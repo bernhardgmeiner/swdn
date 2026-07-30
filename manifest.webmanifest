@@ -1,0 +1,16 @@
+{
+  "name": "Schweden 2026 – Familien-Reiseguide",
+  "short_name": "Schweden 26",
+  "description": "Reise-Dashboard für den Familien-Roadtrip Wien–Kopenhagen–Schweden, 2.–24. August 2026",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F5F4EF",
+  "theme_color": "#0A5EA8",
+  "lang": "de",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ]
+}

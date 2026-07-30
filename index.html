@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Schweden 2026</title>
+<meta name="description" content="Familien-Reise-Dashboard: Wien–Kopenhagen–Schweden, 1.–24. August 2026">
+<meta name="theme-color" content="#0A5EA8">
+<meta name="robots" content="noindex,nofollow">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Schweden 26">
+<style>
+:root{
+  --bg:#F5F4EF; --card:#FFFFFF; --ink:#22303E; --ink2:#5C6B7A; --ink3:#66737F;
+  --blue:#0A5EA8; --blue2:#0E76C8; --blue-soft:#E3EEF7; --yellow:#F2C230; --yellow-soft:#FBF0D2;
+  --green:#2E7D5B; --green-soft:#E1F0E8; --red:#C0483C; --red-soft:#F7E3E0;
+  --line:#E6E4DC; --shadow:0 1px 3px rgba(20,45,75,.09), 0 4px 14px rgba(20,45,75,.05);
+  --r:16px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#131A22; --card:#1C2530; --ink:#E8ECF0; --ink2:#A8B4C0; --ink3:#8E9AA7;
+    --blue:#4D9FE0; --blue2:#5FAEE8; --blue-soft:#20313F; --yellow:#E8BE49;
+    --yellow-soft:#38301B; --green:#5BB18A; --green-soft:#1E3229; --red:#E0776B; --red-soft:#3A2320;
+    --line:#2C3846; --shadow:0 1px 3px rgba(0,0,0,.35);
+  }
+  .btn{color:#0B1723;}
+  .pill-toggle button.on{color:#0B1723;}
+}
+*{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:16px; line-height:1.45;
+  padding-bottom:calc(64px + env(safe-area-inset-bottom));
+}
+header.app{
+  position:sticky; top:0; z-index:30;
+  background:linear-gradient(135deg,#0A5EA8 0%,#0E76C8 78%,#1585D8 100%);
+  color:#fff; padding:calc(10px + env(safe-area-inset-top)) 18px 12px;
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  box-shadow:0 2px 10px rgba(10,60,110,.25);
+}
+header.app .t{font-weight:700; font-size:19px; letter-spacing:.2px; display:flex; align-items:center; gap:8px;}
+header.app .t .flag{width:22px;height:14px;border-radius:3px;background:#006AA7;position:relative;overflow:hidden;flex:none;box-shadow:0 0 0 1px rgba(255,255,255,.35);}
+header.app .t .flag::before{content:"";position:absolute;left:6px;top:0;width:4px;height:100%;background:#FECC02;}
+header.app .t .flag::after{content:"";position:absolute;left:0;top:5px;width:100%;height:4px;background:#FECC02;}
+header.app #sos{background:rgba(255,255,255,.18);border:none;border-radius:12px;min-width:42px;height:42px;font-size:19px;cursor:pointer;padding:0 6px}
+header.app .datechip{font-size:12.5px; background:rgba(255,255,255,.18); padding:4px 10px; border-radius:999px; white-space:nowrap;}
+main{max-width:660px; margin:0 auto; padding:12px 14px 30px;}
+h2.sec{font-size:14px; text-transform:uppercase; letter-spacing:.09em; color:var(--ink3); margin:22px 4px 8px; font-weight:700;}
+.card{background:var(--card); border-radius:var(--r); padding:14px 16px; box-shadow:var(--shadow); margin:10px 0; border:1px solid var(--line);}
+.card.hl{border-left:5px solid var(--yellow);}
+.card.blue{background:var(--blue-soft); border-color:transparent;}
+.card h3{margin:0 0 6px; font-size:16.5px;}
+.card p{margin:6px 0;}
+.muted{color:var(--ink2); font-size:14px;}
+.tiny{color:var(--ink3); font-size:12.5px;}
+.big{font-size:22px; font-weight:700;}
+a{color:var(--blue); text-decoration:none; font-weight:600;}
+.rowline{display:flex; justify-content:space-between; align-items:baseline; gap:10px;}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0 2px;}
+.chip{font-size:12.5px; font-weight:600; padding:3px 10px; border-radius:999px; background:var(--blue-soft); color:var(--blue); white-space:nowrap;}
+.chip.y{background:var(--yellow-soft); color:#7D600E;}
+.chip.g{background:var(--green-soft); color:var(--green);}
+.chip.r{background:var(--red-soft); color:var(--red);}
+.chip.plain{background:var(--bg); color:var(--ink2); border:1px solid var(--line);}
+@media (prefers-color-scheme: dark){ .chip.y{color:#E8BE49;} }
+nav.tabs{
+  position:fixed; bottom:0; left:0; right:0; z-index:40;
+  background:var(--card); border-top:1px solid var(--line);
+  display:flex; justify-content:space-around;
+  padding:6px 4px calc(6px + env(safe-area-inset-bottom));
+}
+nav.tabs button{
+  flex:1; background:none; border:none; font-family:inherit; cursor:pointer;
+  display:flex; flex-direction:column; align-items:center; gap:2px;
+  font-size:12px; font-weight:600; color:var(--ink3); padding:4px 0; border-radius:12px;
+}
+nav.tabs button .ico{font-size:21px; line-height:1;}
+nav.tabs button.on{color:var(--blue);}
+nav.tabs button.on .ico{transform:translateY(-1px);}
+.view{display:none;}
+.view.on{display:block; animation:fade .18s ease;}
+@keyframes fade{from{opacity:0; transform:translateY(4px);} to{opacity:1;}}
+details{background:var(--card); border:1px solid var(--line); border-radius:var(--r); margin:8px 0; box-shadow:var(--shadow); overflow:hidden;}
+details summary{padding:12px 16px; font-weight:700; cursor:pointer; list-style:none; display:flex; align-items:center; gap:8px;}
+details summary::-webkit-details-marker{display:none;}
+details summary::after{content:"›"; margin-left:auto; font-size:20px; color:var(--ink3); transform:rotate(90deg); transition:transform .15s;}
+details[open] summary::after{transform:rotate(-90deg);}
+details .inner{padding:0 16px 14px;}
+details.mini{box-shadow:none; background:var(--bg);}
+.btn{display:inline-block; background:var(--blue); color:#fff; border:none; border-radius:12px; padding:10px 16px; font-size:15px; font-weight:700; font-family:inherit; cursor:pointer;}
+.btn.sub{background:var(--blue-soft); color:var(--blue);}
+.btn.ghost{background:transparent; border:1.5px solid var(--line); color:var(--ink2);}
+.btn.sm{padding:6px 12px; font-size:13.5px; border-radius:10px;}
+.iconbtn{background:var(--blue-soft); color:var(--blue); border:none; border-radius:12px; width:44px; height:44px; font-size:20px; cursor:pointer;}
+input[type=text],input[type=number],select{
+  font-family:inherit; font-size:16px; color:var(--ink);
+  background:var(--bg); border:1.5px solid var(--line); border-radius:12px; padding:10px 12px; width:100%;
+}
+input:focus,select:focus{outline:2px solid var(--blue2); border-color:transparent;}
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+.wxrow{display:grid; grid-template-columns:52px 34px 1fr auto; align-items:center; gap:8px; padding:7px 2px; border-bottom:1px solid var(--line); font-size:14.5px;}
+.wxrow:last-child{border-bottom:none;}
+.wxrow .d{font-weight:700;}
+.wxrow .ic{font-size:22px; text-align:center;}
+.wxrow .rain{color:var(--blue); font-size:12.5px; font-weight:600;}
+.wxrow .tt{font-weight:700; white-space:nowrap;}
+.wxrow .tt .lo{color:var(--ink3); font-weight:400;}
+.tempbar{height:5px; border-radius:3px; background:linear-gradient(90deg,#7FB4DC,#F2C230,#E0776B); opacity:.85; margin-top:3px;}
+.act{padding:10px 0; border-bottom:1px solid var(--line);}
+.act:last-child{border-bottom:none;}
+.act .nm{font-weight:700; font-size:15.5px;}
+.act .meta{font-size:13px; color:var(--ink2); margin-top:2px;}
+.act .why{font-size:14px; margin-top:3px;}
+.checkrow{display:flex; align-items:center; gap:10px; padding:9px 2px; border-bottom:1px solid var(--line); font-size:15.5px;}
+.checkrow:last-child{border-bottom:none;}
+.checkrow input{width:22px; height:22px; accent-color:var(--blue); flex:none;}
+.checkrow.done label{text-decoration:line-through; color:var(--ink3);}
+.checkrow label{flex:1;}
+.daylist .card{display:block; padding:11px 14px;}
+.daylist .dt{font-weight:800; color:var(--blue); font-size:13px;}
+.daylist .ti{font-weight:700; margin-top:1px;}
+.daylist .sb{font-size:13px; color:var(--ink2); margin-top:1px;}
+.stgrid{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+.stgrid .card{margin:0; padding:12px 13px; cursor:pointer;}
+.stgrid .fl{font-size:22px;}
+.stgrid .nm{font-weight:800; margin-top:2px;}
+.stgrid .ni{font-size:12.5px; color:var(--ink2);}
+.bingo{display:grid; grid-template-columns:repeat(4,1fr); gap:7px; margin-top:10px;}
+.bingo button{aspect-ratio:1; border:1.5px solid var(--line); border-radius:12px; background:var(--card); font-family:inherit; font-size:12px; font-weight:600; color:var(--ink); cursor:pointer; padding:3px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px;}
+.bingo button .e{font-size:20px;}
+.bingo button.hit{background:var(--yellow-soft); border-color:var(--yellow);}
+.counterbox{display:flex; align-items:center; justify-content:space-between; gap:10px; padding:10px 0;}
+.counterbox .n{font-size:34px; font-weight:800; min-width:56px; text-align:center;}
+.phr{padding:8px 0; border-bottom:1px solid var(--line);}
+.phr:last-child{border-bottom:none;}
+.phr .sv{font-weight:700;}
+.phr .de{font-size:13.5px; color:var(--ink2);}
+.phr .py{font-size:12.5px; color:var(--ink3); font-style:italic;}
+.bday{background:linear-gradient(135deg,#F2C230,#E8A61C); color:#3A2C05; border:none;}
+.bday h3{font-size:18px;}
+.topbar{display:flex; align-items:center; gap:10px; margin:4px 0 10px;}
+.topbar .back{background:var(--card); border:1px solid var(--line); border-radius:12px; width:44px; height:44px; font-size:18px; cursor:pointer; color:var(--ink);}
+.topbar h2{margin:0; font-size:20px;}
+.note{font-size:13.5px; background:var(--yellow-soft); border-radius:10px; padding:8px 12px; margin:8px 0;}
+.warn{font-size:13.5px; background:var(--red-soft); border-radius:10px; padding:8px 12px; margin:8px 0;}
+.oknote{font-size:13.5px; background:var(--green-soft); border-radius:10px; padding:8px 12px; margin:8px 0;}
+table.simple{width:100%; border-collapse:collapse; font-size:14px;}
+table.simple td{padding:6px 4px; border-bottom:1px solid var(--line); vertical-align:top;}
+table.simple td:first-child{font-weight:600; white-space:nowrap;}
+.footer{color:var(--ink3); font-size:12.5px; text-align:center; margin:26px 0 8px;}
+.pill-toggle{display:flex; background:var(--bg); border:1px solid var(--line); border-radius:12px; overflow:hidden; margin:8px 0;}
+.pill-toggle button{flex:1; border:none; background:none; padding:8px; font-family:inherit; font-weight:700; font-size:13.5px; color:var(--ink2); cursor:pointer;}
+.pill-toggle button.on{background:var(--blue); color:#fff;}
+.skel{color:var(--ink3); font-size:14px; padding:8px 0;}
+.rs{display:flex;align-items:flex-end;gap:2px;height:48px;margin-top:10px}
+.rs span{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:2px;height:100%}
+.rs i{width:100%;background:linear-gradient(180deg,var(--blue2),var(--blue));border-radius:3px 3px 0 0;min-height:2px}
+.rs b{font-size:10px;color:var(--ink3);font-weight:600;height:12px}
+.rslegend{display:flex;justify-content:space-between;font-size:12px;color:var(--ink3);margin-top:2px}
+.qbtn{display:block;width:100%;text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;margin:6px 0;font-family:inherit;font-size:15px;color:var(--ink);cursor:pointer}
+.qbtn.ok{background:var(--green-soft);border-color:var(--green)}
+.qbtn.no{background:var(--red-soft);border-color:var(--red)}
+iframe.mymap{width:100%;height:420px;border:0;border-radius:12px;margin-top:10px;background:var(--bg)}
+.cf{position:fixed;top:-30px;z-index:99;animation:cfFall 2.7s linear forwards;pointer-events:none}
+@keyframes cfFall{to{transform:translateY(108vh) rotate(340deg);opacity:.9}}
+#toast{position:fixed;left:50%;transform:translateX(-50%) translateY(20px);bottom:calc(76px + env(safe-area-inset-bottom));background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;font-weight:700;font-size:14px;opacity:0;transition:all .25s;z-index:60;pointer-events:none;max-width:88vw;text-align:center}
+#toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+.stamp{position:absolute;top:8px;right:8px;background:var(--yellow-soft);color:#7D600E;border:1.5px solid var(--yellow);border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;transform:rotate(8deg)}
+.stamp.now{background:var(--blue-soft);border-color:var(--blue);font-size:12px}
+.chips.actions .chip{min-height:44px;display:inline-flex;align-items:center;padding:8px 14px;font-size:13.5px;border:1.5px solid var(--line);cursor:pointer}
+.qbtn.big{font-size:18px;padding:13px 14px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}}
+</style>
+</head>
+<body>
+<header class="app">
+  <div class="t"><span class="flag"></span> Schweden 2026</div>
+  <div style="display:flex;align-items:center;gap:8px"><div class="datechip" id="headDate"></div><button id="sos" aria-label="Notfall-Infos" onclick="openNotfall()">🆘</button></div>
+</header>
+<main>
+  <div class="view" id="v-heute"></div>
+  <div class="view" id="v-route"></div>
+  <div class="view" id="v-orte"></div>
+  <div class="view" id="v-wetter"></div>
+  <div class="view" id="v-mehr"></div>
+</main>
+<nav class="tabs">
+  <button data-v="heute"><span class="ico" aria-hidden="true">🏠</span>Heute</button>
+  <button data-v="route"><span class="ico" aria-hidden="true">🗓️</span>Route</button>
+  <button data-v="orte"><span class="ico" aria-hidden="true">📍</span>Orte</button>
+  <button data-v="wetter"><span class="ico" aria-hidden="true">🌦️</span>Wetter</button>
+  <button data-v="mehr"><span class="ico" aria-hidden="true">🎒</span>Mehr</button>
+</nav>
+<script>
+"use strict";
+/* ================= DATEN ================= */
+const ST = {
+salzburg:{name:"Salzburg",fl:"🇦🇹",lat:47.80,lon:13.04,ni:"2 Nächte · 1.→3.8.",lodg:"Privat, Kuno-Brandauer-Straße 1",
+about:"Zwei Nächte zum Ankommen – mit einem vollen Salzburg-Tag am Sonntag, bevor es Richtung Norden geht.",
+top:[
+{n:"Wasserspiele Hellbrunn",t:"out",d:"2–3 h",p:"Erw. ca. 15 €, Kind ca. 7 € (Stand 2025)",h:"Führungen laufend, im Aug. bis abends",a:"Hellbrunn, 15 min",w:"Der Kinder-Klassiker: versteckte Spritzbrunnen, mechanisches Theater – nass wird man garantiert. Danach Schlosspark mit großem Spielplatz.",u:"https://www.hellbrunn.at"},
+{n:"Zoo Salzburg",t:"out",d:"2–3 h",p:"Erw. ca. 14 €, Kind ca. 6,50 € (Stand 2025)",h:"täglich ab 9",a:"direkt bei Hellbrunn",w:"Am Fels gebaut, Steinböcke über euch – gut mit Hellbrunn kombinierbar, wenn die Energie reicht.",u:"https://www.salzburg-zoo.at"},
+{n:"Festung Hohensalzburg",t:"mix",d:"2 h",p:"online ab ca. 14 €/Erw. inkl. Bahn (Stand 2025)",h:"täglich",a:"Altstadt",w:"Mit der Standseilbahn hinauf – Burg, Blick und für den 5-Jährigen die Bahn als halbes Programm.",u:"https://www.festung-hohensalzburg.at"},
+{n:"Mirabellgarten & Zwergerlgarten",t:"out",d:"1 h",p:"gratis",h:"bis Einbruch der Dunkelheit",a:"Zentrum",w:"Sound-of-Music-Brunnen und Zwergenfiguren zum Anfassen – der lockere Abendprogrammpunkt.",c:1}],
+reserve:[
+{n:"Spielzeug Museum",t:"in",d:"1,5 h",p:"günstig, Kinder-Fokus",h:"Di–So",a:"Altstadt",w:"Der Regen-Joker: zwei Etagen zum Spielen, Kugelbahn, Verkleiden."},
+{n:"Kapitelplatz & Getreidegasse",t:"out",d:"1 h",p:"gratis",h:"immer",a:"Altstadt",w:"Goldene Kugel als Foto, danach Eis in einer Gelateria.",c:1}],food:[{n:"Gelateria in der Altstadt",pr:"€",d:"Eis am Abend reicht völlig – morgen wird ein langer Tag."}],fika:[],
+foto:["Kapitelplatz: Kinder vor der goldenen Kugel"],prak:[]},
+
+bamberg:{name:"Bamberg",fl:"🇩🇪",lat:49.89,lon:10.89,ni:"1 Nacht · 3.→4.8.",lodg:"BM Rooms, Jäckstraße 33",
+about:"Welterbe-Altstadt, perfekt für eine Abendrunde. Vom Quartier ca. 20 min zu Fuß ins Zentrum.",
+top:[
+{n:"Abendrunde Altstadt",t:"out",d:"1,5 h",p:"gratis",h:"abends am schönsten",a:"Zentrum",w:"Grüner Markt → Altes Rathaus (Obere Brücke, Fassadenmalerei) → Untere Brücke → am Regnitzufer zu Klein Venedig. Auf der Unteren Brücke sitzen alle mit Eis auf der Brüstung – mitmachen.",c:1},
+{n:"Domplatz & Rosengarten",t:"out",d:"45 min",p:"gratis",h:"Rosengarten bis Dämmerung",a:"Domberg",w:"Nur bei fitten Kindern: kurzer Anstieg, dafür Blick über die Dächer.",c:1}],
+reserve:[],
+food:[{n:"Wirtshaus Zum Sternla",pr:"€",d:"Älteste Wirtschaft Bambergs, fränkisch-günstig, vegetarische Gerichte."},{n:"Pizzerien Sand-/Austraße",pr:"€",d:"Unkomplizierte Veggie-Option mit Kindern."},{n:"Eis bei Graupner",pr:"€",d:"Lange Straße – Eis-Klassiker der Stadt."}],
+fika:[],foto:["Altes Rathaus von der Unteren Brücke in der Abendsonne"],prak:[]},
+
+wernigerode:{name:"Wernigerode",fl:"🇩🇪",lat:51.83,lon:10.79,ni:"1 Nacht · 4.→5.8. – ihr schlaft im Schloss!",lodg:"Schloss Wernigerode",
+about:"Die bunte Fachwerkstadt am Harzrand – und ihr übernachtet oben im Schloss. Besichtigungstickets sind schon da.",
+top:[
+{n:"Schloss Wernigerode – Besichtigung",t:"mix",d:"1,5 h",p:"Tickets vorhanden ✓",h:"nach Ankunft",a:"direkt an der Unterkunft",w:"Märchenschloss über der Stadt – und danach müsst ihr nicht mal heimfahren, ihr wohnt ja da."},
+{n:"Schlossbahn (Bimmelbahn)",t:"out",d:"60 min Rundfahrt",p:"Familienticket 2+2: 20 € (Berg+Tal)",h:"ca. 9:40–18 Uhr, alle 30 min",a:"ab Anger/Altstadt",w:"Praktisch für den Weg Altstadt ↔ Schloss und für den 5-Jährigen ein Ereignis für sich.",u:"https://www.schlossbahn.de"},
+{n:"Altstadt-Runde",t:"out",d:"1 h",p:"gratis",h:"abends",a:"Marktplatz",w:"Rathaus (eines der schönsten Fachwerk-Rathäuser Deutschlands), Breite Straße, das „Kleinste Haus“ in der Kochstraße.",c:1}],
+reserve:[
+{n:"Harzer Schmalspurbahn: Dampfloks schauen",t:"out",d:"30 min",p:"gratis",h:"Bf. Westerntor",a:"an der Altstadt",w:"Echte Dampfloks aus nächster Nähe – gratis Gänsehaut für den 5-Jährigen. Die Brockenfahrt selbst (65 €/Erw.!) braucht 3–4 h und lohnt am Durchreisetag nicht.",c:1}],
+food:[{n:"Gasthäuser am Marktplatz",pr:"€€",d:"Bodenständig, Käsespätzle & Co. als Veggie-Option."},{n:"Flammkuchen/Pfannkuchen, Breite Straße",pr:"€",d:"Schnell, kindertauglich, preiswert."}],
+fika:[],foto:["Schlossterrasse: Blick über die Altstadt bis zum Brocken – euer Übernachtungsbonus"],prak:[]},
+
+luebeck:{name:"Lübeck",fl:"🇩🇪",lat:53.87,lon:10.69,ni:"1 Nacht · 5.→6.8.",lodg:"Premier Inn, Moislinger Allee 9 · Ref. GBI6353604",
+about:"Hansestadt-Abend vor der Fähre. Vom Hotel ca. 15 min zu Fuß zum Holstentor.",
+top:[
+{n:"Abendrunde Altstadtinsel",t:"out",d:"2 h",p:"gratis",h:"abends",a:"ab Holstentor",w:"Holstentor (außen reicht) → Breite Straße → Rathaus → zurück über die Obertrave mit Salzspeicher-Blick.",c:1},
+{n:"Niederegger Stammhaus",t:"in",d:"45 min",p:"Marzipan-Museum gratis (2. OG)",h:"bis ca. 18 Uhr – rechtzeitig hin!",a:"Breite Straße",w:"Marzipan-Stadt zum Anschauen, Nusstorte als „Dessert-Abendessen“ – Lübeck-Pflicht.",u:"https://www.niederegger.de"},
+{n:"Petrikirche Aussichtsplattform",t:"mix",d:"30 min",p:"ca. 5 € Erw. (Stand 2025)",h:"Aufzug!",a:"Altstadt",w:"Per Aufzug hinauf – Altstadt-Dächer und die sieben Türme von oben."}],
+reserve:[],
+food:[{n:"Kartoffelkeller",pr:"€€",d:"Koberg – deftig, preiswert, viele vegetarische Kartoffelgerichte."},{n:"Tipasa",pr:"€",d:"Schlumacherstraße – Studi-Klassiker, günstig, gute Veggie-Auswahl."}],
+fika:[],foto:["Holstentor von der Wiese davor, abends angestrahlt; Salzspeicher von der Obertrave-Brücke"],
+prak:["Morgen früh: 90 km bis Puttgarden (ca. 1:10 h). Spätestens 7:45 losfahren – Fähre 9:45, Puffer für die Fehmarnbelt-Baustellen auf der A1."]},
+
+kopenhagen:{name:"Kopenhagen",fl:"🇩🇰",lat:55.68,lon:12.57,ni:"3 Nächte · 6.→9.8.",lodg:"Airbnb, Bjelkes Allé 4, 2200 København N",
+about:"Euer Viertel Nørrebro ist entspannt und voller Spielplätze – das Zentrum ist mit Metro/Rad schnell erreicht. Kinder unter 12 fahren im ganzen ÖPNV gratis mit.",
+top:[
+{n:"Tivoli",t:"mix",d:"ab Nachmittag bis zur Abendbeleuchtung",p:"Eintritt Erw./Kind ab 8: 170–210 DKK (23–28 €), Kind 3–7: 85–105 DKK. Unbegrenzte Fahrten (Turpas) +299–349 DKK",h:"ab 11 Uhr, bis 22–24 Uhr",a:"Vesterbrogade 3",w:"Falls ihr spontan Lust habt (noch offen): Tickets gibt es kurzfristig online. Dynamische Preise – Freitag ist günstiger als Samstag. Abends wird es magisch.",u:"https://www.tivoli.dk"},
+{n:"Den Blå Planet (Aquarium)",t:"in",d:"2,5–3 h",p:"online: Erw. 219–229 DKK, Kind 3–11: 116–123 DKK (vor Ort +30)",h:"Mo bis 21 Uhr, Di–So bis 17/18 Uhr – Zeit beim Ticketkauf prüfen, letzter Einlass 1 h vorher",a:"Kastrup, Metro M2",w:"Hammerhai-Tunnel und Ozeanbecken – Regenoption Nr. 1. Online-Zeitfenster Pflicht, oft ausverkauft → vorbuchen!",u:"https://denblaaplanet.dk"},
+{n:"Hafenrundfahrt mit Netto-Bådene",t:"mix",d:"1 h",p:"Erw. 80 DKK (11 €), Kind ca. 40 – viel billiger als Stromma (199)",h:"mehrmals täglich",a:"ab Nyhavn/Holmens Kirke",w:"Boot fahren zieht bei Kindern immer, Meerjungfrau gibt's im Vorbeifahren gratis dazu.",u:"https://www.havnerundfart.dk",c:1},
+{n:"Rundetaarn",t:"mix",d:"45–60 min",p:"Erw. 60 DKK, Kind 5–15 ca. 25 DKK, unter 5 gratis",h:"täglich 10–20 Uhr",a:"Købmagergade 52A",w:"Spiralrampe statt Treppen – die Kinder laufen hinauf, oben Altstadt-Blick.",u:"https://www.rundetaarn.dk",c:1}],
+reserve:[
+{n:"Experimentarium",t:"in",d:"3–4 h",p:"Erw. ca. 250–275 DKK, Kinder reduziert (online −10 %)",h:"täglich 9:30–17",a:"Hellerup",w:"Hands-on-Science – Regen-Joker Nr. 2, für 5 wie 9 perfekt.",u:"https://www.experimentarium.dk"},
+{n:"Nationalmuseet – Kindermuseum",t:"in",d:"1,5–2 h",p:"Erw. 130 DKK, unter 18 gratis",h:"täglich 10–17",a:"Ny Vestergade 10",w:"Eigenes Kindermuseum mit Wikingerschiff zum Klettern.",c:1,u:"https://en.natmus.dk"},
+{n:"Tårnlegepladsen im Fælledparken",t:"out",d:"1–2 h",p:"gratis",h:"immer",a:"Østerbro",w:"Spektakulärer Turm-Spielplatz: Kopenhagens Türme als Rutschen.",c:1},
+{n:"Superkilen",t:"out",d:"1 h",p:"gratis",h:"immer",a:"Nørrebro, 5 min vom Airbnb",w:"Roter & schwarzer Design-Platz, Schaukeln, Skate-Action – idealer Abendspaziergang.",c:1},
+{n:"Nørrebroparken & BaNanna Park",t:"out",d:"nach Bedarf",p:"gratis",h:"immer",a:"direkt beim Airbnb",w:"Spielplätze für den Ankunftstag.",c:1},
+{n:"Islands Brygge Havnebad",t:"out",d:"2 h",p:"gratis",h:"Sommer, bewacht",a:"Islands Brygge",w:"Hafenbad mit Kinderbecken – bei Hitze die beste Abkühlung.",c:1},
+{n:"Kleine Meerjungfrau",t:"out",d:"20 min",p:"gratis",h:"immer",a:"Langelinie",w:"Ehrlich: klein und überlaufen. Nur als Kombi mit Kastellet-Spaziergang – oder vom Boot aus abhaken.",c:1}],
+food:[
+{n:"Reffen Street Food",pr:"€",d:"50+ Stände auf Refshaleøen, sehr viel vegetarisch/vegan, 85–155 DKK, täglich 12–22. Früh kommen, viel Platz zum Herumlaufen."},
+{n:"Broens Gadekøkken",pr:"€",d:"Street-Food an der Brücke, 5 min von Nyhavn – perfekt nach der Hafenrundfahrt."},
+{n:"The Laundromat Café",pr:"€",d:"Elmegade, Nørrebro – Retro-Café mit Büchern, Pancakes, viele Veggie-Gerichte. Nah am Airbnb."},
+{n:"Grød",pr:"€",d:"Jægersborggade – Porridge & Bowls, fast alles vegetarisch. Frühstücks-Tipp im Viertel."},
+{n:"Sporvejen",pr:"€",d:"Restaurant in einer historischen Straßenbahn (Gråbrødretorv) – Burger & Omeletts, Kinderburger ca. 45 DKK."},
+{n:"Hallernes Smørrebrød, Torvehallerne",pr:"€",d:"Smørrebrød leistbar (65–95 DKK/Stück, auch vegetarisch) – dänischer Klassiker zum Mittag."},
+{n:"Sticks'n'Sushi",pr:"€€€",d:"Das „bessere Lokal“: Malbögen & Kinderstäbchen, vegetarische Rolls."}],
+fika:[
+{n:"Juno the Bakery",d:"Århusgade 48 – berühmteste Kardamomschnecke der Stadt (45 DKK). Am Wochenende 30+ min Schlange → früh."},
+{n:"Andersen & Maillard",d:"Nørrebrogade 62 – fußläufig vom Airbnb, Top-Kaffee, Morning Bun 45 DKK."},
+{n:"Hart Bageri",d:"Gl. Kongevej 109 – Kanelsnegle-Kult (mittwochs Spezial, früh ausverkauft)."}],
+foto:["Nyhavn morgens vor 10 (menschenleer!)","Superkilen: Kinder in Bewegung auf dem roten Platz","Rundetaarn-Plattform über den Dächern"],
+prak:["Parken: Nørrebro = gelbe Zone, 17–18 DKK/h (8–23 Uhr) → Auto am besten stehen lassen. Apps: EasyPark/ParkMan. Gratis-Option: P-Platz Nørrebrohallen (max. 3 h).",
+"ÖPNV: Kinder unter 12 GRATIS mit Erwachsenem – beide Kinder zahlen nichts. Metro M3 „Nørrebro“, Busse 5C/6A. Tickets per DOT-App.",
+"Rad: Lastenrad fürs Kind 225–250 DKK/Tag (Baisikeli), die 9-Jährige fährt auf den geschützten Radwegen selbst.",
+"Copenhagen Card (48 h, 2 Erw. + 2 Kinder ≈ 268 €): lohnt nur bei straffem Programm (Tivoli + Blå Planet + Kanalfahrt + Museum in 2 Tagen). Bei Familientempo mit Gratis-Spielplätzen: knapp nicht."]},
+
+lomma:{name:"Lomma & Skåne",fl:"🇸🇪",lat:55.67,lon:13.07,ni:"2 Nächte · 9.→11.8.",lodg:"Lomma Station Inn Loft, Järnvägsgatan 16",
+about:"Willkommen in Schweden! Lomma hat einen flachen, kinderfreundlichen Sandstrand 5 Gehminuten vom Loft – und Lund & Malmö liegen vor der Tür. Bonus: Das Malmöfestivalen (gratis, sehr kinderfreundlich) läuft noch bis 14.8.!",
+top:[
+{n:"Lomma Strand & Hafen",t:"out",d:"2–4 h",p:"gratis",h:"immer",a:"5 min zu Fuß",w:"Flacher Sandstrand mit Badestegen und Spielplatz, Blick über den Öresund. Perfekt für den Ankunftsabend und ein Abschiedsbad am Dienstag.",c:1},
+{n:"Lund: Dom + Kulturen",t:"mix",d:"halber Tag",p:"Dom gratis; Kulturen: Erw. 150 SEK (~13,50 €), bis 18 gratis",h:"Kulturen tägl. 10–17",a:"Lund, 15 min Fahrt",w:"Um 12:00 & 15:00 schlägt die astronomische Uhr im Dom (Figurenspiel – Kinder-Hit!). Kulturen: Freilichtmuseum mit historischen Häusern zum Reinklettern.",u:"https://www.kulturen.com"},
+{n:"Malmö: Folkets Park + Möllevången",t:"out",d:"2–3 h",p:"Eintritt gratis",h:"immer",a:"Malmö",w:"Malmös Familienpark: große Spielplätze, Minigolf, Terrarium. Danach 10 min zu Fuß zur besten Falafel Schwedens.",c:1},
+{n:"Malmö: Teknikens hus + Malmöhus",t:"in",d:"2–3 h",p:"sehr günstig, Kinder frei (Stand 2025: 40 SEK/Erw.)",h:"tägl. 10–17",a:"Malmö",w:"Echtes U-Boot U3 zum Reinklettern, Technik-Mitmachbereich, Schloss mit Aquarium – Top-Regenoption.",u:"https://malmo.se/museum",c:1}],
+reserve:[
+{n:"Ribersborgsstranden",t:"out",d:"2 h",p:"gratis",h:"immer",a:"Malmö",w:"Stadtstrand mit Turning-Torso-Blick, flaches Wasser.",c:1},
+{n:"Stadsparken Lund",t:"out",d:"1–2 h",p:"gratis",h:"immer",a:"Lund",w:"Großer Abenteuerspielplatz direkt bei der Altstadt.",c:1},
+{n:"Stadsbiblioteket Malmö",t:"in",d:"1 h",p:"gratis",h:"tägl.",a:"Malmö",w:"Regen-Joker: architektonisch toll, feiner Kinderbereich.",c:1},
+{n:"Radeln an der Höje å",t:"out",d:"1–2 h",p:"gratis",h:"immer",a:"Lomma",w:"Flacher Rad-/Spazierweg, Eis am Hafenkiosk als Ziel.",c:1}],
+food:[
+{n:"Jalla Jalla",pr:"€",d:"Möllevången, Malmö – Kult-Falafel, Rolle 40–60 SEK (~4–5 €), vegan/vegetarisch Standard."},
+{n:"Far i Hatten",pr:"€€",d:"Im Folkets Park – entspanntes Familienlokal, gute Veggie-Auswahl."},
+{n:"Govindas",pr:"€",d:"Lund – vegetarisches Buffet, sehr günstig, unkompliziert mit Kindern."},
+{n:"Fiskboden Lomma",pr:"€€",d:"Fischlokal am Hafen, Fish & Chips draußen am Wasser; daneben Lomma Beach House für Eis & Snacks."}],
+fika:[{n:"St Jakobs Stenugnsbageri",d:"Klostergatan, Lund – berühmte Zimtschnecken."},{n:"Ebbas Skafferi",d:"Lund – gemütlicher Innenhof, günstige Fika."}],
+foto:["Lomma Strand bei Sonnenuntergang – Öresundbrücke am Horizont","Ribersborg-Steg mit Turning Torso"],
+prak:["Malmöfestivalen 7.–14.8.: Gratis-Stadtfestival mit Kinderprogramm – Abendprogramm-Tipp für Mo 10.8.","Ab jetzt gilt: Karte statt Bargeld, SEK ÷ 11 ≈ Euro."]},
+vimmerby:{name:"Vimmerby",fl:"🇸🇪",lat:57.67,lon:15.86,ni:"2 Nächte · 11.→13.8.",lodg:"Airbnb, Kungsgatan 7A, Vimmerby",
+about:"Astrid-Lindgren-Land! Die ALV-Tickets für Mittwoch sind gebucht – am 12.8. läuft noch der volle Sommerbetrieb.",
+top:[
+{n:"Astrid Lindgrens Värld – euer Tag",t:"out",d:"ganzer Tag",p:"Tickets gebucht ✓ · Parken 85 SEK/Tag",h:"i. d. R. 10–18 Uhr (Tageskalender in der ALV-App checken)",a:"Vimmerby",w:"Taktik: Zuerst 2–3 Wunsch-Shows in der App fixieren (je 20–30 min, auf Schwedisch, ca. 15 min früher da sein) und den Tag drumherum bauen. Für Karl: Villa Kunterbunt/Pippi-Show, Katthult (Michel!) und die Kleine Stadt. Für Nora: Mattisborgen (Ronja – die actionreichste Show) und Körsbärsdalen (Brüder Löwenherz). Eigene Jause ist ausdrücklich erlaubt – Picknickplätze im Park, Restaurants kosten 150–200 SEK/Person. Wiedereintritt mit Stempel möglich.",u:"https://astridlindgrensvarld.se"},
+{n:"Virum Älgpark",t:"out",d:"1,5 h",p:"Familienticket 700 SEK (~63 €, 2 Erw. + bis 3 Kinder)",h:"Safari-Zeiten online buchen, 15 min früher da sein",a:"25 min von Vimmerby",w:"Elch-Safari im Bummelzug, Elche füttern! Ideal schon am Anreisetag Di 11.8. nachmittags – liegt fast an der Strecke.",u:"https://virummoosepark.com"},
+{n:"Katthult / Gibberyd",t:"out",d:"1 h",p:"gratis",h:"Hofgelände frei zugänglich",a:"bei Mariannelund, 30 min",w:"Der echte Michel-Drehort: Wohnhaus, Tischlerschuppen, „Hoppbaum“. Perfekt Do 13.8. vormittags – liegt Richtung Stockholm.",u:"https://filmbyn.se",c:1}],
+reserve:[
+{n:"Astrid Lindgrens Näs",t:"mix",d:"1–2 h",p:"25 % Rabatt mit ALV-Ticket! (Stand 2025: ~195 SEK, Kinder frei)",h:"fußläufig von ALV",a:"Vimmerby",w:"Ausstellung, Gärten, Geburtshaus – für den späten Nachmittag am 12.8., falls Energie übrig."},
+{n:"Filmbyn Småland",t:"in",d:"1,5–2 h",p:"Erw. 200, Kind 3–15: 150 SEK",h:"tägl. 10–17:30",a:"Mariannelund",w:"Interaktives Filmmuseum zu Michel & Pippi (Requisiten, Kulissen) – Regen-Joker, kombinierbar mit Katthult.",u:"https://filmbyn.se"},
+{n:"Vimmerby Simhall / Bowling",t:"in",d:"1–2 h",p:"günstig",h:"lokal prüfen",a:"Vimmerby",w:"Zwei weitere Regen-Optionen im Ort."}],
+food:[
+{n:"Brygghuset (Åbro)",pr:"€€",d:"Brauereirestaurant, solide, Kindergerichte."},
+{n:"Mammas Pizzeria / Palma",pr:"€",d:"Pizza 100–130 SEK, immer vegetarische Optionen."},
+{n:"Magasin 5",pr:"€",d:"Gelato + Café – der Kinder-Hit nach dem Parktag."},
+{n:"Björkbacken Kök & Scen",pr:"€€",d:"Pippi-Themen-Hotel-Restaurant, sehr kinderorientiert."}],
+fika:[{n:"Bageri Guldkringlan",d:"Bäckerei mit kleiner Servierung."},{n:"Café Paris",d:"Mittag + Gebäck."}],
+foto:["Kinder auf der Veranda der Villa Kunterbunt","Katthult: am Fahnenmast wie Michel"],
+prak:["ALV-App vorab installieren – Show-Zeitplan & Karte.","Jause & Trinkflaschen am Vorabend einkaufen (ICA in Vimmerby).","Myggmedel (Gelsenschutz) ins Handschuhfach! Vor Virum-Safari und Katthult einsprühen (Knöchel + Nacken), lange Ärmel dabei – Waldrand + Spätnachmittag = Gelsenzeit."]},
+
+stockholm:{name:"Stockholm",fl:"🇸🇪",lat:59.33,lon:18.07,ni:"4 Nächte · 13.→17.8.",lodg:"Biz Apartment Gärdet, Sandhamnsgatan 67",
+about:"Euer Apartment liegt in Gärdet – die Museumsinsel Djurgården ist zu Fuß (20–30 min) oder mit Bus 69 erreichbar. Bonus: Das Stockholmer Kulturfestival (Eintritt frei, Innenstadt) läuft 12.–16.8.!",
+top:[
+{n:"Vasa-Museum",t:"in",d:"1,5–2 h",p:"Erw. 240 SEK (~22 €), unter 18 gratis",h:"täglich 8:30–18",a:"Djurgården",w:"Ein echtes, fast unversehrtes Kriegsschiff von 1628 – Wow-Effekt garantiert. Trick: gleich um 8:30 hin, dann gehört es fast euch.",u:"https://www.vasamuseet.se"},
+{n:"Skansen",t:"out",d:"3–5 h",p:"Erw. ca. 220–265 SEK online, Kind 4–15 ca. 100 SEK, unter 4 gratis",h:"täglich 10–18",a:"Djurgården",w:"Freilichtmuseum + Lill-Skansen-Kinderzoo + Baltic Sea Science Center inklusive: Elche, Bären, historisches Schweden zum Anfassen.",u:"https://skansen.se"},
+{n:"Junibacken",t:"in",d:"2–3 h",p:"ab 140 SEK online, tagesabhängig; unter 2 gratis",h:"Aug. ca. 10–17 (kurz vorher prüfen)",a:"Djurgården",w:"Der Sagotåget-Märchenzug durch Astrid Lindgrens Welten – der perfekte Anschluss an Vimmerby. Theaterplätze online reservieren.",u:"https://www.junibacken.se"},
+{n:"Gröna Lund",t:"out",d:"halber Tag / Abend",p:"Entré ca. 150–170 SEK, Fahrten-Band (Åkband) ca. 400–470 SEK online",h:"im Aug. meist bis 22/23 Uhr",a:"Djurgården",w:"Vergnügungspark am Wasser, viele Fahrgeschäfte ab ~90 cm – ideal als Abend nach einem Museumstag.",u:"https://www.gronalund.com"}],
+reserve:[
+{n:"Tekniska Museet",t:"in",d:"2–3 h",p:"Erw. ab 145 SEK, unter 7 gratis, 7–19: 60 SEK",h:"täglich 9–21(!)",a:"nahe Gärdet, Bus 69",w:"MegaMind-Experimentierhalle – Regen-Joker Nr. 1, praktisch vor der Haustür.",u:"https://www.tekniskamuseet.se",c:1},
+{n:"Naturhistoriska + Cosmonova",t:"in",d:"2–3 h",p:"Ausstellungen: unter 18 gratis, Erw. 170 SEK; Cosmonova 160/100 SEK",h:"täglich",a:"Frescati",w:"Dinos + größtes Kuppelkino Schwedens.",c:1,u:"https://www.nrm.se"},
+{n:"Gamla Stan",t:"out",d:"2 h",p:"gratis",h:"immer",a:"Altstadt",w:"Stortorget, dann Mårten Trotzigs Gränd – die 90-cm-Gasse lieben Kinder. Rückweg mit der Djurgårdsfähre!",c:1},
+{n:"Wachablöse am Schloss",t:"out",d:"45 min",p:"gratis",h:"wochentags 12:15, So 13:15 – 20 min früher da sein",a:"Gamla Stan",w:"Musik, Pferde, Uniformen – gratis Spektakel.",c:1},
+{n:"Fjäderholmarna",t:"out",d:"Halbtag",p:"Boot retour ca. 205 SEK/Pers.",h:"ab Strandvägen alle 30 min (10:30–17)",a:"30 min Bootsfahrt",w:"Mini-Schäreninsel mit Badefelsen, Glasbläserei, Räucherei – die perfekte kurze Schärentour mit 5-Jährigem.",u:"https://www.stromma.com"},
+{n:"Rosendals Trädgård",t:"out",d:"1–2 h",p:"gratis",h:"tagsüber",a:"Djurgården",w:"Bio-Gärten, Gewächshaus-Café, Picknickwiesen – der ruhige Vormittag.",c:1,u:"https://www.rosendalstradgard.se"},
+{n:"Badeplätze: Långholmen & Fredhäll",t:"out",d:"2–3 h",p:"gratis",h:"immer",a:"Stadtgebiet",w:"Långholmen: Sandstrand, kinderfreundlich. Fredhäll: Klippenbaden für Mutige. Nahe Apartment: Badefelsen an der Djurgårdsbrunnsviken.",c:1},
+{n:"Sjöhistoriska Museet",t:"in",d:"1 h",p:"gratis",h:"täglich",a:"am Weg Gärdet→Djurgården",w:"Schifffahrtsmuseum mit Modellschiffen – gratis Zwischenstopp.",c:1}],
+food:[
+{n:"Hermans",pr:"€€",d:"Fjällgatan 23B – vegetarisch-veganes Buffet mit Traumblick über die Stadt, Kinderrabatt. Mit Fotospot Fjällgatan kombinieren!"},
+{n:"Meatballs for the People",pr:"€€",d:"Södermalm – Köttbullar-Kult inkl. vegetarischer Bällchen, Kinderportionen."},
+{n:"Rosendals Trädgårdskafé",pr:"€€",d:"Bio-Lunch & Holzofen-Gebäck auf Djurgården, viel vegetarisch."},
+{n:"Max Burgers",pr:"€",d:"Schwedens Burger-Kette mit großer Veggie-Linie („Green“), Kindermenü 65–85 SEK – der Preis-Retter."},
+{n:"Vete-Katten",pr:"€",d:"Auch für günstigen Lunch/Sandwiches gut, nicht nur Fika."},
+{n:"Dagens rätt",pr:"€",d:"Werktags-Mittagsmenü 115–155 SEK inkl. Salat & Kaffee – die größte Sparmöglichkeit Schwedens. Einfach nach „dagens“ fragen."}],
+fika:[
+{n:"Vete-Katten",d:"Kungsgatan 55 – Institution seit 1928: Kanelbullar & Prinzesstorte."},
+{n:"Lillebrors Bageri",d:"Rörstrandsgatan 12 – oft zur besten Kanelbulle der Stadt gekürt."},
+{n:"Café Saturnus",d:"Eriksbergsgatan 6 – riesige Zimtschnecken, von Gärdet gut erreichbar."}],
+foto:["Monteliusvägen (Södermalm) im Abendlicht – Blick auf Gamla Stan & Stadshuset","Fjällgatan – „Stockholms Balkon“","Skeppsholmsbron mit der goldenen Krone"],
+prak:["Parken: Straßen um das Apartment = Taxa 3: werktags 7–19 Uhr 20 SEK/h, Sa 11–17 15 SEK/h, sonst gratis. Mo vor 7 Uhr wegfahren = Montag gratis. Achtung Servicetag-Schilder (Reinigungsnacht)! Apps: Betala P/EasyPark. Alternativ nach Garage fragen.",
+"SL-Öffis: unter 7 gratis (Karl zahlt nichts), 72 h: Erw. 415 / Kind 275 SEK. Einfach kontaktlos mit Karte einsteigen (Erwachsene) bzw. SL-App für den Kindertarif. Ihr seid Djurgården-nah – oft reichen Einzeltickets (41 SEK) und Fußwege.",
+"Djurgårdsfähre Linie 82 (Slussen↔Gröna Lund): normales SL-Ticket gilt – die schönste „Gratis-Bootstour“."]},
+
+skrea:{name:"Skrea / Falkenberg",fl:"🇸🇪",lat:56.885,lon:12.505,ni:"4 Nächte · 17.→21.8.",lodg:"Ferienhaus Villavägen 4, Skrea",
+about:"Strandwoche! Skrea Strand: 2 km feiner Sand, flach abfallend – ideal für Karl. Direkt am Strand: Café Klippan, Minigolf, Eisladen und das Klitterbadet. Wassertemperatur Mitte August: 17–19 °C – kühl, aber machbar (Neoprenshortys für die Kinder helfen).",
+top:[
+{n:"Skrea Strand",t:"out",d:"täglich",p:"gratis",h:"immer",a:"vor der Haustür",w:"250-m-Badebrücke, Dünen, Duschen & WCs, Strandpromenade (2 km Radweg) bis in die Stadt. Abends: Sonnenuntergang im Meer – Westküste!",c:1},
+{n:"Klitterbadet",t:"in",d:"2–3 h",p:"Erw. 55 SEK (~5 €), Kind 3–11: 25 SEK",h:"Zeiten für KW 34 online prüfen",a:"direkt am Strand",w:"50-m-Becken, 34-Grad-Kinderbecken, Kletterwand überm Wasser – die Schlechtwetter-Option Nr. 1, fast geschenkt.",u:"https://www.klitterbadet.se"},
+{n:"Gekås Ullared",t:"in",d:"max. 2–3 h",p:"gratis (bis ihr einkauft)",h:"öffnet ~7 Uhr, Di–Do am ruhigsten",a:"20 min Fahrt",w:"Skandinaviens größtes Kaufhaus (35.000 m²) – als „Erlebnis“ mit Kindern machbar, aber voll. Früh hinfahren, Zeitlimit setzen, Restaurants im Haus.",u:"https://www.gekas.se"},
+{n:"Varberg: Festung & Bockstensmann",t:"mix",d:"Halbtag",p:"Museum: Erw. 120 SEK, unter 20 gratis",h:"tägl. 10–17 (bis 23.8.)",a:"30 min",w:"Festung am Meer + die 600 Jahre alte Moorleiche im Museum – gruselig-faszinierend für Nora. Foto beim Jugendstil-Kallbadhuset.",u:"https://museumhalland.se"}],
+reserve:[
+{n:"Falkenberg Gamla Stan & Tullbron",t:"out",d:"2 h",p:"gratis",h:"immer",a:"10 min",w:"Kopfsteinpflaster-Altstadt, Steinbrücke von 1756, Hafen – gut mit Fika kombinierbar.",c:1},
+{n:"Skrea Bangolf",t:"out",d:"1 h",p:"günstig",h:"Sommer",a:"am Strand",w:"Minigolf als Abendprogramm."},
+{n:"Vallarna-Park",t:"out",d:"1–2 h",p:"gratis",h:"immer",a:"Falkenberg",w:"Großer Spielplatz im Park (das Freilufttheater hat leider schon Saisonende).",c:1},
+{n:"Olofsbo & Ugglarp Strand",t:"out",d:"Halbtag",p:"gratis",h:"immer",a:"10–20 min",w:"Strandwechsel: Olofsbo langgrund & kindersicher, Ugglarp ruhiger Naturstrand.",c:1},
+{n:"Laxbutiken Heberg",t:"mix",d:"1,5 h",p:"à la carte",h:"täglich",a:"10 min",w:"DAS Lachs-Restaurant + Shop – Essens-Ausflug (Kinder zahlen ihr Alter × 20 SEK beim Buffet, sofern verfügbar).",u:"https://www.laxbutiken.se"},
+{n:"Doktorspromenaden",t:"out",d:"1 h",p:"gratis",h:"immer",a:"Falkenberg",w:"Schattiger Spazierweg am Fluss Ätran.",c:1},
+{n:"Tylösand (Halmstad)",t:"out",d:"Halbtag",p:"gratis",h:"immer",a:"30 min süd",w:"Einer der berühmtesten Strände Schwedens – Variante für einen Tapetenwechsel-Strandtag.",c:1}],
+food:[
+{n:"Lilla Napoli",pr:"€€",d:"Kult-Pizzeria (neapolitanisch, Holzofen) – eine der besten Pizzen Schwedens, Margherita 130–150 SEK, vegetarisch top."},
+{n:"Prashad",pr:"€€",d:"Indisch, viele vegetarische Currys, Schärfe wählbar, kinderfreundlich."},
+{n:"Klippan & Sandy's Grill",pr:"€",d:"Direkt am Skrea Strand – Burger & Co. für Badetage, Glasshuset fürs Eis."},
+{n:"Prostens Pizza",pr:"€",d:"Pizzeria mit Tieren im Garten – Kinder-Favorit."},
+{n:"Hamnkrogen",pr:"€€",d:"Am Hafen, schwedische Küche, Terrasse."}],
+fika:[{n:"Stålboms Konditori",d:"Storgatan, seit 1913 – die Institution der Stadt."},{n:"Borgmästargården",d:"Ruhige Terrasse in der Altstadt."}],
+foto:["Skrea-Badebrücke bei Sonnenuntergang (Silhouetten!)","Tullbron von Süden mit Ätran-Spiegelung, abends angestrahlt"],
+prak:["Nächster Supermarkt: ICA Supermarket Skrea Strand (Ljungholmsvägen), wenige Autominuten. Günstiger: Lidl in Falkenberg-Stadt.",
+"Bei Wind: Windschutz in die Dünen, Drachen mitnehmen – oder Klitterbadet.",
+"Ab ca. 18.8. beginnt in Schweden die Schule: Strände herrlich leer, aber Kioske, Minigolf und Strandcafés oft nur noch nachmittags/am Wochenende offen. Vormittags-Eis: ICA. Genau deshalb die Klitterbadet-Zeiten für die Woche checken.",
+"Quallen-Check von der Badebrücke: durchsichtig-blau (öronmanet) = harmlos. Rot/gelb mit langen Fäden (brännmanet) = nicht berühren! Falls doch: mit Meerwasser (nie Süßwasser!) und Sand abstreifen, Apotheke hat Gel. Nach West-/Südwestwind häufiger.",
+"Do 20.8. Abend: tanken + Auto packen. Fr 21.8.: Abfahrt spätestens 6:00 – Ziel 8:30 am Terminal Trelleborg (Check-in-Schluss 9:25)."]},
+
+rostock:{name:"Rostock",fl:"🇩🇪",lat:54.09,lon:12.14,ni:"1 Nacht · 21.→22.8.",lodg:"Hotel Warnow, Bei der Knochenmühle 1",
+about:"Ankunft mit der Fähre ca. 15:15. Empfehlung für den Abend: Warnemünde statt Altstadt – Strand & Hafenflair.",
+top:[
+{n:"Warnemünde-Abend",t:"out",d:"3 h",p:"Leuchtturm ca. 4 €/2 € (bis 18:30, letzter Einlass 18:00)",h:"abends",a:"S-Bahn ~20 min oder Auto",w:"Alter Strom (Fischkutter gucken) → Leuchtturm besteigen → barfuß am Strand bis zur Mole. Der perfekte Deutschland-Wiedereinstieg.",c:1}],
+reserve:[{n:"Altstadt Rostock",t:"mix",d:"1,5 h",p:"gratis",h:"abends",a:"Zentrum",w:"Neuer Markt & Marienkirche – die Schlechtwetter-Alternative."}],
+food:[{n:"Fischbrötchen am Alten Strom",pr:"€",d:"Direkt vom Kutter, 4–6 €. Veggie-Ersatz: Backcamembert an den Buden oder Italiener am Alten Strom."},{n:"Softeis mit Sanddorn",pr:"€",d:"An der Promenade – der Klassiker."}],
+fika:[],foto:["Leuchtturm + Teepott im Abendlicht; Sonnenuntergang von der Westmole"],
+prak:["Morgen 13:30: Man United startet in die neue Saison (Hull City auswärts) – Anpfiff fällt in die Fahrt nach Dresden."]},
+
+dresden:{name:"Dresden",fl:"🇩🇪",lat:51.05,lon:13.74,ni:"2 Nächte · 22.→24.8.",lodg:"Wachsbleichstraße 65 (Friedrichstadt)",
+about:"Letzter Stopp. Wichtig für die Planung: Hygiene-Museum & Verkehrsmuseum sind MONTAGS ZU – also alles auf Sonntag legen.",
+top:[
+{n:"Altstadt kompakt",t:"out",d:"1,5–2 h",p:"gratis (Frauenkirche-Kuppel: 10 €/Kind 5 €)",h:"Sa-Abend oder So",a:"20 min zu Fuß",w:"Zwinger-Innenhof (frei) → Theaterplatz/Semperoper → Fürstenzug → Frauenkirche. Mit Kindern reichen 2 Stunden gut.",c:1},
+{n:"Hygiene-Museum: „Welt der Sinne“",t:"in",d:"2–3 h",p:"Erw. 12 €, unter 17 GRATIS – Kinder-Museum inklusive",h:"Di–So 10–17 (Mo zu!)",a:"beim Großen Garten",w:"Das Kinder-Museum zum Riechen, Hören, Tasten – Top-Preis-Leistung für den Sonntagvormittag.",u:"https://www.dhmd.de",c:1},
+{n:"Großer Garten & Parkeisenbahn",t:"out",d:"2 h",p:"Kind ca. 3,50 €, Erw. ca. 7 €",h:"im August täglich",a:"Großer Garten",w:"Die Liliputbahn wird von Kindern & Jugendlichen betrieben – 5,6-km-Runde durch den Park, danach Spielplatz & Picknick. Idealer Sonntagnachmittag.",u:"https://www.grosser-garten-dresden.de"}],
+reserve:[
+{n:"Verkehrsmuseum",t:"in",d:"2 h",p:"Erw. ca. 10 €, Kinder günstig",h:"Di–So 10–17",a:"Johanneum, Neumarkt",w:"Eisenbahnen & Oldtimer – der Regen-Joker."},
+{n:"Elbdampfer-Runde",t:"out",d:"1,5 h",p:"ab ca. 20 €/Erw., Familientickets",h:"ab Terrassenufer",a:"Altstadt",w:"Hübsch, aber verzichtbar, wenn das Budget nach 3 Wochen müde ist."}],
+food:[
+{n:"brennNessel",pr:"€€",d:"Schützengasse – vegetarisches Traditionslokal mit Biergarten, nah an eurer Unterkunft!"},
+{n:"Ladencafé aha",pr:"€",d:"Kreuzstraße – fair & vegetarisch-stark, kindgerecht."},
+{n:"Louisenstraße (Neustadt)",pr:"€",d:"Falafel & Pizza günstig – falls ihr abends drüben seid."}],
+fika:[],foto:["Canaletto-Blick: Neustädter Elbufer an der Augustusbrücke zur blauen Stunde"],
+prak:["Mo 24.8.: 700 km Heimreise – früh los. Stopps: Průhonice-Park bei Prag (D1-Ausfahrt 6, Schlosspark zum Auslaufen) und Mikulov (Eis am Marktplatz, 1 h vor Wien)."]}
+};
+const DAYS = [
+{d:"2026-08-01",ti:"Wien → Salzburg",type:"drive",st:"salzburg",drive:{from:"Wien",to:"Salzburg",km:300,hrs:"ca. 3:15 h",dep:"Start gemütlich ~9–10 Uhr",stops:[
+ {n:"Mondsee",d:"A1-Ausfahrt, 5 min: Seepromenade, Badeplatz + Spielplatz, Basilika – perfekte Mittags-/Badepause."},
+ {n:"Alternativ: Seewalchen am Attersee",d:"Frühere Ausfahrt, Promenade + Eis."}]},
+ prog:["Abends evtl. Mirabellgarten & Zwergerlgarten oder Eis in der Altstadt"],
+ note:"Los geht's! 23 Nächte, 4 Länder, 2 Fähren."},
+{d:"2026-08-02",ti:"Salzburg-Tag",type:"stay",st:"salzburg",
+ prog:["Vormittag: Wasserspiele Hellbrunn – Spritzbrunnen-Führung, danach Schlosspark-Spielplatz","Wer noch kann: Zoo Salzburg direkt daneben – oder stattdessen Festung mit der Standseilbahn","Abends: Getreidegasse-Bummel, Kapitelplatz, Eis","Bei Regen: Spielzeug Museum + Festung innen"]},
+{d:"2026-08-03",ti:"Salzburg → Bamberg",type:"drive",st:"bamberg",drive:{from:"Salzburg",to:"Bamberg",km:430,hrs:"ca. 4:30 h",dep:"Eher früh (~8:30), dann bleibt der Abend für die Altstadt",stops:[
+ {n:"Strandbad Übersee am Chiemsee",d:"A8-Ausfahrt Übersee, 5 min: riesige Gratis-Liegewiese, Strand, Spielplatz, Alpenblick – Badestopp nach ~1 h."},
+ {n:"Nürnberg Wöhrder See",d:"10 min von der Autobahn: große Spiellandschaft + Stadtstrand, gratis Beine vertreten."}]},
+ prog:["Abendrunde: Klein Venedig, Altes Rathaus, Eis auf der Unteren Brücke"]},
+{d:"2026-08-04",ti:"Bamberg → Wernigerode",type:"drive",st:"wernigerode",drive:{from:"Bamberg",to:"Wernigerode",km:300,hrs:"ca. 3:15 h",dep:"Gemütlich ~9:30 – nachmittags Schlossbesichtigung",stops:[
+ {n:"Erfurt: Krämerbrücke",d:"A71, 10 min: Domplatz + die bebaute Krämerbrücke (Schokoladen-Manufaktur, Eis) – 1 h, gratis."}]},
+ prog:["Schlossbesichtigung (Tickets ✓) – ihr übernachtet IM Schloss!","Abends Altstadt oder Schlossterrasse"]},
+{d:"2026-08-05",ti:"Wernigerode → Lübeck",type:"drive",st:"luebeck",drive:{from:"Wernigerode",to:"Lübeck",km:320,hrs:"ca. 3:30 h",dep:"~9:30 nach dem Schloss-Frühstück",stops:[
+ {n:"Lüneburg Altstadt",d:"Platz Am Sande, Stintmarkt am Wasser, Eis – schöner 1-h-Stopp."},
+ {n:"Alternativ: Wildpark Lüneburger Heide",d:"A7-Ausfahrt Evendorf: weiße Tiger + großer Spielplatz (Erw. ~18 €, Kind ~15 €) – nur bei ≥2 h Zeit."}]},
+ prog:["Abend: Holstentor → Niederegger (vor 18 Uhr!) → Obertrave"]},
+{d:"2026-08-06",ti:"Fährtag! Lübeck → Kopenhagen",type:"drive",st:"kopenhagen",drive:{from:"Lübeck",to:"Kopenhagen",km:240,hrs:"1:10 h bis Puttgarden + 45 min Fähre + 1:40 h bis CPH",dep:"Spätestens 7:45 ab Lübeck!",stops:[]},
+ ferry:{n:"Scandlines Puttgarden → Rødby",dep:"9:45",ref:"MT26EBBDDA",q:"Scandlines Fährhafen Puttgarden",info:"Check-in spätestens 15 min vorher – wegen dänischer Grenzkontrollen besser 30–45 min einplanen. Auto aufs Deck, alle raus nach oben (Shop, Cafeteria, Sonnendeck). Überfahrt 45 min. Verpasst? Halb so wild – fährt ca. alle 30 min."},
+ prog:["Nachmittags ankommen, Nørrebro erkunden: Superkilen + Spielplatz","Abendessen im Viertel (Laundromat Café?)"]},
+{d:"2026-08-07",ti:"Kopenhagen",type:"stay",st:"kopenhagen",
+ prog:["Vormittag: Rundetaarn (Spiralrampe!) + Bummel Richtung Nyhavn","Nachmittag: Hafenrundfahrt (Netto-Bådene, 80 DKK) + Broens Gadekøkken","Abends: Superkilen-Runde im Viertel"]},
+{d:"2026-08-08",ti:"Kopenhagen",type:"stay",st:"kopenhagen",
+ prog:["Bei Regen: Den Blå Planet (vorbuchen!) oder Experimentarium","Bei Hitze: Islands Brygge Havnebad + Tårnlegepladsen","Abends: Essen in Nørrebro (Laundromat / Grød)"]},
+{d:"2026-08-09",ti:"Kopenhagen → Lomma (Öresundbrücke!)",type:"drive",st:"lomma",drive:{from:"Kopenhagen",to:"Lomma",km:60,hrs:"ca. 50 min",dep:"Ganz entspannt – Check-in in Lomma abwarten, vorher Strand",stops:[]},
+ oresund:true,
+ prog:["Über die Öresundbrücke – Online-Ticket vorher kaufen: 64 € statt 72 € (oresundsbron.com)","Alle 4 Pässe griffbereit ins Handschuhfach: Schweden kontrolliert nach der Mautstation stichprobenartig","Ankommen, dann: Lomma Strand, 5 min vom Loft","Abends „en glass“ am Hafen – Eis auf Schwedisch"]},
+{d:"2026-08-10",ti:"Lund & Malmö",type:"stay",st:"lomma",
+ prog:["Lund: Dom – um 12:00 oder 15:00 schlägt die astronomische Uhr! Danach Kulturen (Kinder gratis)","Malmö: Folkets Park + Falafel in Möllevången","Abends: Malmöfestivalen (gratis, läuft bis 14.8.) oder Abschiedsbad in Lomma"]},
+{d:"2026-08-11",ti:"Lomma → Vimmerby",type:"drive",st:"vimmerby",drive:{from:"Lomma",to:"Vimmerby",km:330,hrs:"ca. 4 h",dep:"~9 Uhr – mit zwei feinen Stopps",stops:[
+ {n:"IKEA Museum Älmhult",d:"Route über Rv23: täglich 10–18, Erw. 60 SEK, Kinder gratis – Kinder-Ausstellung + berühmt günstiges Restaurant (Köttbullar & Veggie-Bällchen) = perfekter Mittagsstopp, ca. Halbzeit."},
+ {n:"Virum Älgpark ~15:30",d:"Fast an der Strecke: Elch-Safari im Bummelzug (Familienticket 700 SEK, online Zeit buchen!). So bleibt Donnerstag frei."},
+ {n:"E22-Alternative: Kristianstad",d:"Naturum Vattenriket (Haus im Fluss, gratis) + Tivoliparken-Spielplatz."}]},
+ prog:["Abends in Vimmerby: Jause für morgen einkaufen (ICA), ALV-App installieren"]},
+{d:"2026-08-12",ti:"Astrid Lindgrens Värld!",type:"stay",st:"vimmerby",
+ prog:["Der große Tag – Tickets ✓, voller Sommerbetrieb, ca. 10–18 Uhr","Taktik: 2–3 Shows in der App fixieren, Rest drumherum. Karl: Villa Kunterbunt & Katthult. Nora: Mattisborgen & Körsbärsdalen","Picknick mitnehmen (erlaubt!) – Parken 85 SEK","Mittags-Reset: 45 min Picknick abseits der Bühnen – 3 fixierte Shows sind ein voller Erfolg, alles andere ist Bonus","Näs (25 % Rabatt mit ALV-Ticket) nur, wenn wirklich ALLE noch mögen – im Zweifel Gelato bei Magasin 5 und früh ins Bett"]},
+{d:"2026-08-13",ti:"Vimmerby → Stockholm",type:"drive",st:"stockholm",drive:{from:"Vimmerby",to:"Stockholm",km:330,hrs:"ca. 4 h",dep:"~9 Uhr, zwei Stopps eingeplant",stops:[
+ {n:"Katthult/Gibberyd (optional, vormittags)",d:"30 min Umweg: der echte Michel-Hof, gratis – Wohnhaus, Tischlerschuppen, Hoppbaum."},
+ {n:"Gamla Linköping",d:"Freilichtmuseum am Stadtrand (5–10 min ab E4): Gelände gratis, Kaufmannsläden mit Bonbontüten, LasseMaja-Detektivhaus, daneben Lill-Valla-Riesenspielplatz. Mittags stoppen, 1,5–2 h."}]},
+ prog:["Abends: ankommen in Gärdet, kurzer Spaziergang zur Djurgårdsbrunnsviken","Und heimlich: mit Nora & Karl „Ja, må han leva“ üben – das schwedische Geburtstagslied (Text in der Kids-Ecke)"]},
+{d:"2026-08-14",ti:"🎂 Stockholm – der 40er!",type:"stay",st:"stockholm",bday:true,
+ prog:["Geburtstags-Bausteine – sucht euch 2–3 aus, der Rest ist fürs nächste Mal:","Frühstück & Zimtschnecken im Gewächshaus-Café von Rosendals Trädgård","Vasa-Museum gleich um 8:30 (leer!) – oder gemütlich später","Nachmittags Boot nach Fjäderholmarna: Badefelsen + Eis","Abends festlich: Villa Godthem / Ulla Winbladh / Oaxen Slip (reserviert?)","Absacker: Gröna Lund bei Abendbeleuchtung","PS: Kulturfestival läuft in der Innenstadt (gratis)"]},
+{d:"2026-08-15",ti:"Stockholm",type:"stay",st:"stockholm",
+ prog:["Skansen-Tag? (Elche, Lill-Skansen & Baltic Sea Center)","Junibacken als Astrid-Lindgren-Nachklapp","Feiertag nur in Österreich – hier hat alles offen"]},
+{d:"2026-08-16",ti:"Stockholm",type:"stay",st:"stockholm",
+ prog:["Gamla Stan + Wachablöse (So 13:15) + Mårten Trotzigs Gränd","Rückweg mit der Djurgårdsfähre","Bei Regen: Tekniska (bis 21 Uhr!) oder Naturhistoriska","Abends packen – morgen früh geht's los"]},
+{d:"2026-08-17",ti:"Stockholm → Skrea (575 km)",type:"drive",st:"skrea",drive:{from:"Stockholm",to:"Skrea/Falkenberg",km:575,hrs:"ca. 6:30 h reine Fahrt",dep:"Früh! ~7:30 (Parken ist Mo ab 7 kostenpflichtig – vorher weg = gratis)",stops:[
+ {n:"Rasta Nyköpingsbro (nach ~1:15 h)",d:"Großer E4-Rastplatz mit Spielplatz und Blick auf die Nyköping-Bucht – kurze Beine-vertreten-Pause, dann weiter."},
+ {n:"Vätterstranden Jönköping",d:"Direkt an der E4, ca. Halbzeit: gratis Badestrand am Vättern + Spielplatz – idealer Mittagsstopp."},
+ {n:"Smålandet Markaryds Älgsafari",d:"Direkt an der E4 im letzten Drittel: mit dem eigenen Auto durch – Erw. 200, Kind 120 SEK, ohne Reservierung, 45–60 min. Elch-Garantie als Fahrt-Unterbrecher."},
+ {n:"Info: Kolmårdens Djurpark",d:"Wäre Schwedens größter Tierpark (Seilbahn-Safari!) – aber ein Ganztagsprogramm (579/479 SEK) und für den heutigen 575-km-Tag schlicht zu groß. Falls ihr je wiederkommt: einplanen."}]},
+ prog:["Abends: Haus beziehen, ICA Skrea Strand für die Grundausstattung"]},
+{d:"2026-08-18",ti:"Skrea – Strandtag",type:"stay",st:"skrea",prog:["Strand, Badebrücke, Minigolf, Eis vom Glasshuset","Abends Sonnenuntergang von der Badebrücke"]},
+{d:"2026-08-19",ti:"Skrea – Strandtag",type:"stay",st:"skrea",prog:["Strand – oder Ausflug: Varberg (Festung + Bockstensmann) / Gekås Ullared (früh!)","Bei Regen: Klitterbadet (5 €/2 €!)"]},
+{d:"2026-08-20",ti:"Skrea – Strandtag",type:"stay",st:"skrea",prog:["Letzter voller Schweden-Tag – Strand & Lieblingssachen wiederholen","Abends: tanken (Schweden ist am günstigsten!), Auto packen, früh schlafen"]},
+{d:"2026-08-21",ti:"Fährtag! Skrea → Trelleborg → Rostock",type:"drive",st:"rostock",drive:{from:"Skrea",to:"Trelleborg (Fähre) → Rostock",km:220,hrs:"2:15 h Fahrt + 6,5 h Fähre",dep:"Abfahrt spätestens 6:00! Freitags E6-Verkehr um Helsingborg/Malmö – Ziel: 8:30 am Terminal (TT-Line empfiehlt 60 min vor Abfahrt)",stops:[]},
+ ferry:{n:"TT-Line Trelleborg → Rostock",dep:"9:55 (an 15:15)",ref:"07882167",q:"TT-Line Terminal, Norra Nyhamnsgatan 1b, Trelleborg",info:"Check-in schließt 9:25, TT-Line empfiehlt 60 min früher → Ziel: 8:30 am Terminal (Norra Nyhamnsgatan 1b). Freitags E6-Berufsverkehr um Helsingborg und Malmö! Die Kinder können im Auto weiterschlafen und frühstücken – dafür ist das Frühstückssackerl da. An Bord: Restaurant, Shop, Kinderspielraum + Sommer-Kinderprogramm, WLAN. Frühstück fürs Auto vorbereiten!"},
+ prog:["Check-in kurz halten, spätestens 17:30 in Warnemünde: ZUERST der Leuchtturm (letzter Einlass 18:00!), dann Alter Strom, Fischbrötchen und barfuß am Strand zur Mole"]},
+{d:"2026-08-22",ti:"Rostock → Dresden",type:"drive",st:"dresden",drive:{from:"Rostock",to:"Dresden",km:425,hrs:"ca. 4:15 h",dep:"~9:30",stops:[
+ {n:"Röbel an der Müritz",d:"A19-Ausfahrt, 10 min: bunter Hafen + Badestelle an der Müritz – Badepause nach ~1,5 h."},
+ {n:"Lübbenau (Spreewald)",d:"A13-Ausfahrt, 10 min: Kahnhafen, Spreewaldgurke vom Stand; kurze Kahnfahrt nur bei Zeitreserve."}]},
+ manu:{txt:"13:30 MESZ: Hull City – Man United, 1. Runde Premier League! Fällt genau in die Fahrt – Kommentar-Stream ins Auto?"},
+ prog:["Abends: erste Altstadt-Runde (Zwinger, Frauenkirche außen) oder ausrasten"]},
+{d:"2026-08-23",ti:"Dresden",type:"stay",st:"dresden",
+ prog:["Vormittag: Hygiene-Museum mit Kinder-Museum „Welt der Sinne“ (So offen, Mo zu! Kinder gratis)","Nachmittag: Großer Garten + Parkeisenbahn, Picknick","Abends: Canaletto-Blick zur blauen Stunde"]},
+{d:"2026-08-24",ti:"Heimreise: Dresden → Wien",type:"drive",st:"dresden",drive:{from:"Dresden",to:"Wien",km:700,hrs:"ca. 6:45 h",dep:"Früh ~8 Uhr",stops:[
+ {n:"Průhonice Park (bei Prag)",d:"D1-Ausfahrt 6, 5 min: UNESCO-Schlosspark, kleiner Eintritt – auslaufen statt Prag-Stau."},
+ {n:"Mikulov",d:"Direkt an der Route vor Drasenhofen: Marktplatz-Eis, kurzer Aufstieg zum Heiligen Berg – letzte Pause vor Wien."}]},
+ prog:["Ankommen, auspacken, Fotos anschauen. Ihr habt's verdient."]}
+];
+const PACK = {
+"Dokumente":["Reisepässe (alle 4!)","e-cards (Rückseite = EU-Krankenversicherung)","Führerschein + Zulassungsschein","Grüne Versicherungskarte","Buchungs-Referenzen (sind auch hier in der App)","Öresund-Online-Ticket (vorab kaufen!)"],
+"Auto":["Warnwesten für alle","Verbandszeug + Warndreieck","Parkscheibe (Pflicht in Dänemark!)","Handyhalterung + Ladekabel","Sonnenblenden für die Rückbank","Müllsackerl + Feuchttücher","Picknickdecke"],
+"Strand & draußen":["Badesachen für alle","Neoprenshortys für die Kinder (17–19 °C Wasser!)","Handtücher + Mikrofaser-Reserve","Strandmuschel/Windschutz","Sandspielzeug + Drachen","Schwimmflügel/Schwimmhilfe für Karl"],
+"Kleidung":["Regenjacken für alle (Schweden!)","Warme Schicht für die Abende","Feste Schuhe + Sandalen","Kappen/Sonnenhüte"],
+"Kinder":["Hörspiele/Kopfhörer für die Fahrten","Mal- und Rätselzeug","Lieblingskuscheltiere","Wasserfester Stift (Handynummer auf den Kinderarm an vollen Tagen)","Reise-Übelkeitsmittel (falls nötig)","Snack-Box je Kind"],
+"Technik":["Powerbank(s)","Ladekabel-Set (kein Adapter nötig – EU)","Kamera","Kopfhörer"],
+"Apotheke":["Zeckenzange/-karte (Südschweden!)","Gelsen- & Zeckenschutz","Sonnencreme 50+","Fieberthermometer + Fiebersaft","Pflaster-Set","persönliche Medikamente"]
+};
+const CHECK = {
+"Wohnung":["Fenster zu, Wasser ab, Herd aus","Müll raus","Pflanzen versorgt / Nachbarn informiert","Post organisiert","Kühlschrank leer geräumt"],
+"Auto":["Volltanken","Reifendruck + Öl + Scheibenwasser","Scheiben innen putzen (Sonne!)","Auto-Ladung: schwere Sachen unten"],
+"Organisatorisches":["Öresund-Online-Ticket gekauft (64 € statt 72 €)","Daten-Roaming am Handy checken","Bankomat-/Kreditkarten-Limits prüfen","ALV-App + SL-App + EasyPark installiert","Viaplay? (Man U am 22.8.)","Geburtstagsessen Stockholm Fr 14.8. reservieren (Villa Godthem / Ulla Winbladh / Oaxen Slip)","ÖAMTC-Schutzbrief aktiv? Nothilfe-Nummer: +43 1 25 120 00","Nachbarn Schlüssel/Notfallnummer"]
+};
+const PHRASES = [
+["Hej!","Hallo!","hey"],["Hej då!","Tschüss!","hey doh"],["Tack!","Danke!","tack"],["Tack så mycket!","Vielen Dank!","tack soh mücke"],
+["Ja / Nej","Ja / Nein","jah / ney"],["Ursäkta!","Entschuldigung!","urschäkta"],["Snälla","Bitte (bittend)","snella"],["Varsågod","Bitte sehr","waschogud"],
+["Jag förstår inte","Ich verstehe nicht","jag först-schohr inte"],["Pratar du engelska?","Sprichst du Englisch?","prohtar dü engelska"],
+["Vad kostar det?","Was kostet das?","wad kostar de"],["Var är toaletten?","Wo ist die Toilette?","war är toaletten"],
+["En glass, tack","Ein Eis, bitte","en glass tack"],["Två kanelbullar, tack","Zwei Zimtschnecken, bitte","twoh kanehlbüllar tack"],
+["Kan jag betala med kort?","Kann ich mit Karte zahlen?","kan jag betohla me kort"],["Notan, tack","Die Rechnung, bitte","nutan tack"],
+["Dagens rätt","Tagesgericht (Mittagsmenü)","dahgens rett"],["utan kött","ohne Fleisch","ütan schött"],["vegetariskt","vegetarisch","wegetahriskt"],
+["barnmeny","Kindermenü","barnmenüh"],["En älg!","Ein Elch!","en elj"],["Var är stranden?","Wo ist der Strand?","war är stranden"],
+["Kan man bada här?","Kann man hier baden?","kan man bahda här"],["öppet / stängt","offen / geschlossen","öppet / stengt"],
+["Hjälp!","Hilfe!","jelp"],["Jag kommer från Österrike","Ich komme aus Österreich","jag kommer frohn österrike"],
+["Var ligger...?","Wo liegt ...?","war ligger"],["lagom","genau richtig (DAS schwedische Wort)","lahgom"]
+];
+const BINGO = [["🫎","Elch-Schild"],["🏠","Falu-rotes Haus"],["🌊","See"],["🚜","Traktor"],["⛪","Landkirche"],["🌾","Kornfeld"],["🐄","Kühe"],["🐎","Pferde"],["💨","Windrad"],["🚙","Volvo"],["⛴️","Fähre/Schiff"],["🌉","Große Brücke"],["🗼","Leuchtturm"],["🍦","Eis-Stand"],["🇸🇪","Schweden-Flagge"],["🚂","Zug"]];
+const ISPY = [["röd","rot","röhd"],["blå","blau","bloh"],["gul","gelb","gühl"],["grön","grün","gröhn"],["vit","weiß","wiht"],["svart","schwarz","swart"],["brun","braun","brühn"],["orange","orange","oransch"]];
+const FX_FALLBACK = {SEK:11.04,DKK:7.46};
+const MANU = [
+{d:"Sa 22.8.",g:"Hull City (A)",t:"13:30 MESZ",note:"1. Runde – Anpfiff während eurer Fahrt Rostock→Dresden!"},
+{d:"Sa 29.8.",g:"Ipswich Town (H)",t:"Anstoßzeit noch offen",note:"Da seid ihr wieder daheim in Wien."}
+];
+const KNOW = [
+{id:"faehren",ic:"⛴️",t:"Fähren & Öresundbrücke",h:`
+<h3>Scandlines Puttgarden–Rødby · Do 6.8., 9:45</h3>
+<p>Ref. <b>MT26EBBDDA</b> · Check-in spätestens 15 min vorher, wegen dänischer Grenzkontrollen besser 30–45 min. 45 min Überfahrt, Shop & Sonnendeck an Bord. Verpasst? Fährt ca. alle 30 min.</p>
+<h3>TT-Line Trelleborg–Rostock · Fr 21.8., 9:55–15:15</h3>
+<p>Ref. <b>07882167</b> (258,50 €) · Terminal: Norra Nyhamnsgatan 1b, Trelleborg. Check-in schließt 9:25, TT-Line empfiehlt 60 min vorher → Ziel: <b>8:30 am Terminal</b>, Abfahrt in Skrea spätestens 6:00 (freitags E6-Verkehr um Helsingborg/Malmö). An Bord: Restaurant, Kinderspielraum, Sommer-Kinderprogramm, WLAN.</p>
+<h3>Öresundbrücke · So 9.8.</h3>
+<p>PKW einmalig: <b>online 64 €</b> (465 DKK) statt 72 € an der Mautstation → vorab auf <a href="https://www.oresundsbron.com/de/preise">oresundsbron.com</a> kaufen (30 Tage gültig, Kennzeichen wird automatisch erkannt). <b>Wichtig:</b> Direkt nach der Mautstation kontrolliert Schweden stichprobenartig die Einreise – alle 4 Pässe griffbereit ins Handschuhfach, nicht in den Kofferraum!</p>`},
+{id:"tanken",ic:"⛽",t:"Tanken & Verkehrsregeln",h:`
+<p><b>Faustregel Sprit</b> (Stand Juli 2026): Schweden ist am günstigsten (~1,45–1,55 €/l), Dänemark am teuersten (~1,95–2 €). Also: in AT/DE normal tanken, in DK nur das Nötigste, <b>in Schweden volltanken</b> – auch vor der Fähre am 20.8.!</p>
+<p><b>Schweden-Tankstellen:</b> oft unbemannte Automaten (Ingo, St1, OKQ8) – Kreditkarte mit PIN nötig, Reservierung von ~1.500 SEK am Konto ist normal. „Bensin 95“ ist Standard. Nicht E85/Etanol oder HVO100 erwischen!</p>
+<table class="simple">
+<tr><td>🇩🇰 Dänemark</td><td>50/80/130 (oft 110) · Licht Pflicht · 0,5 ‰ · <b>Parkscheibe Pflicht</b> bei Gratis-Parkplätzen mit Zeitlimit! · Bußgelder hoch</td></tr>
+<tr><td>🇸🇪 Schweden</td><td>40–50 / 70–90 / 110–120 · Licht Pflicht · <b>0,2 ‰ – praktisch: gar nichts trinken</b> · Tempobußen 2.000–4.000 SEK</td></tr>
+<tr><td>Umweltzonen</td><td>Kopenhagen: nur Diesel betroffen – euer Benziner nicht. Lübeck/Rostock/Dresden: keine Plakette nötig.</td></tr>
+<tr><td>Vignetten</td><td>Keine in DK/SE – nur die Öresund-Maut. AT/CZ wie gewohnt für die Heimreise (CZ: E-Vignette für D1 nicht vergessen!).</td></tr>
+</table>`},
+{id:"geld",ic:"💳",t:"Geld & Einkaufen",h:`
+<p><b>Karte zahlt alles</b> – in DK/SE auch Kleinstbeträge, viele Läden sind komplett bargeldlos. Max. 200–300 SEK/DKK Bargeld-Reserve. Trinkgeld nicht erwartet, bei gutem Service aufrunden.</p>
+<p><b>Merkregel:</b> SEK ÷ 11 ≈ € · DKK ÷ 7,5 ≈ € (Rechner unter „Mehr“)</p>
+<p><b>Systembolaget</b> (Alkohol >3,5 % nur dort): Mo–Fr ca. 10–19, <b>Sa nur 10–15, So ZU</b>. Mindestalter 20. Im Supermarkt gibt's nur „folköl“ (max. 3,5 %).</p>
+<p><b>Supermärkte:</b> Schweden: Willys & Lidl günstig, ICA Maxi groß & okay, „ICA Nära“ klein & teuer. Dänemark: Netto & Rema 1000 günstig. Meist täglich 7/8–21/22 Uhr, auch sonntags.</p>
+<p><b>Pfand (pant):</b> SE ~2–3 SEK, DK 1–3 DKK – Automaten in jedem Supermarkt. Mitgebrachte österreichische/deutsche Dosen werden NICHT erstattet.</p>`},
+{id:"gesund",ic:"🏥",t:"Gesundheit & Notfall",h:`
+<table class="simple">
+<tr><td>🚨 Notruf</td><td><b><a href="tel:112">112</a></b> – überall (DE/DK/SE, wie in AT)</td></tr>
+<tr><td>🇸🇪 Ärzte-Hotline</td><td><b><a href="tel:1177">1177</a></b> – Beratung rund um die Uhr, auch Englisch. Falls die Kurznummer im Roaming nicht geht: <a href="tel:+46771117700">+46 771 11 77 00</a></td></tr>
+<tr><td>🇩🇰 Akut (CPH)</td><td><b><a href="tel:1813">1813</a></b> – rund um die Uhr, IMMER zuerst anrufen, bevor ihr in eine Notaufnahme fahrt (ohne Anruf lange Wartezeit). Falls 1813 nicht durchgeht: <a href="tel:+4538698900">+45 38 69 89 00</a></td></tr>
+<tr><td>🇩🇪 Bereitschaft</td><td><b><a href="tel:116117">116 117</a></b> – ärztlicher Bereitschaftsdienst, wenn es kein 112-Fall ist (gilt für alle 6 Deutschland-Nächte)</td></tr>
+<tr><td>🇦🇹 Beratung</td><td><b><a href="tel:1450">1450</a></b> – Gesundheitsberatung für die Salzburg-Tage</td></tr>
+<tr><td>☠️ Giftnotruf</td><td>🇸🇪 <a href="tel:+46104566700">+46 10 456 67 00</a> (akut: 112) · 🇩🇰 <a href="tel:+4582121212">+45 82 12 12 12</a> · 🇩🇪 <a href="tel:+4955119240">+49 551 19240</a> · 🇦🇹 <a href="tel:+4314064343">+43 1 406 43 43</a> – Verpackung bereithalten, nichts erbrechen lassen</td></tr>
+<tr><td>Apotheken</td><td>SE: Apoteket, Apotek Hjärtat, Kronans · DK: „Apotek“ (Steno Apotek beim CPH-Hbf: 24 h)</td></tr>
+<tr><td>e-card</td><td>Rückseite = EU-Krankenversicherungskarte: bei öffentlichen Ärzten vorzeigen, ihr werdet wie Einheimische behandelt (SE: kleine Selbstbehalte, Kinder meist gratis)</td></tr>
+<tr><td>🕷 Zeckenbiss</td><td>1) Mit Zeckenkarte/-zange hautnah fassen, gerade herausziehen – nicht drehen, kein Öl. 2) Desinfizieren, Handyfoto mit Datum machen. 3) 4 Wochen beobachten: wachsender roter Ring, Fieber oder Gliederschmerzen → Arzt bzw. 1177 („misstänkt borrelia efter fästingbett“) – Borreliose ist gut behandelbar. 4) Fieber + starke Kopfschmerzen 1–2 Wochen später → sofort abklären (FSME). Abends Zeckencheck bei allen, FSME-Impfstatus vor Abreise prüfen</td></tr>
+<tr><td>🏛 Botschaft Stockholm</td><td>Kommendörsgatan 35 · <a href="tel:+4686651770">+46 8 665 17 70</a></td></tr>
+<tr><td>🏛 Botschaft Kopenhagen</td><td>Sølundsvej 1 · <a href="tel:+4539294141">+45 39 29 41 41</a></td></tr>
+<tr><td>🏥 Pro Station</td><td>Das passende Krankenhaus mit Kinder-Notaufnahme steht bei jedem Ort unter „🚑 Im Notfall hier“ – und gebündelt hinter dem 🆘 oben rechts</td></tr>
+<tr><td>💳 Karten sperren</td><td>Bankomatkarte (PSA): <a href="tel:+4312048800">+43 1 204 8800</a> · Visa: <a href="tel:+13039671096">+1 303 967 1096</a> · Mastercard: <a href="tel:+16367227111">+1 636 722 7111</a></td></tr>
+</table>`},
+{id:"panne",ic:"🚗",t:"Panne & Unfall",h:`
+<p><b>ÖAMTC-Nothilfe aus dem Ausland: <a href="tel:+431251200">+43 1 25 120 00</a></b> (rund um die Uhr; Schutzbrief-Status vor Abreise prüfen – steht in der Checkliste).</p>
+<p><b>Ablauf bei Panne:</b> Warnblinker an → Warnwesten für alle 4 noch IM Auto anziehen → Warndreieck 100–200 m (Autobahn) aufstellen → alle hinter die Leitplanke, nie im Auto warten.</p>
+<p><b>Unfall:</b> Verletzte? → 112. Sonst: Fotos von allem, Daten austauschen, Europäischen Unfallbericht ausfüllen (liegt bei der Grünen Karte). Keine Schuld anerkennen, nur Fakten.</p>
+<p><b>Falsch getankt (E85/HVO erwischt):</b> NICHT starten! Auto stehen lassen, Pannenhilfe rufen – dann bleibt es beim Abpumpen.</p>`},
+{id:"kind",ic:"🧒",t:"Kind verloren – der Plan",h:`
+<p><b>Vorsorge:</b> An vollen Tagen (ALV, Gröna Lund, Festivals, Strand) morgens die Handynummer mit wasserfestem Stift auf Karls und Noras Unterarm schreiben. Bei Ankunft an jedem vollen Ort gemeinsam einen Treffpunkt zeigen: „Wenn du uns nicht siehst → hierher.“</p>
+<p><b>Regel für die Kinder:</b> Stehen bleiben, laut rufen, nur Menschen mit Uniform/Namensschild ansprechen – oder eine andere Mama/einen anderen Papa mit Kindern.</p>
+<p><b>Für die Eltern:</b> Sofort Personal informieren (Parks haben eingespielte Abläufe), eine:r bleibt am Treffpunkt, eine:r sucht. Morgens ein aktuelles Foto der Kinder machen – kostet nichts, hilft enorm.</p>`},
+{id:"allemans",ic:"🌲",t:"Allemansrätten – für Kinder erklärt",h:`
+<p>In Schweden gilt das „Jedermannsrecht“ – die Natur gehört allen. Die Regeln:</p>
+<p>🥾 <b>Überall wandern & spielen</b> – Wald und Wiese darf man betreten, auch ohne zu fragen.<br>
+⛺ <b>Eine Nacht zelten ist okay</b> – abseits von Häusern, dann weiterziehen.<br>
+🫐 <b>Heidelbeeren (blåbär) naschen ist offiziell erlaubt!</b> Auch Pilze und Blumen sammeln.<br>
+🏡 <b>Abstand zu Häusern</b> – Gärten sind tabu.<br>
+🔥 <b>Feuer nur, wo es erlaubt ist</b> – bei „eldningsförbud“ (Feuerverbot) gar nicht.<br>
+🗑 <b>Nicht stören, nichts zerstören</b> – allen Müll wieder mitnehmen.</p>`},
+{id:"manu",ic:"⚽",t:"Man United unterwegs",h:`
+<p>Die Premier-League-Saison 2026/27 startet, während ihr unterwegs seid:</p>
+<div id="manuList"></div>
+<p class="tiny">TV-Verschiebungen möglich – vor Abreise nochmal checken. In Schweden/Dänemark läuft die PL legal auf <b>Viaplay</b>.</p>`}
+];
+/* ================= HELFER ================= */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const WD=["So","Mo","Di","Mi","Do","Fr","Sa"];
+const MO=["Jän","Feb","März","Apr","Mai","Juni","Juli","Aug","Sep","Okt","Nov","Dez"];
+function iso(dt){return dt.getFullYear()+"-"+String(dt.getMonth()+1).padStart(2,"0")+"-"+String(dt.getDate()).padStart(2,"0");}
+function todayISO(){
+  const ov=localStorage.getItem("sw26_date");
+  if(ov) return ov;
+  const q=new URLSearchParams(location.search).get("date");
+  if(q&&/^\d{4}-\d{2}-\d{2}$/.test(q)) return q;
+  return iso(new Date());
+}
+function d2(s){const[y,m,d]=s.split("-").map(Number);return new Date(y,m-1,d);}
+function fmtD(s){const dt=d2(s);return WD[dt.getDay()]+" "+dt.getDate()+". "+MO[dt.getMonth()];}
+function fmtShort(s){const dt=d2(s);return WD[dt.getDay()]+" "+dt.getDate()+".";}
+function daysBetween(a,b){return Math.round((d2(b)-d2(a))/86400000);}
+function dayFor(dateS){return DAYS.find(x=>x.d===dateS)||null;}
+function store(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){try{localStorage.removeItem("sw26_wxh");localStorage.removeItem("sw26_warn");localStorage.setItem(k,JSON.stringify(v));}catch(e2){}}}
+function load(k,f){try{const v=localStorage.getItem(k);return v?JSON.parse(v):f;}catch(e){return f;}}
+const WCODE=c=>{
+  if(c===0)return["☀️","sonnig"]; if(c<=2)return["🌤️","heiter"]; if(c===3)return["☁️","bewölkt"];
+  if(c<=48)return["🌫️","Nebel"]; if(c<=57)return["🌦️","Niesel"]; if(c<=67)return["🌧️","Regen"];
+  if(c<=77)return["🌨️","Schnee"]; if(c<=82)return["🌧️","Schauer"]; if(c<=86)return["🌨️","Schneeschauer"];
+  return["⛈️","Gewitter"];};
+/* ================= WETTER ================= */
+async function getWx(stKey){
+  const st=ST[stKey]; const cache=load("sw26_wx",{});
+  const c=cache[stKey];
+  if(c && Date.now()-c.t<3*3600e3) return c.data;
+  try{
+    const u=`https://api.open-meteo.com/v1/forecast?latitude=${st.lat}&longitude=${st.lon}&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,sunset,wind_speed_10m_max,uv_index_max&timezone=Europe%2FBerlin&forecast_days=16`;
+    const r=await fetch(u); if(!r.ok) throw 0;
+    const j=await r.json();
+    if(!j.daily||!j.daily.time) throw 0;
+    cache[stKey]={t:Date.now(),data:j.daily}; store("sw26_wx",cache);
+    return j.daily;
+  }catch(e){ return c?c.data:null; }
+}
+async function getSea(){
+  const c=load("sw26_sea",null);
+  if(c && Date.now()-c.t<6*3600e3) return c.v;
+  try{
+    const u=`https://marine-api.open-meteo.com/v1/marine?latitude=56.88&longitude=12.45&hourly=sea_surface_temperature&forecast_days=1&timezone=Europe%2FBerlin`;
+    const r=await fetch(u); if(!r.ok) throw 0;
+    const j=await r.json();
+    const h=new Date().getHours();
+    const v=j.hourly.sea_surface_temperature[Math.min(h,j.hourly.sea_surface_temperature.length-1)];
+    store("sw26_sea",{t:Date.now(),v}); return v;
+  }catch(e){ return c?c.v:null; }
+}
+function wxRows(daily,fromS,toS,max){
+  if(!daily) return '<div class="skel">Keine Wetterdaten – zuletzt geladene Werte fehlen. Kurz online gehen und neu laden.</div>';
+  let out=""; let n=0;
+  for(let i=0;i<daily.time.length;i++){
+    const t=daily.time[i];
+    if(fromS && t<fromS) continue; if(toS && t>toS) continue; if(max && n>=max) break;
+    const [ic,lb]=WCODE(daily.weather_code[i]);
+    const rain=daily.precipitation_probability_max[i];
+    out+=`<div class="wxrow"><span class="d">${fmtShort(t)}</span><span class="ic">${ic}</span>
+      <span>${lb}${rain>=30?` · <span class="rain">☔ ${rain} %</span>`:""}</span>
+      <span class="tt">${Math.round(daily.temperature_2m_max[i])}° <span class="lo">/ ${Math.round(daily.temperature_2m_min[i])}°</span></span></div>`;
+    n++;
+  }
+  return out||'<div class="skel">Für diese Tage gibt es noch keine Prognose (max. 16 Tage im Voraus).</div>';
+}
+async function getFx(){
+  const c=load("sw26_fx",null);
+  if(c && Date.now()-c.t<12*3600e3) return c.v;
+  try{
+    const r=await fetch("https://api.frankfurter.app/latest?from=EUR&to=SEK,DKK");
+    if(!r.ok) throw 0;
+    const j=await r.json();
+    if(!j.rates||!j.rates.SEK) throw 0;
+    const v={SEK:j.rates.SEK,DKK:j.rates.DKK,date:j.date};
+    store("sw26_fx",{t:Date.now(),v}); return v;
+  }catch(e){ return c?c.v:FX_FALLBACK; }
+}
+/* ================= NAVIGATION ================= */
+let curView="heute";
+function go(v){
+  curView=v;
+  if(typeof lastRenderTs!=="undefined") lastRenderTs=Date.now();
+  document.querySelectorAll(".view").forEach(x=>x.classList.remove("on"));
+  $("#v-"+v).classList.add("on");
+  document.querySelectorAll("nav.tabs button").forEach(b=>{b.classList.toggle("on",b.dataset.v===v);b.setAttribute("aria-current",b.dataset.v===v?"page":"false");});
+  window.scrollTo({top:0});
+  ({heute:renderHeute,route:renderRoute,orte:renderOrte,wetter:renderWetter,mehr:renderMehr})[v]();
+}
+document.querySelectorAll("nav.tabs button").forEach(b=>b.onclick=()=>go(b.dataset.v));
+document.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.matches&&e.target.matches('[role="button"]')){e.preventDefault();e.target.click();}});
+/* ================= BAUSTEINE ================= */
+function actHtml(a){
+  const tag=a.t==="in"?'<span class="chip">🏠 Indoor</span>':a.t==="out"?'<span class="chip g">🌳 Outdoor</span>':'<span class="chip plain">🏠/🌳</span>';
+  const cheap=a.c?'<span class="chip y">💰 günstig/gratis</span>':"";
+  return `<div class="act"><div class="nm">${a.n} ${a.u?`<a href="${a.u}" target="_blank" rel="noopener">↗</a>`:""}</div>
+  <div class="chips">${tag}${cheap}</div>
+  <div class="meta">⏱ ${a.d} · 💶 ${a.p}${a.h?` · 🕐 ${a.h}`:""}${a.a?` · 📍 ${a.a}`:""}</div>
+  <div class="why">${a.w}</div></div>`;
+}
+function mapsLink(q){return `https://maps.google.com/?q=${encodeURIComponent(q)}`;}
+function stationBlock(key,compact){
+  const s=ST[key];
+  let h=`<div class="card"><h3>${s.fl} ${s.name}</h3><p class="muted">${s.ni} · ${s.lodg} <a href="${mapsLink(s.lodg.replace(/Ref\..*$/,"")+", "+s.name)}" target="_blank" rel="noopener">🗺️ Karte</a></p><p>${s.about}</p></div>`;
+  h+=`<div class="card" id="stWx"><h3>🌦️ Wetter hier</h3><div id="stWxRows" class="skel">lädt …</div><div id="stWarn"></div>${key==="skrea"?'<div id="stBath"></div>':""}</div>`;
+  h+=`<h2 class="sec">Highlights</h2><div class="card">`+s.top.map(actHtml).join("")+`</div>`;
+  if(s.reserve.length) h+=`<details><summary>🎒 Weitere Ideen (${s.reserve.length}) – auch für Regentage</summary><div class="inner">`+s.reserve.map(actHtml).join("")+`</div></details>`;
+  if(s.food.length) h+=`<details><summary>🍽️ Essen & Trinken</summary><div class="inner">`+s.food.map(f=>`<div class="act"><div class="nm">${f.n} <span class="chip plain">${f.pr}</span></div><div class="why">${f.d}</div></div>`).join("")+`</div></details>`;
+  if(s.fika.length) h+=`<details><summary>☕ Fika-Stopps</summary><div class="inner">`+s.fika.map(f=>`<div class="act"><div class="nm">${f.n}</div><div class="why">${f.d}</div></div>`).join("")+`</div></details>`;
+  if(s.foto.length) h+=`<details><summary>📸 Fotospots</summary><div class="inner"><p>`+s.foto.map(f=>"• "+f).join("<br>")+`</p></div></details>`;
+  if(PLAY[key]) h+=`<details><summary>🛝 Spielplätze in der Nähe</summary><div class="inner">`+PLAY[key].map(pl=>`<div class="act"><div class="nm">${pl.n} <a href="${mapsLink(pl.q)}" target="_blank" rel="noopener">🗺️</a></div><div class="why">${pl.d}</div></div>`).join("")+`</div></details>`;
+  if(s.prak.length) h+=`<details><summary>ℹ️ Praktisches vor Ort</summary><div class="inner"><p>`+s.prak.map(p=>"• "+p).join("<br><br>")+`</p></div></details>`;
+  if(ER[key]) h+=`<details><summary>🚑 Im Notfall hier</summary><div class="inner"><p>${ER[key].t}</p><p><a href="${mapsLink(ER[key].q)}" target="_blank" rel="noopener">🗺️ Route zum Krankenhaus</a> · Notruf: <a href="tel:112">112</a></p></div></details>`;
+  return h;
+}
+async function fillStationWx(key){
+  const t=todayISO();
+  const daily=await getWx(key);
+  if(curStation!==key) return;
+  const box=document.getElementById("stWxRows");
+  if(box) box.innerHTML=wxRows(daily,t,null,7);
+  const wh=await warnHtml(key);
+  if(curStation!==key) return;
+  const wEl=document.getElementById("stWarn");
+  if(wEl) wEl.innerHTML=wh;
+  if(key==="skrea"){const bh=await bathHtml(); if(curStation!==key) return; const bEl=document.getElementById("stBath"); if(bEl) bEl.innerHTML=bh;}
+}
+/* ================= HEUTE ================= */
+function ferryCard(f){
+  return `<div class="card hl"><h3>⛴️ ${f.n}</h3>
+  <div class="rowline"><span class="big">${f.dep}</span><span class="chip">Ref. ${f.ref}</span></div>
+  ${f.q?`<p style="margin:8px 0"><a class="btn sub sm" href="${mapsLink(f.q)}" target="_blank" rel="noopener">🗺️ Zum Terminal navigieren</a></p>`:""}
+  <p class="muted">${f.info}</p></div>`;
+}
+const TANK={"2026-08-05":"⛽ Heute in Deutschland volltanken – Dänemark ist Europas teuerstes Tankland.","2026-08-06":"⛽ Vor Puttgarden nochmal volltanken – in Dänemark nur das Nötigste.","2026-08-09":"⛽ In Dänemark nicht mehr tanken – gleich hinter der Brücke ist Schweden deutlich billiger.","2026-08-11":"⛽ Schweden ist das günstigste Tankland der Route (~1,45–1,55 €/l) – unbemannte Automaten, Karte mit PIN.","2026-08-13":"⛽ Tanken in Schweden bleibt günstig – kein Stress.","2026-08-17":"⛽ Unterwegs in Schweden volltanken – günstiger wird es auf der Reise nicht mehr.","2026-08-21":"⛽ Gestern in Schweden vollgetankt? Dann reicht das bis weit nach Deutschland hinein."};
+function driveCard(day){
+  const dr=day.drive;
+  let h=`<div class="card"><h3>🚗 ${dr.from} → ${dr.to}</h3>
+  <div class="chips"><span class="chip">${dr.km} km</span><span class="chip plain">${dr.hrs}</span></div>
+  <p class="muted"><b>${dr.dep}</b></p>`;
+  if(dr.km>=300) h+=`<p class="tiny">⏸ Faustregel: alle 1,5–2 Stunden Pause – Karl braucht sie, bevor er sie braucht.</p>`;
+  if(dr.stops&&dr.stops.length){
+    h+=`<p style="margin-top:10px"><b>Zwischenstopps:</b></p>`;
+    h+=dr.stops.map(sx=>`<div class="act"><div class="nm">📍 ${sx.n} <a href="${mapsLink(sx.q||sx.n)}" target="_blank" rel="noopener" aria-label="Karte öffnen">🗺️</a></div><div class="why">${sx.d}</div></div>`).join("");
+  }
+  if(dr.from!=="Wien") h+=`<div class="note">👋 Abschiedsrunde im Auto: Jede:r – auch die Eltern! – sagt den eigenen Lieblingsmoment von ${dr.from}. Kurz winken, dann geht's weiter.</div>`;
+  if(TANK[day.d]) h+=`<p class="tiny" style="margin-top:8px">${TANK[day.d]}</p>`;
+  h+=`</div>`;
+  return h;
+}
+function progCard(day){
+  if(!day.prog||!day.prog.length) return "";
+  return `<div class="card"><h3>📋 Plan für heute</h3><p>`+day.prog.map(p=>"• "+p).join("<br>")+`</p></div>`;
+}
+async function suggestCard(day){
+  if(day.type!=="stay") return "";
+  const s=ST[day.st]; const t=todayISO();
+  const daily=await getWx(day.st);
+  let rain=null,hint="";
+  if(daily){const i=daily.time.indexOf(t); if(i>=0){rain=daily.precipitation_probability_max[i];}}
+  const all=[...s.top,...s.reserve];
+  let picks;
+  if(rain!==null&&rain>=45){hint=`☔ ${rain} % Regenrisiko heute – hier die besten Indoor-Optionen:`;picks=all.filter(a=>a.t!=="out");}
+  else{hint=rain!==null?`Nur ${rain} % Regenrisiko – raus mit euch:`:"Vorschläge für heute:";picks=all.filter(a=>a.t!=="in").concat(all.filter(a=>a.t==="in"));}
+  picks=picks.slice(0,3);
+  if(!picks.length) return "";
+  return `<div class="card"><h3>💡 Passt zum Wetter</h3><p class="muted">${hint}</p>`+picks.map(actHtml).join("")+`<p class="tiny">Auch völlig okay: Vormittag im Quartier, Spielplatz + Eis – auf 24 Tagen ist Nichtstun ein vollwertiger Programmpunkt.</p><button class="btn sub sm" onclick="openStation('${day.st}',true)">Alle Ideen für ${s.name} →</button></div>`;
+}
+async function renderHeute(){
+  const box=$("#v-heute"); const t=todayISO();
+  const first=DAYS[0].d, last=DAYS[DAYS.length-1].d;
+  let h="";
+  if(t<first){
+    const n=daysBetween(t,first);
+    h+=`<div class="card blue" style="text-align:center;padding:22px"><div style="font-size:40px">🇸🇪</div>
+    <div class="big" style="font-size:30px">${n} ${n===1?"Tag":"Tage"}</div><div class="muted">bis zur Abreise am Sa 1. August</div></div>`;
+    h+=`<div class="card"><h3>✅ Vor der Abfahrt</h3><p class="muted">Die Häkchen setzen sich nicht von selbst:</p><div id="cdPack"></div><button class="btn" onclick="go('mehr');openSub('check')">Zur Checkliste</button> <button class="btn sub" onclick="go('mehr');openSub('pack')">Packliste</button></div>`;
+    h+=`<div class="card"><h3>Etappe 1 · Sa 1.8.</h3><p>Wien → Salzburg, 300 km. Badestopp am Mondsee einplanen.</p><button class="btn sub sm" onclick="go('route')">Ganze Route ansehen</button></div>`;
+    if(daysBetween(t,first)<=14){h+=`<div class="card" id="cdWx"><h3>🌦️ Wetter zum Start (Salzburg)</h3><div id="cdWxRows" class="skel">lädt …</div></div>`;}
+    box.innerHTML=h;
+    const cp=document.getElementById("cdPack");
+    if(cp){const stp=load("sw26_pack",{});let tot=0,done=0;Object.entries(PACK).forEach(([c,items])=>items.forEach(it=>{tot++;if(stp[c+"|"+it])done++;}));const px=load("sw26_packx",[]);px.forEach(i=>{tot++;if(i.d)done++;});cp.innerHTML=`<p class="muted">🧳 Packliste: <b>${done} von ${tot}</b> erledigt</p>`;}
+    if(document.getElementById("cdWxRows")){const d=await getWx("salzburg");if(todayISO()===t&&document.getElementById("cdWxRows"))document.getElementById("cdWxRows").innerHTML=wxRows(d,first,null,5);}
+    return;
+  }
+  if(t>last){
+    const elk3=load("sw26_elk",{nora:0,karl:0});
+    const qb3=load("sw26_quizbest",{});
+    box.innerHTML=`<div class="card blue" style="text-align:center;padding:24px"><div style="font-size:40px">🫎</div>
+    <p class="big">Hej då, Sverige!</p><p class="muted">23 Nächte, 4 Länder, 2 Fähren, unzählige Zimtschnecken.</p></div>
+    <div class="card"><h3>🏆 Eure Reise-Bilanz</h3><table class="simple">
+    <tr><td>🚗 Strecke</td><td>~4.630 km quer durch Europa</td></tr>
+    <tr><td>📍 Stationen</td><td>11 von 11 – volle Stempelkarte</td></tr>
+    <tr><td>🫎 Elche</td><td>Nora ${elk3.nora} · Karl ${elk3.karl} · als Team ${elk3.nora+elk3.karl}</td></tr>
+    ${(qb3.mini||qb3.kinder||qb3.erwachsene)?`<tr><td>🧠 Quiz-Rekorde</td><td>${["mini","kinder","erwachsene"].filter(k=>qb3[k]).map(k=>({mini:"Mini",kinder:"Kinder",erwachsene:"Erw."})[k]+" "+qb3[k]+"/8").join(" · ")}</td></tr>`:""}
+    </table><button class="btn sub sm" onclick="confetti(30)">🎉 Nochmal feiern</button></div>
+    <button class="btn sub" style="width:100%" onclick="go('route')">Die Reise noch einmal durchblättern</button>`;
+    return;
+  }
+  const day=dayFor(t);
+  if(!day){box.innerHTML='<div class="card">Kein Reisetag gefunden.</div>';return;}
+  const st=ST[day.st];
+  const simOn=!!localStorage.getItem("sw26_date")||!!new URLSearchParams(location.search).get("date");
+  if(simOn) h+=`<div class="note">🔧 Simulierter Reisetag – <a onclick="clearSim()" style="cursor:pointer">zurück zum echten Datum</a></div>`;
+  h+=`<div class="card blue"><div class="tiny">${fmtD(t)} · Tag ${daysBetween(first,t)+1} von 24 · Station ${ST_ORDER.indexOf(day.st)+1}/11</div>
+  <h3 style="font-size:20px;margin-top:2px">${day.ti}</h3>
+  <div class="muted">Übernachtung: ${st.fl} ${st.lodg} <a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(st.lodg.replace(/Ref\..*$/,"")+", "+st.name)}&travelmode=driving" target="_blank" rel="noopener">🗺️ Route</a></div></div>`;
+  if(day.bday) h+=`<div class="card bday"><h3>🎂 40! Grattis på födelsedagen, Bernhard!</h3><p>Vierzig Jahre, und du feierst sie in Stockholm. Besser geht's nicht. Der Plan für heute steht unten – lass dich feiern.</p><p>🎤 Zum Frühstück gibt's ein Ständchen auf Schwedisch – Nora und Karl wissen Bescheid (Text in der Kids-Ecke).</p><button class="btn sm" style="background:#fff;color:#8a6a10" onclick="confetti(32)">🎆 Nochmal feiern!</button></div>`;
+  if(day.manu) h+=`<div class="card hl"><h3>⚽ Man United</h3><p>${day.manu.txt}</p></div>`;
+  if(day.ferry) h+=ferryCard(day.ferry);
+  if(day.oresund) h+=`<div class="card hl"><h3>🌉 Öresundbrücke heute</h3><p>Online-Ticket gekauft? 64 € statt 72 € – <a href="https://www.oresundsbron.com/de/preise" target="_blank" rel="noopener">oresundsbron.com</a>. Kennzeichen wird an der Mautstation automatisch erkannt.</p></div>`;
+  if(day.type==="drive") h+=driveCard(day);
+  h+=`<div class="card" id="hWx"><h3>🌦️ Wetter: ${st.name}</h3><div id="hWxRows" class="skel">lädt …</div><div id="hRain"></div><div id="hExtra"></div><div class="tiny" id="hSun"></div><div id="hWarn"></div></div>`;
+  h+=progCard(day);
+  h+=`<div id="hSuggest"></div>`;
+  h+=wotdCard(t);
+  h+=`<div id="hTomorrow"></div>`;
+  if(day.note) h+=`<div class="oknote">${day.note}</div>`;
+  h+=`<div class="chips actions" style="margin-top:14px">
+    <span class="chip r" role="button" tabindex="0" onclick="openNotfall()">🚨 Notfall</span>
+    <span class="chip" role="button" tabindex="0" onclick="openStation('${day.st}',true)">📍 Alles über ${st.name}</span>
+    <span class="chip y" role="button" tabindex="0" onclick="go('mehr');openSub('fx')">💱 Währungsrechner</span>
+    <span class="chip g" role="button" tabindex="0" onclick="go('mehr');openSub('kids')">🧒 Kids-Ecke</span>
+    <span class="chip plain" role="button" tabindex="0" onclick="shareToday()">📤 Tagesplan teilen</span>
+    <span class="chip plain" role="button" tabindex="0" onclick="go('mehr');openSub('park')">🅿️ Parkmerker</span></div>`;
+  box.innerHTML=h;
+  if(day.bday&&!load("sw26_bdayseen",false)){store("sw26_bdayseen",true);setTimeout(()=>confetti(36),500);}
+  const daily=await getWx(day.st);
+  if(curView!=="heute"||todayISO()!==t) return;
+  const rowsEl=document.getElementById("hWxRows");
+  if(rowsEl) rowsEl.innerHTML=wxRows(daily,t,null,5);
+  if(daily){const i=daily.time.indexOf(t);
+    if(i>=0&&daily.sunset&&daily.sunset[i]){const sEl=document.getElementById("hSun"); if(sEl) sEl.textContent="🌇 Sonnenuntergang heute: "+daily.sunset[i].slice(11,16)+" Uhr";}
+    if(i>=0){let ex="";
+      const uv=daily.uv_index_max?daily.uv_index_max[i]:null;
+      if(uv!==null&&uv>=6) ex+=`<div class="note">☀️ UV-Index ${Math.round(uv)} – eincremen, Kappen auf!</div>`;
+      const wind=daily.wind_speed_10m_max?daily.wind_speed_10m_max[i]:null;
+      if(day.st==="skrea"&&wind!==null&&wind>=25) ex+=`<div class="note">🪁 Frischer Wind (~${Math.round(wind)} km/h) – Drachen-Wetter! Strandmuschel gut verankern.</div>`;
+      const eEl=document.getElementById("hExtra"); if(eEl&&ex) eEl.innerHTML=ex;
+    }
+  }
+  const hh=await getWxH(day.st);
+  if(curView!=="heute"||todayISO()!==t) return;
+  const rEl=document.getElementById("hRain");
+  if(rEl) rEl.innerHTML=rainStrip(hh,t);
+  const wh2=await warnHtml(day.st);
+  if(curView!=="heute"||todayISO()!==t) return;
+  const wEl=document.getElementById("hWarn");
+  if(wEl) wEl.innerHTML=wh2;
+  const sg=await suggestCard(day);
+  if(curView!=="heute"||todayISO()!==t) return;
+  const sgEl=document.getElementById("hSuggest");
+  if(sgEl) sgEl.innerHTML=sg;
+  if(day.st==="skrea"&&rowsEl){
+    const sea=await getSea();
+    if(sea!==null) rowsEl.insertAdjacentHTML("afterend",`<div class="note">🌊 Wassertemperatur Skrea gerade: ~${Math.round(sea)} °C</div>`);
+    const bh=await bathHtml();
+    if(bh) rowsEl.insertAdjacentHTML("afterend",bh);
+  }
+  fillTomorrow(t);
+}
+/* ================= ROUTE ================= */
+function renderRoute(){
+  const box=$("#v-route"); const t=todayISO();
+  let h=`<h2 class="sec">1.–24. August · 23 Nächte · ~4.630 km</h2><div class="daylist">`;
+  DAYS.forEach((day,i)=>{
+    const cur=day.d===t;
+    const past=day.d<t;
+    h+=`<div class="card" role="button" tabindex="0" style="${cur?"border-left:5px solid var(--yellow);":""}${past?"opacity:.55;":""}cursor:pointer" onclick="openDay(${i})">
+    <div class="dt">${fmtD(day.d)}${cur?" · HEUTE":""}</div>
+    <div class="ti">${day.type==="drive"?"🚗 ":""}${day.ti}</div>
+    <div class="sb">${day.type==="drive"?day.drive.km+" km · ":""}🛏 ${ST[day.st].name}</div></div>`;
+  });
+  h+=`</div>`;
+  box.innerHTML=h;
+}
+function openDay(i){
+  pushNav();
+  const day=DAYS[i]; const box=$("#v-route"); const st=ST[day.st];
+  let h=`<div class="topbar"><button class="back" aria-label="Zurück" onclick="navBack()">‹</button><h2>${fmtD(day.d)}</h2></div>`;
+  h+=`<div class="card blue"><h3>${day.ti}</h3><div class="muted">Übernachtung: ${st.fl} ${st.lodg} <a href="${mapsLink(st.lodg.replace(/Ref\..*$/,"")+", "+st.name)}" target="_blank" rel="noopener">🗺️</a></div></div>`;
+  if(day.bday) h+=`<div class="card bday"><h3>🎂 Der 40er!</h3></div>`;
+  if(day.ferry) h+=ferryCard(day.ferry);
+  if(day.oresund) h+=`<div class="card hl"><h3>🌉 Öresundbrücke</h3><p>Online 64 € statt 72 € – vorher auf oresundsbron.com kaufen.</p></div>`;
+  if(day.manu) h+=`<div class="card hl"><h3>⚽ Man United</h3><p>${day.manu.txt}</p></div>`;
+  if(day.type==="drive") h+=driveCard(day);
+  h+=progCard(day);
+  h+=`<button class="btn sub" onclick="openStation('${day.st}',true)">📍 Alles über ${st.name}</button>`;
+  box.innerHTML=h; window.scrollTo({top:0});
+}
+/* ================= ORTE ================= */
+const ST_ORDER=["salzburg","bamberg","wernigerode","luebeck","kopenhagen","lomma","vimmerby","stockholm","skrea","rostock","dresden"];
+function renderOrte(){
+  const box=$("#v-orte");
+  let h=`<div class="card"><h3>🗺️ Unsere Reisekarte</h3><p class="tiny">Bernhards Google-Karte mit allen markierten Punkten der Reise.</p><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn sub sm" id="myMapBtn" onclick="toggleMyMap()">Karte hier anzeigen</button><a class="btn sm" href="https://www.google.com/maps/d/viewer?mid=${MYMAP}" target="_blank" rel="noopener">In Google Maps öffnen ↗</a></div><div id="myMapBox"></div></div>`;
+  h+=`<h2 class="sec">Eure 11 Stationen</h2><div class="stgrid">`;
+  const t=todayISO();
+  ST_ORDER.forEach(k=>{const st2=ST[k];
+    const[a,b]=STAY_RANGES[k];
+    const badge=b<t?'<span class="stamp" aria-label="besucht">✓</span>':(t>=a&&t<=b?'<span class="stamp now" aria-label="aktuelle Station">📍</span>':"");
+    h+=`<div class="card" role="button" tabindex="0" style="position:relative" onclick="openStation('${k}')">${badge}<div class="fl" aria-hidden="true">${st2.fl}</div><div class="nm">${st2.name}</div><div class="ni">${st2.ni}</div></div>`;});
+  h+=`</div>`;
+  box.innerHTML=h;
+}
+let curStation=null;
+function openStation(key,switchTab){
+  pushNav();
+  curStation=key;
+  if(switchTab){curView="orte";document.querySelectorAll(".view").forEach(x=>x.classList.remove("on"));$("#v-orte").classList.add("on");document.querySelectorAll("nav.tabs button").forEach(b=>b.classList.toggle("on",b.dataset.v==="orte"));}
+  const box=$("#v-orte");
+  box.innerHTML=`<div class="topbar"><button class="back" aria-label="Zurück" onclick="navBack()">‹</button><h2>${ST[key].fl} ${ST[key].name}</h2></div>`+stationBlock(key);
+  window.scrollTo({top:0});
+  fillStationWx(key);
+}
+/* ================= WETTER-TAB ================= */
+const STAY_RANGES={salzburg:["2026-08-01","2026-08-03"],bamberg:["2026-08-03","2026-08-04"],wernigerode:["2026-08-04","2026-08-05"],luebeck:["2026-08-05","2026-08-06"],kopenhagen:["2026-08-06","2026-08-09"],lomma:["2026-08-09","2026-08-11"],vimmerby:["2026-08-11","2026-08-13"],stockholm:["2026-08-13","2026-08-17"],skrea:["2026-08-17","2026-08-21"],rostock:["2026-08-21","2026-08-22"],dresden:["2026-08-22","2026-08-24"]};
+async function renderWetter(){
+  const box=$("#v-wetter"); const t=todayISO();
+  let h=`<h2 class="sec">Wetter an euren Stationen</h2><p class="tiny" style="margin:0 4px 8px">Prognosen reichen max. 16 Tage – weiter entfernte Stationen tauchen automatisch auf, sobald es so weit ist. Zuletzt geladene Daten bleiben offline sichtbar.</p>`;
+  const horizon=iso(new Date(d2(t).getTime()+15*86400000));
+  const shows=[];
+  ST_ORDER.forEach(k=>{
+    const[a,b]=STAY_RANGES[k];
+    if(b<t) return;              // vorbei
+    if(a>horizon){h+=`<div class="card" style="opacity:.65"><h3>${ST[k].fl} ${ST[k].name}</h3><p class="tiny">${ST[k].ni} – Prognose verfügbar ab ${fmtShort(iso(new Date(d2(a).getTime()-15*86400000)))}</p></div>`;return;}
+    h+=`<div class="card"><h3>${ST[k].fl} ${ST[k].name} <span class="tiny">${ST[k].ni}</span></h3><div id="wx_${k}" class="skel">lädt …</div>${k==="skrea"?'<div id="seaBox"></div>':""}</div>`;
+    shows.push(k);
+  });
+  box.innerHTML=h;
+  await Promise.all(shows.map(async k=>{
+    const[a,b]=STAY_RANGES[k];
+    const daily=await getWx(k);
+    if(curView!=="wetter") return;
+    const el=document.getElementById("wx_"+k);
+    if(el) el.innerHTML=wxRows(daily,(t>a?t:a),b,8);
+  }));
+  if(shows.includes("skrea")){const sea=await getSea(); const sb=document.getElementById("seaBox"); if(sb&&sea!==null) sb.innerHTML=`<div class="note">🌊 Wassertemperatur aktuell: ~${Math.round(sea)} °C</div>`;}
+}
+/* ================= MEHR ================= */
+function renderMehr(){
+  const box=$("#v-mehr");
+  const items=[
+    ["pack","🧳","Packliste","abhakbar, wird gespeichert"],
+    ["check","✅","Vor der Abfahrt","die letzte Kontrollrunde"],
+    ["fx","💱","Währungsrechner","SEK · DKK · EUR, Live-Kurs"],
+    ["book","🧾","Buchungen & Referenzen","alles Gebuchte auf einen Blick"],
+    ["facts","🤯","Unnützes Wissen","Schweden-Fakten für Kinder & Erwachsene"],
+    ["park","🅿️","Parkmerker","wo steht das Auto?"],
+    ["shop","🛒","Supermarkt-Dolmetscher","mjölk, jäst, blöjor & Co."],
+    ["kids","🧒","Kids-Ecke","Auto-Bingo, Quiz, Elch-Zähler & Co."],
+    ["phrase","🗣️","Mini-Schwedisch","die 28 Sätze, die ihr braucht"]
+  ];
+  let h=`<h2 class="sec">Werkzeuge</h2>`;
+  items.forEach(([id,ic,t,sub])=>{h+=`<div class="card" role="button" tabindex="0" style="cursor:pointer;display:flex;gap:12px;align-items:center" onclick="openSub('${id}')"><span style="font-size:26px">${ic}</span><div><b>${t}</b><div class="tiny">${sub}</div></div></div>`;});
+  h+=`<h2 class="sec">Gut zu wissen</h2>`;
+  KNOW.forEach(k=>{h+=`<details><summary>${k.ic} ${k.t}</summary><div class="inner">${k.h}</div></details>`;});
+  h+=`<h2 class="sec">App</h2>
+  <div class="card"><h3>🗓 Reisetag simulieren</h3><p class="tiny">Zum Vorschauen: App zeigt dann diesen Tag als „heute“ an.</p>
+  <input type="text" id="simDate" placeholder="z. B. 2026-08-14" value="${localStorage.getItem("sw26_date")||""}">
+  <div style="margin-top:8px"><button class="btn sm" onclick="setSim()">Setzen</button> <button class="btn ghost sm" onclick="clearSim()">Zurück zum echten Datum</button></div></div>
+  <div class="footer">Schweden 2026 · gebaut mit ♥ und viel Recherche · Wetter: open-meteo.com · Warnungen: SMHI &amp; DWD · Badewasser: HaV · Kurse: frankfurter.app<br>Alle Preise/Zeiten recherchiert Juli 2026, Änderungen möglich – Links führen zu den offiziellen Seiten.</div>`;
+  box.innerHTML=h;
+  const ml=document.getElementById("manuList");
+  if(ml) ml.innerHTML=MANU.map(m=>`<div class="act"><div class="nm">${m.g}</div><div class="meta">${m.d} · ${m.t}</div><div class="why">${m.note}</div></div>`).join("");
+}
+function setSim(){const v=document.getElementById("simDate").value.trim();if(/^\d{4}-\d{2}-\d{2}$/.test(v)){localStorage.setItem("sw26_date",v);setHeadDate();go("heute");}else alert("Format: JJJJ-MM-TT");}
+function clearSim(){localStorage.removeItem("sw26_date");if(new URLSearchParams(location.search).get("date")){location.href=location.pathname;return;}setHeadDate();go("heute");}
+function subShell(title,inner){
+  return `<div class="topbar"><button class="back" aria-label="Zurück" onclick="navBack()">‹</button><h2>${title}</h2></div>`+inner;
+}
+function checklist(storageKey,data){
+  const state=load(storageKey,{});
+  let h="";
+  if(storageKey==="sw26_pack") h+=`<div class="card"><div id="packSum" class="muted">…</div></div>`;
+  Object.entries(data).forEach(([cat,items])=>{
+    const dn=items.filter(it=>state[cat+"|"+it]).length;
+    h+=`<div class="card"><h3>${cat} <span class="tiny">· ${dn}/${items.length}</span></h3>`;
+    items.forEach(it=>{
+      const id=cat+"|"+it; const done=!!state[id];
+      const cid="c_"+btoa(encodeURIComponent(id)).replace(/[^a-zA-Z0-9]/g,"");
+      h+=`<div class="checkrow ${done?"done":""}"><input type="checkbox" id="${cid}" ${done?"checked":""} onchange="toggleCheck('${storageKey}','${id.replace(/'/g,"\\'")}',this)"><label for="${cid}">${it}</label></div>`;
+    });
+    h+=`</div>`;
+  });
+  return h;
+}
+function toggleCheck(key,id,el){
+  el.closest(".checkrow").classList.toggle("done",el.checked);
+  const st=load(key,{}); st[id]=el.checked; store(key,st);
+  packCelebrate();
+}
+let packParty=false;
+function packCelebrate(){
+  if(packParty) return;
+  const stp=load("sw26_pack",{});
+  let tot=0,done=0;
+  Object.entries(PACK).forEach(([c,items])=>items.forEach(it=>{tot++;if(stp[c+"|"+it])done++;}));
+  const px=load("sw26_packx",[]); px.forEach(i=>{tot++;if(i.d)done++;});
+  const sum=document.getElementById("packSum");
+  if(sum) sum.innerHTML=`Noch <b>${tot-done}</b> von ${tot} offen`;
+  if(tot>0&&done===tot){packParty=true;confetti(28);if(sum)sum.innerHTML="🧳 Alles gepackt – Schweden kann kommen! 🇸🇪";}
+}
+async function openSub(id){
+  pushNav();
+  const box=$("#v-mehr");
+  if(id==="pack"){
+    const extra=load("sw26_packx",[]);
+    let h=checklist("sw26_pack",PACK);
+    h+=`<div class="card"><h3>Eigene Punkte</h3><div id="extraList">`;
+    extra.forEach((it,i)=>{h+=`<div class="checkrow ${it.d?"done":""}"><input type="checkbox" id="px_${i}" ${it.d?"checked":""} onchange="togglePackX(${i},this)"><label for="px_${i}" style="flex:1">${esc(it.n)}</label><button class="btn ghost sm" aria-label="Eintrag löschen" onclick="delPackX(${i})">✕</button></div>`;});
+    h+=`</div><div style="display:flex;gap:8px;margin-top:8px"><input type="text" id="newPack" placeholder="Neuer Eintrag …"><button class="iconbtn" aria-label="Eintrag hinzufügen" onclick="addPackX()">+</button></div></div>`;
+    box.innerHTML=subShell("🧳 Packliste",h);
+    packSumInit();
+  }
+  else if(id==="check"){box.innerHTML=subShell("✅ Vor der Abfahrt",checklist("sw26_check",CHECK));}
+  else if(id==="fx"){
+    box.innerHTML=subShell("💱 Währungsrechner",`<div class="card">
+    <div class="grid2"><div><label class="tiny">Betrag</label><input type="number" id="fxAmt" value="100" inputmode="decimal"></div>
+    <div><label class="tiny">Währung</label><select id="fxCur"><option value="SEK">SEK → EUR</option><option value="DKK">DKK → EUR</option><option value="EURSEK">EUR → SEK</option><option value="EURDKK">EUR → DKK</option></select></div></div>
+    <div class="big" id="fxOut" style="margin-top:12px">–</div>
+    <div class="tiny" id="fxInfo"></div></div>
+    <div class="card"><h3>Schnell-Übersicht</h3><div id="fxTable"></div></div>`);
+    const fx=await getFx();
+    const upd=()=>{
+      const a=parseFloat(document.getElementById("fxAmt").value)||0;
+      const c=document.getElementById("fxCur").value; let out;
+      if(c==="SEK") out=(a/fx.SEK).toFixed(2)+" €";
+      else if(c==="DKK") out=(a/fx.DKK).toFixed(2)+" €";
+      else if(c==="EURSEK") out=(a*fx.SEK).toFixed(0)+" SEK";
+      else out=(a*fx.DKK).toFixed(0)+" DKK";
+      document.getElementById("fxOut").textContent=out;
+    };
+    document.getElementById("fxAmt").oninput=upd; document.getElementById("fxCur").onchange=upd; upd();
+    document.getElementById("fxInfo").textContent=`Kurs: 1 € = ${fx.SEK.toFixed(2)} SEK = ${fx.DKK.toFixed(2)} DKK${fx.date?" (Stand "+fx.date+")":" (Offline-Richtwert)"}`;
+    document.getElementById("fxTable").innerHTML=[10,50,100,200,500,1000].map(v=>`<div class="rowline" style="padding:4px 0;border-bottom:1px solid var(--line)"><span>${v} SEK</span><b>${(v/fx.SEK).toFixed(2)} €</b></div>`).join("");
+  }
+  else if(id==="book"){
+    box.innerHTML=subShell("🧾 Buchungen",`
+    <div class="card"><table class="simple">
+    <tr><td>Fähre 6.8.</td><td>Scandlines Puttgarden–Rødby 9:45 · <b>MT26EBBDDA</b></td></tr>
+    <tr><td>Fähre 21.8.</td><td>TT-Line Trelleborg–Rostock 9:55–15:15 · <b>07882167</b> (258,50 €)</td></tr>
+    <tr><td>ALV 12.8.</td><td>Astrid Lindgrens Värld – Tickets gebucht ✓</td></tr>
+    <tr><td>Schloss Wernigerode</td><td>Besichtigungs-Tickets vorhanden ✓ (Übernachtung im Schloss)</td></tr>
+    <tr><td>Bamberg</td><td>BM Rooms, Jäckstraße 33</td></tr>
+    <tr><td>Lübeck</td><td>Premier Inn, Moislinger Allee 9 · <b>GBI6353604</b></td></tr>
+    <tr><td>Kopenhagen</td><td>Airbnb, Bjelkes Allé 4 (3 Nächte)</td></tr>
+    <tr><td>Lomma</td><td>Station Inn Loft, Järnvägsgatan 16 (2 Nächte)</td></tr>
+    <tr><td>Vimmerby</td><td>Airbnb (2 Nächte)</td></tr>
+    <tr><td>Stockholm</td><td>Biz Apartment Gärdet (4 Nächte)</td></tr>
+    <tr><td>Skrea</td><td>Ferienhaus Villavägen 4 (4 Nächte)</td></tr>
+    <tr><td>Rostock</td><td>Hotel Warnow, Bei der Knochenmühle 1</td></tr>
+    <tr><td>Dresden</td><td>Wachsbleichstraße 65 (2 Nächte)</td></tr>
+    </table></div>`);
+  }
+  else if(id==="phrase"){
+    box.innerHTML=subShell("🗣️ Mini-Schwedisch",`<p class="tiny" style="margin:0 4px 8px">🔉 antippen = das Handy spricht vor (schwedische Stimme, falls installiert).</p><div class="card">`+PHRASES.map(p=>`<div class="phr"><div class="rowline"><div style="flex:1"><div class="sv">${p[0]}</div><div class="de">${p[1]}</div><div class="py">${p[2]}</div></div><button class="iconbtn" aria-label="Vorsprechen" onclick="say('${p[0].replace(/'/g,"\\'")}')">🔉</button></div></div>`).join("")+`</div>`);
+  }
+  else if(id==="facts"){
+    box.innerHTML=subShell("🤯 Unnützes Wissen über Schweden",`
+    <div class="pill-toggle" id="factToggle"><button data-s="kinder" class="on" onclick="setFactSet('kinder')">Für Kinder</button><button data-s="erwachsene" onclick="setFactSet('erwachsene')">Für Erwachsene</button></div>
+    <div class="card" style="text-align:center;padding:26px 18px"><div style="font-size:36px">🤯</div>
+    <p id="factText" style="font-size:17.5px;line-height:1.5;min-height:80px;transition:opacity .15s"></p>
+    <button class="btn" onclick="nextFact()">Nächster Fakt</button></div>
+    <p class="tiny" style="margin:8px 4px">Perfekt für die Autofahrt: vorlesen, staunen, weitergeben.</p>`);
+    factShuffle(); nextFact(true);
+  }
+  else if(id==="park"){
+    box.innerHTML=subShell("🅿️ Parkmerker",`<div class="card"><p class="tiny">Einmal antippen, wenn das Auto geparkt ist – die App merkt sich den Punkt (bleibt nur am Handy gespeichert).</p><input type="text" id="parkNote" placeholder="Notiz, z. B. „Parkhaus Ebene 3“ (optional)"><div style="margin-top:10px"><button class="btn" onclick="parkSave()">📍 Auto steht hier</button></div><div id="parkStatus" style="margin-top:12px">${parkStatusHtml()}</div><p class="tiny" style="margin-top:10px">GPS funktioniert über die App-Adresse (https). Beim allerersten Mal fragt das Handy um Erlaubnis.</p></div>`);
+  }
+  else if(id==="shop"){
+    box.innerHTML=subShell("🛒 Supermarkt-Dolmetscher",`<div class="card"><input type="text" id="shopSearch" placeholder="Suchen … (deutsch oder schwedisch)"><div id="shopList" style="margin-top:8px"></div></div><p class="tiny" style="margin:8px 4px">🇩🇰-Einträge gelten für Dänemark. Achtung: „saft“ ist in Schweden Verdünnungssirup – echter Fruchtsaft heißt „juice“.</p>`);
+    const list=document.getElementById("shopList");
+    const render=q=>{q=(q||"").toLowerCase();
+      list.innerHTML=GROCERY.filter(g=>!q||g[0].toLowerCase().includes(q)||g[1].toLowerCase().includes(q)).map(g=>`<div class="rowline" style="padding:6px 0;border-bottom:1px solid var(--line)"><span><b>${g[0]}</b></span><span class="muted" style="text-align:right">${g[1]}</span></div>`).join("")||'<p class="muted">Nichts gefunden.</p>';};
+    render(); document.getElementById("shopSearch").oninput=e=>render(e.target.value);
+  }
+  else if(id==="kids"){renderKids();}
+  window.scrollTo({top:0});
+}
+function packSumInit(){
+  const stp=load("sw26_pack",{});let tot=0,done=0;
+  Object.entries(PACK).forEach(([c,items])=>items.forEach(it=>{tot++;if(stp[c+"|"+it])done++;}));
+  const px=load("sw26_packx",[]);px.forEach(i=>{tot++;if(i.d)done++;});
+  packParty=(tot>0&&done===tot);
+  const sum=document.getElementById("packSum");
+  if(sum) sum.innerHTML=packParty?"🧳 Alles gepackt – Schweden kann kommen! 🇸🇪":`Noch <b>${tot-done}</b> von ${tot} offen`;
+}
+function addPackX(){
+  const inp=document.getElementById("newPack"); const v=inp.value.trim(); if(!v) return;
+  const x=load("sw26_packx",[]); x.push({n:v,d:false}); store("sw26_packx",x);
+  const i=x.length-1;
+  document.getElementById("extraList").insertAdjacentHTML("beforeend",`<div class="checkrow"><input type="checkbox" id="px_${i}" onchange="togglePackX(${i},this)"><label for="px_${i}" style="flex:1">${esc(v)}</label><button class="btn ghost sm" aria-label="Eintrag löschen" onclick="delPackX(${i})">✕</button></div>`);
+  inp.value=""; inp.focus(); packSumInit();
+}
+function togglePackX(i,el){const x=load("sw26_packx",[]);if(!x[i])return;x[i].d=el.checked;store("sw26_packx",x);el.closest(".checkrow").classList.toggle("done",el.checked);packCelebrate();}
+function delPackX(i){const x=load("sw26_packx",[]);x.splice(i,1);store("sw26_packx",x);openSub("pack");}
+/* ================= KIDS ================= */
+function renderKids(){
+  const box=$("#v-mehr");
+  const who=load("sw26_bingoWho","nora");
+  const bs=load("sw26_bingo_"+who,{c:{},l:0});
+  const elk2=load("sw26_elk",{nora:0,karl:0});
+  const qb=load("sw26_quizbest",{});
+  const bingoH=BINGO.map((b,i)=>`<button class="${bs.c[i]?"hit":""}" aria-pressed="${bs.c[i]?"true":"false"}" onclick="hitBingo(${i},this)"><span class="e" aria-hidden="true">${b[0]}</span>${b[1]}</button>`).join("");
+  const bestTxt=["mini","kinder","erwachsene"].filter(k=>qb[k]).map(k=>"🏅 "+({mini:"Mini",kinder:"Kinder",erwachsene:"Erwachsene"})[k]+": "+qb[k]+"/8").join(" · ");
+  box.innerHTML=subShell("🧒 Kids-Ecke",`
+  <div class="card"><h3>🚗 Auto-Bingo</h3><p class="tiny">Eine volle Reihe = Bingo! Ganze Karte = Super-Bingo und Eis für alle. Jedes Kind hat die eigene Karte.</p>
+  <div class="pill-toggle"><button class="${who==="nora"?"on":""}" onclick="setBingoWho('nora')">Noras Karte</button><button class="${who==="karl"?"on":""}" onclick="setBingoWho('karl')">Karls Karte</button></div>
+  <div class="bingo">${bingoH}</div>
+  <div id="bingoWin"></div>
+  <button class="btn ghost sm" style="margin-top:10px" onclick="resetBingo()">Neue Runde</button></div>
+  <div class="card"><h3>🫎 Elch-Zähler</h3><p class="tiny">Echte Elche zählen doppelt so viel Jubel wie Elch-Schilder.</p>
+  <div class="counterbox"><b>Nora</b><div style="display:flex;align-items:center;gap:6px"><button class="iconbtn" aria-label="Elch abziehen bei Nora" onclick="elk('nora',-1)">−</button><span class="n" id="elkNora">${elk2.nora}</span><button class="iconbtn" aria-label="Elch dazuzählen bei Nora" onclick="elk('nora',1)">+</button></div></div>
+  <div class="counterbox"><b>Karl</b><div style="display:flex;align-items:center;gap:6px"><button class="iconbtn" aria-label="Elch abziehen bei Karl" onclick="elk('karl',-1)">−</button><span class="n" id="elkKarl">${elk2.karl}</span><button class="iconbtn" aria-label="Elch dazuzählen bei Karl" onclick="elk('karl',1)">+</button></div></div>
+  <div class="rowline" style="border-top:1px solid var(--line);padding-top:8px"><b>Zusammen</b><span class="n" id="elkSum" style="font-size:26px">${elk2.nora+elk2.karl}</span></div>
+  <div id="elkNote">${elk2.nora+elk2.karl>=10?'<div class="oknote">🎉 10+ Elche als Team – das gibt Kanelbullar bei der nächsten Fika!</div>':""}</div></div>
+  <div class="card"><h3>🚌 Schweden-Quiz für die Fahrt</h3><p class="tiny">8 Zufallsfragen pro Runde – wer wird Quiz-König:in der Rückbank?</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn sm" onclick="startQuiz('mini')">🐣 Mini (Karl)</button><button class="btn sm" onclick="startQuiz('kinder')">Kinder</button><button class="btn sub sm" onclick="startQuiz('erwachsene')">Erwachsene</button></div>
+  <div class="tiny" id="quizBest" style="margin-top:6px">${bestTxt}</div>
+  <div id="quizBox" style="margin-top:10px"></div></div>
+  <div class="card"><h3>🎂 Das Geburtstagslied (psst!)</h3><p class="tiny">Bis zum 14.8. heimlich üben, dann Papa zum Frühstück überraschen. <button class="btn sub sm" onclick="say('Ja må han leva, ja må han leva, ja må han leva uti hundrade år')">🔉 Vorsingen lassen</button></p>
+  <p><b>Ja, må han leva!</b> <i class="tiny">(jah moh han lehwa)</i> – dreimal singen<br><b>uti hundrade år!</b> <i class="tiny">(ütih hundrade ohr)</i><br><span class="tiny">Heißt: „Er soll leben – bis zu hundert Jahre!“ Danach viermal laut „Hurra!“ rufen.</span></p></div>
+  <div class="card"><h3>👀 Ich sehe was … auf Schwedisch!</h3><p class="tiny">„Jag ser något som är …“ <i>(jag sehr noht som är)</i> – Farbe antippen zum Anhören.</p>
+  <div class="chips">${ISPY.map(c=>`<span class="chip plain" role="button" tabindex="0" onclick="say('${c[0]}')"><b>${c[0]}</b> = ${c[1]} <i>(${c[2]})</i></span>`).join("")}</div></div>
+  <div class="card"><h3>🌲 Die Natur-Regeln (Allemansrätten)</h3>
+  <p>🫐 Heidelbeeren naschen: erlaubt!<br>🥾 Überall wandern & spielen: erlaubt!<br>🏡 In fremde Gärten: nein.<br>🗑 Müll bleibt bei uns im Sackerl.<br>🔥 Feuer nur, wo es Feuerstellen gibt.</p></div>`);
+}
+function setBingoWho(w){store("sw26_bingoWho",w);renderKids();}
+const BLINES=[[0,1,2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15],[0,4,8,12],[1,5,9,13],[2,6,10,14],[3,7,11,15],[0,5,10,15],[3,6,9,12]];
+function hitBingo(i,el){
+  const who=load("sw26_bingoWho","nora");
+  const key="sw26_bingo_"+who;
+  const bs=load(key,{c:{},l:0});
+  bs.c[i]=!bs.c[i];
+  el.classList.toggle("hit",bs.c[i]); el.setAttribute("aria-pressed",bs.c[i]?"true":"false");
+  const lines=BLINES.filter(L=>L.every(j=>bs.c[j])).length;
+  const full=BINGO.every((_,j)=>bs.c[j]);
+  const win=document.getElementById("bingoWin");
+  if(full&&bs.l<99){bs.l=99;if(win)win.innerHTML='<div class="oknote">🏆 SUPER-BINGO! Ganze Karte voll – das gibt ein Eis für alle!</div>';confetti(30);}
+  else if(!full&&lines>(bs.l===99?0:bs.l)){bs.l=lines;if(win)win.innerHTML='<div class="oknote">🎉 BINGO – eine ganze Reihe! Weiter zur Super-Karte?</div>';confetti(16);}
+  else if(!full){bs.l=lines;if(win&&lines===0)win.innerHTML="";}
+  store(key,bs);
+}
+function resetBingo(){
+  if(!confirm("Wirklich eine neue Runde starten? Alle Häkchen dieser Karte werden gelöscht.")) return;
+  const who=load("sw26_bingoWho","nora");
+  store("sw26_bingo_"+who,{c:{},l:0});renderKids();
+}
+function elk(who,d){
+  if(d<0&&!confirm("Einen Elch bei "+(who==="nora"?"Nora":"Karl")+" abziehen?")) return;
+  const e=load("sw26_elk",{nora:0,karl:0});
+  e[who]=Math.max(0,e[who]+d);store("sw26_elk",e);
+  document.getElementById(who==="nora"?"elkNora":"elkKarl").textContent=e[who];
+  const sum=e.nora+e.karl;
+  const se=document.getElementById("elkSum"); if(se)se.textContent=sum;
+  if(d>0){
+    const M={1:"🫎 Der erste Elch – premiärälg!",5:"⭐ 5 Elche – älgspanare!",10:"👑 10 Elche – älgmästare!",25:"🏆 25 Elche – älgkung!"};
+    if(M[e[who]]){showToast((who==="nora"?"Nora: ":"Karl: ")+M[e[who]]);if(e[who]>=10)confetti(14);}
+    const en=document.getElementById("elkNote");
+    if(en&&sum>=10&&!en.innerHTML)en.innerHTML='<div class="oknote">🎉 10+ Elche als Team – das gibt Kanelbullar bei der nächsten Fika!</div>';
+  }
+}
+function showToast(msg){
+  let t=document.getElementById("toast");
+  if(!t){t=document.createElement("div");t.id="toast";document.body.appendChild(t);}
+  t.textContent=msg;t.classList.add("on");
+  clearTimeout(showToast._t);showToast._t=setTimeout(()=>t.classList.remove("on"),3000);
+}
+function confetti(n){
+  try{
+    if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const em=["🎉","⭐","🫎","🇸🇪","🟡"];
+    for(let i=0;i<(n||24);i++){
+      const sp=document.createElement("span");sp.className="cf";sp.textContent=em[i%em.length];
+      sp.style.left=Math.random()*100+"vw";sp.style.animationDelay=(Math.random()*0.7)+"s";sp.style.fontSize=(15+Math.random()*15)+"px";
+      document.body.appendChild(sp);setTimeout(()=>sp.remove(),3400);
+    }
+    if(navigator.vibrate&&(!navigator.userActivation||navigator.userActivation.hasBeenActive))navigator.vibrate([80,40,80]);
+  }catch(e){}
+};
+/* ============ V2: DATEN ============ */
+const MYMAP="1CF-20RaUJRKsbTq7aaEm2oY46LFLvi4";
+const COUNTY={lomma:"Skåne",vimmerby:"Kalmar",stockholm:"Stockholm",skrea:"Halland"};
+const DWDK={bamberg:["Bamberg"],wernigerode:["Harz","Wernigerode"],luebeck:["Lübeck","Ostholstein"],rostock:["Rostock"],dresden:["Dresden"]};
+const PLAY={
+salzburg:[{n:"Stölzlpark",q:"Stölzlpark Salzburg",d:"~700 m: Holzschiff, Sandbagger, Rodelhügel, viel Schatten."},{n:"Hans-Donnerberg-Park",q:"Hans-Donnerberg-Park Salzburg",d:"~1,2 km: einer der beliebtesten der Stadt, Tischtennis, Streetball, Trinkbrunnen."},{n:"Spielplatz im Mirabellgarten",q:"Spielplatz Mirabellgarten Salzburg",d:"Beim Zwergerlgarten – perfekt mit dem Abendbummel kombinierbar."}],
+bamberg:[{n:"Sams-Spielplatz (ERBA-Insel)",q:"Sams-Spielplatz ERBA-Insel Bamberg",d:"~1,5 km: Sams-Thema nach Paul Maar, Wasser- und Matschbereich, Café im Park."},{n:"Hainspielplatz",q:"Spielplatz Hain Bamberg",d:"~3 km: großer schattiger Parkspielplatz, Hainbadestelle + Biergarten nebenan."}],
+wernigerode:[{n:"Spielplatz Lustgarten",q:"Lustgarten Wernigerode",d:"~700 m von der Altstadt, schattig, liegt am Weg zum Schloss."},{n:"Bürgerpark",q:"Bürgerpark Wernigerode",d:"~2 km: Themenspielplätze mit Riesenrutschen + Miniaturenpark „Kleiner Harz“ (Eintritt)."}],
+luebeck:[{n:"Wasserspielplatz Wallstraße",q:"Wasserspielplatz Wallstraße Lübeck",d:"~800 m: großes Planschbecken (Badeschuhe!), Karussell, eingezäunt, Baumschatten."},{n:"Spielplatz Kronsforder Allee",q:"Spielplatz Kronsforder Allee Lübeck",d:"~1,5 km: beliebter, gut ausgestatteter Stadtspielplatz."}],
+kopenhagen:[{n:"Nørrebroparken",q:"Nørrebroparken København",d:"Direkt vor der Tür (~150 m): Spielplatz + Wiesen."},{n:"BaNanna Park",q:"BaNanna Park København",d:"~700 m: Kletterwand – für die 9-Jährige top."},{n:"Hans Tavsens Park",q:"Hans Tavsens Park København",d:"~1,3 km: schöner schattiger Spielplatz beim Assistens-Friedhofspark."}],
+lomma:[{n:"Fladängsparken",q:"Fladängsparken Lomma",d:"~500 m: größter Park Lommas mit Wasserspielplatz und Skatepark."},{n:"Solskensparken",q:"Solskensparken Lomma",d:"~1 km, strandnah, Däumelinchen-Thema – ideal für den 5-Jährigen."},{n:"Bantorget",q:"Bantorget Lomma",d:"~200 m: klein, für die schnelle Runde."}],
+vimmerby:[{n:"Källängsparken",q:"Källängsparken Vimmerby",d:"Direkt neben eurem Airbnb: denkmalgeschützter 50er-Jahre-Park mit Spielplatz, Boule, schattiger Allee."},{n:"Björkbackens Vattenlekplats",q:"Björkbacken Vimmerby",d:"Wasserspielplatz + Abenteuergolf beim Pippi-Themenhotel."}],
+stockholm:[{n:"Tessinparken",q:"Tessinparken Stockholm",d:"~1,2 km, mitten in Gärdet: betreute Parklek + Planschbecken, getrennte Bereiche für Klein und Groß."},{n:"Galärparkens lekplats",q:"Galärparkens lekplats Stockholm",d:"Djurgården, hinter dem Vasa-Museum, 300 m von Junibacken – Schatten + Cafés."}],
+skrea:[{n:"Lekplats Skrea Strand",q:"Lekplats Skrea strand Falkenberg",d:"~1 km: außergewöhnliches Kletter-Spielmodul, Grillplatz, Strand direkt dahinter."},{n:"Vallarnas lekpark",q:"Vallarna Falkenberg",d:"~3 km: große kostenlose Abenteuer-Lekpark mit Kletterturm, Café daneben."}],
+rostock:[{n:"Strandspielplatz am Leuchtturm",q:"Spielplatz Leuchtturm Warnemünde",d:"Direkt am Strandaufgang bei Teepott/Leuchtturm – Spielen mit Meerblick."},{n:"Spielplatz im Kurpark Warnemünde",q:"Kurpark Warnemünde",d:"~600 m von der Promenade, schattig unter Bäumen."}],
+dresden:[{n:"Weißeritzgrünzug",q:"Weißeritzgrünzug Schäferstraße Dresden",d:"300–500 m von der Unterkunft: mehrere Spielanlagen im Grünzug, inkl. Feuerwehrspielplatz."},{n:"Großer Garten",q:"Großer Garten Dresden Spielplatz",d:"~3 km: große Spielplätze + Parkeisenbahn – der Sonntagsklassiker."}]
+};
+const ER={
+salzburg:{t:"Uniklinikum Salzburg (LKH) – Kinder-Notaufnahme im Kinderzentrum, Müllner Hauptstraße 48 (~10–15 min). Gesundheitsberatung: <a href='tel:1450'>1450</a>.",q:"Uniklinikum Salzburg Müllner Hauptstraße 48"},
+bamberg:{t:"Klinikum am Bruderwald – 24-h-Notfallambulanz der Kinderklinik, Buger Straße 80 (~10 min). Bereitschaftsdienst: <a href='tel:116117'>116 117</a>.",q:"Klinikum Bamberg Buger Straße 80"},
+wernigerode:{t:"Harzklinikum Wernigerode – Kinderklinik mit 24-h-Notfallambulanz, Ilsenburger Straße 15 (~7 min vom Schloss). Bereitschaftsdienst: <a href='tel:116117'>116 117</a>.",q:"Harzklinikum Wernigerode Ilsenburger Straße 15"},
+luebeck:{t:"UKSH Campus Lübeck – Kinder-Notaufnahme, Ratzeburger Allee 160 (~12 min). Bereitschaftsdienst: <a href='tel:116117'>116 117</a>.",q:"UKSH Lübeck Ratzeburger Allee 160"},
+kopenhagen:{t:"<b>Wichtig:</b> In Kopenhagen IMMER zuerst <a href='tel:1813'>1813</a> anrufen (rund um die Uhr) – die Hotline triagiert und vergibt den Termin im richtigen Spital. Falls 1813 im Roaming nicht durchgeht: <a href='tel:+4538698900'>+45 38 69 89 00</a>. Nur bei Lebensgefahr direkt 112. Kinder-Akut: Rigshospitalet (BørneUngeKlinikken), Blegdamsvej 9 (~7 min).",q:"Rigshospitalet Blegdamsvej 9 København"},
+lomma:{t:"Barnakut (bis 18 J.): Skånes universitetssjukhus Lund, Akutgatan 4 (~15 min). Vorher <a href='tel:1177'>1177</a> anrufen – Beratung rund um die Uhr, auch Englisch.",q:"Akutmottagning barn Lund Akutgatan 4"},
+vimmerby:{t:"Leichtere Fälle: Hälsocentral/Primärvårdsjour direkt in Vimmerby. Notaufnahme mit Kinderklinik: Västervik, Östra Kyrkogatan 48 (~45 min). Erst <a href='tel:1177'>1177</a> anrufen – die lotsen euch richtig.",q:"Västerviks sjukhus akutmottagning"},
+stockholm:{t:"Barnakut: Astrid Lindgrens Barnsjukhus (Karolinska Solna), Eugeniavägen 23 (~12 min) – ja, das Kinderspital heißt wirklich so. Alternative im Süden: Sachsska barnakuten (Södersjukhuset).",q:"Astrid Lindgrens Barnsjukhus Solna"},
+skrea:{t:"Kinder-Notaufnahme (0–17 J.): Hallands sjukhus <b>Halmstad</b>, Eingang 21, Lasarettsvägen (~30 min Richtung Süden). Nicht Varberg – dort gibt es keine Kinderklinik! Vorher <a href='tel:1177'>1177</a>.",q:"Hallands sjukhus Halmstad barnakuten"},
+rostock:{t:"Unimedizin Rostock – Kinder-Notaufnahme, Ernst-Heydemann-Straße 8 (~10 min). Bereitschaftsdienst: <a href='tel:116117'>116 117</a>.",q:"Unimedizin Rostock Ernst-Heydemann-Straße 8"},
+dresden:{t:"Uniklinikum Carl Gustav Carus – Kinder-Notfallaufnahme Haus 21, Fetscherstraße 74 (~15 min). Bereitschaftsdienst: <a href='tel:116117'>116 117</a>.",q:"Uniklinikum Dresden Fetscherstraße 74"}
+};
+const GROCERY=[["mjölk","Milch"],["filmjölk","Dickmilch (fürs Müsli)"],["grädde","Obers"],["vispgrädde","Schlagobers"],["smör","Butter"],["ost","Käse"],["ägg","Eier"],["bröd","Brot"],["knäckebröd","Knäckebrot"],["bulle/bullar","süße Brötchen (kanelbulle!)"],["mjöl","Mehl"],["socker","Zucker"],["salt","Salz"],["jäst","Germ/Hefe"],["havregryn","Haferflocken"],["flingor","Frühstücksflocken"],["köttfärs","Faschiertes"],["kyckling","Huhn"],["korv","Wurst"],["skinka","Schinken"],["lax","Lachs"],["räkor","Garnelen"],["potatis","Erdäpfel"],["lök","Zwiebel"],["vitlök","Knoblauch"],["morot/morötter","Karotten"],["gurka","Gurke"],["tomat","Paradeiser"],["äpple","Apfel"],["jordgubbar","Erdbeeren"],["blåbär","Heidelbeeren"],["hallon","Himbeeren"],["juice","Fruchtsaft"],["saft","Verdünnungssirup (nicht Saft!)"],["läsk","Limonade"],["kolsyrat vatten","Mineralwasser prickelnd"],["stilla vatten","Wasser still"],["folköl","Leichtbier (max. 3,5 %)"],["glass","Eis"],["godis","Süßigkeiten"],["blöjor","Windeln"],["våtservetter","Feuchttücher"],["solkräm","Sonnencreme"],["myggmedel","Gelsenschutz"],["plåster","Pflaster"],["tvättmedel","Waschmittel"],["diskmedel","Spülmittel"],["toapapper","Klopapier"],["laktosfri","laktosefrei"],["vegetarisk / vegansk","vegetarisch / vegan"],["mælk 🇩🇰","Milch (DK)"],["fløde 🇩🇰","Obers (DK)"],["rugbrød 🇩🇰","Roggenbrot (DK-Klassiker)"],["is 🇩🇰","Eis (DK)"],["slik 🇩🇰","Süßigkeiten (DK)"]];
+const WOTD=[
+["resfeber","das „Reisefieber“ – die Kribbel-Aufregung vor der Abreise","rehs-feber"],
+["utflykt","der Ausflug – heute z. B. zu den Wasserspielen","üht-flükt"],
+["på väg","unterwegs","poh wähg"],
+["slott","das Schloss – heute schlaft ihr in einem!","slott"],
+["snart","bald","snahrt"],
+["hygge 🇩🇰","die dänische Gemütlichkeit – ab heute vor Ort üben","hügge"],
+["lækker 🇩🇰","köstlich, super – passt zu Zimtschnecken","legga"],
+["tak 🇩🇰","danke (auf Dänisch)","tagg"],
+["äntligen","endlich! Heute: Schweden!","änt-lien"],
+["fika","die heilige Kaffeepause mit Gebäck","fihka"],
+["smultronställe","wörtlich „Walderdbeer-Platz“: ein persönlicher Lieblingsort","smultron-stelle"],
+["saga","das Märchen – morgen wird eines wahr","sahga"],
+["älg","der Elch","elj"],
+["grattis!","herzlichen Glückwunsch – heute ganz besonders 🎂","grattis"],
+["kunglig","königlich","küngli"],
+["skärgård","der Schärengarten – Stockholms Inselwelt","schähr-gohrd"],
+["packa","packen – heute geht's an die Westküste","packa"],
+["badkruka","der „Badefeigling“ – wer nur zehenweise ins Wasser geht","bahd-krühka"],
+["solnedgång","der Sonnenuntergang – Westküsten-Spezialität","sohl-nehd-gong"],
+["mångata","die Lichtstraße des Mondes auf dem Wasser","mohn-gahta"],
+["hej då","tschüss – heute heißt es Abschied von Schweden","hey doh"],
+["fotboll","der Fußball – heute spielt United!","fuht-boll"],
+["minnen","die Erinnerungen","minnen"],
+["borta bra men hemma bäst","„auswärts gut, daheim am besten“ – das schwedische Heimkehr-Sprichwort","borta brah men hemma best"]];
+const QUIZ={
+mini:[
+{q:"Welches Tier ist der König des Waldes?",a:["🫎 Der Elch","🐻 Der Bär","🐟 Der Fisch"],c:0},
+{q:"Welche Farben hat die schwedische Flagge?",a:["🔴⚪ Rot und Weiß","🔵🟡 Blau und Gelb","🟢⚪ Grün und Weiß"],c:1},
+{q:"Was schleckt man im Sommer?",a:["🧦 Eine Socke","🪨 Einen Stein","🍦 Ein Eis (glass)"],c:2},
+{q:"Womit fahren wir übers Meer?",a:["⛴️ Mit der Fähre","🚲 Mit dem Rad","🛷 Mit dem Schlitten"],c:0},
+{q:"Wie sagt man in Schweden Danke?",a:["🐸 Quak","🙏 Tack","🚗 Brumm"],c:1},
+{q:"Wer hat rote Zöpfe und ist superstark?",a:["👧 Pippi Langstrumpf","🧙 Eine Hexe","🤖 Ein Roboter"],c:0},
+{q:"Was isst man bei einer Fika?",a:["🥦 Brokkoli","🧊 Eiswürfel","🥐 Eine Zimtschnecke"],c:2},
+{q:"Welche Farbe haben viele Häuser in Schweden?",a:["🔴 Rot","⚫ Schwarz","💜 Lila"],c:0},
+{q:"Wo baden wir in Skrea?",a:["🛁 In der Badewanne","🌊 Im Meer","☕ Im Kaffee"],c:1},
+{q:"Was macht Michel aus Lönneberga dauernd?",a:["😴 Schlafen","😈 Unfug","🧹 Aufräumen"],c:1}],
+kinder:[
+{q:"Wie sagt man auf Schwedisch „Danke“?",a:["Tack","Hej","Glass"],c:0},
+{q:"Welches Tier ist der „König des Waldes“ in Schweden?",a:["Der Bär","Der Elch","Der Wolf"],c:1},
+{q:"Welche Farben hat die schwedische Flagge?",a:["Rot und Weiß","Blau und Gelb","Grün und Weiß"],c:1},
+{q:"Wie heißt Pippi Langstrumpfs Affe?",a:["Herr Nilsson","Herr Karlsson","Herr Svensson"],c:0},
+{q:"Wie heißt Michels kleine Schwester?",a:["Lotta","Klein-Ida","Madita"],c:1},
+{q:"Was ist eine „kanelbulle“?",a:["Eine Zimtschnecke","Ein kleines Boot","Eine Mütze"],c:0},
+{q:"Wie heißt die Hauptstadt von Schweden?",a:["Oslo","Kopenhagen","Stockholm"],c:2},
+{q:"Was macht man bei einer „Fika“?",a:["Fisch fangen","Pause mit Kakao/Kaffee und Gebäck","Schnell laufen"],c:1},
+{q:"Wie heißt Pippis Pferd?",a:["Kleiner Onkel","Alter Schimmel","Blitz"],c:0},
+{q:"Wie heißt die berühmte Brücke zwischen Dänemark und Schweden?",a:["Ostseebrücke","Öresundbrücke","Wikingerbrücke"],c:1},
+{q:"Was heißt „glass“ auf Deutsch?",a:["Glas","Eis","Wasser"],c:1},
+{q:"In welchem Dorf wohnt Michel aus Lönneberga?",a:["Bullerbü","Lönneberga","Saltkrokan"],c:1},
+{q:"Was heißt „hej då“?",a:["Guten Morgen","Tschüss","Wie geht's?"],c:1},
+{q:"Welche Beeren darf man in Schweden im Wald einfach pflücken?",a:["Heidelbeeren","Gar keine","Nur mit Erlaubnis"],c:0},
+{q:"Wo wohnt Pippi Langstrumpf?",a:["Villa Kunterbunt","Schloss Katthult","Bullerbü"],c:0},
+{q:"Wie heißt Ronjas Vater, der Räuberhauptmann?",a:["Borka","Mattis","Glatzen-Per"],c:1},
+{q:"Was ist ein „köttbulle“?",a:["Ein Fleischbällchen","Ein Kissen","Ein kleiner Hund"],c:0},
+{q:"Welche Farbe haben ganz viele schwedische Holzhäuser?",a:["Rot","Lila","Schwarz"],c:0},
+{q:"Wie heißt das Geld in Schweden?",a:["Euro","Kronen","Taler"],c:1},
+{q:"Was heißt „en, två, tre“?",a:["eins, zwei, drei","rot, gelb, blau","Mama, Papa, Kind"],c:0},
+{q:"Was bekommen viele schwedische Kinder am Samstag?",a:["Lördagsgodis – Samstags-Süßigkeiten","Hausaufgaben","Ein neues Spielzeug"],c:0},
+{q:"Was frisst ein Elch am liebsten?",a:["Zweige, Blätter und Wasserpflanzen","Fische","Beeren-Marmelade"],c:0},
+{q:"Wie heißt das rote Holzpferd, das es überall in Schweden gibt?",a:["Dalapferd","Wikingerpferd","Elchpferd"],c:0},
+{q:"Wie heißen die Brüder Löwenherz mit Vornamen?",a:["Karl und Jonathan","Michel und Alfred","Kalle und Anders"],c:0}],
+erwachsene:[
+{q:"Wie viele Menschen leben in Schweden?",a:["ca. 6 Millionen","ca. 10,5 Millionen","ca. 15 Millionen"],c:1},
+{q:"Seit wann verbindet die Öresundbrücke Dänemark und Schweden?",a:["1992","2000","2008"],c:1},
+{q:"Mit welchem Song gewann ABBA 1974 den Eurovision Song Contest?",a:["Mamma Mia","Waterloo","Dancing Queen"],c:1},
+{q:"Was ist „Systembolaget“?",a:["Das staatliche Alkoholmonopol","Eine Baumarktkette","Die schwedische Bahn"],c:0},
+{q:"Wer stiftete den Nobelpreis?",a:["Alfred Nobel","Ingvar Kamprad","Carl von Linné"],c:0},
+{q:"In welcher Stadt wurde Astrid Lindgren geboren?",a:["Stockholm","Vimmerby","Göteborg"],c:1},
+{q:"Was bedeutet „lagom“?",a:["Sehr viel","Genau richtig","Langsam"],c:1},
+{q:"Wie heißt der größte See Schwedens?",a:["Vättern","Mälaren","Vänern"],c:2},
+{q:"Was ist „surströmming“?",a:["Vergorener Hering","Ein Tanz","Süßer Senf"],c:0},
+{q:"Wer gründete IKEA?",a:["Erling Persson","Ingvar Kamprad","Ruben Rausing"],c:1},
+{q:"Wie viel von Schwedens Fläche ist von Wald bedeckt?",a:["ca. 30 %","ca. 50 %","fast 70 %"],c:2},
+{q:"Wann sank das Kriegsschiff Vasa?",a:["1628, auf der Jungfernfahrt","1721, im Krieg gegen Russland","1809, vor Finnland"],c:0},
+{q:"Wann feiern die Schweden Midsommar?",a:["Ende Juni","1. Mai","Ende August"],c:0},
+{q:"Wie heißt das schwedische Parlament?",a:["Storting","Riksdag","Folketing"],c:1},
+{q:"Welche zwei Städte verbindet die Öresundbrücke?",a:["Kopenhagen und Malmö","Helsingør und Helsingborg","Kopenhagen und Göteborg"],c:0},
+{q:"Wie heißt Schwedens zweitgrößte Stadt?",a:["Malmö","Uppsala","Göteborg"],c:2},
+{q:"Wer schrieb „Nils Holgersson“ – und bekam als erste Frau den Literaturnobelpreis?",a:["Selma Lagerlöf","Astrid Lindgren","Karin Boye"],c:0},
+{q:"Wie viele Inseln hat der Stockholmer Schärengarten ungefähr?",a:["300","3.000","30.000"],c:2},
+{q:"Von welcher Band ist „The Final Countdown“?",a:["Europe","Roxette","Ace of Base"],c:0},
+{q:"Welches Videospiel kommt aus Schweden?",a:["Minecraft","Tetris","Super Mario"],c:0},
+{q:"Wie heißt der höchste Berg Schwedens?",a:["Kebnekaise","Galdhøpiggen","Åreskutan"],c:0},
+{q:"Seit wann fährt Schweden rechts?",a:["Schon immer","Seit 1967 („Dagen H“)","Seit 1995 (EU-Beitritt)"],c:1},
+{q:"Was ist ein „smörgåsbord“?",a:["Ein Buffet","Ein Surfbrett","Ein Butterfass"],c:0},
+{q:"Welcher Fußballer aus Malmö hat ein eigenes Verb im schwedischen Wörterbuch?",a:["Zlatan Ibrahimović („zlatanera“)","Henrik Larsson","Freddie Ljungberg"],c:0}]
+};
+const FACTS={
+kinder:[
+"In Schweden leben rund 300.000 Elche – im Sommer mehr als in jedem anderen Land Europas. 🫎",
+"Elche können richtig gut schwimmen – sogar mehrere Kilometer weit!",
+"Pippi heißt mit vollem Namen: Pippilotta Viktualia Rollgardina Pfefferminz Efraimstochter Langstrumpf.",
+"Michel aus Lönneberga heißt in Schweden gar nicht Michel – sondern Emil!",
+"Viele schwedische Kinder bekommen nur samstags Süßigkeiten. Das heißt „lördagsgodis“ – Samstagszuckerl.",
+"Schweden hat rund 100.000 Seen. Wer jeden Tag in einem anderen baden wollte, bräuchte über 270 Jahre.",
+"Ganz im Norden Schwedens geht die Sonne im Sommer wochenlang überhaupt nicht unter – Mitternachtssonne!",
+"Am 4. Oktober feiert Schweden den „Kanelbullens dag“ – den Ehrentag der Zimtschnecke. 🥐",
+"In Jukkasjärvi wird jeden Winter ein ganzes Hotel aus Eis gebaut – im Frühling schmilzt es einfach weg.",
+"Für „bitte“ gibt es auf Schwedisch kein eigenes Wort – man sagt einfach ganz oft „tack“ (danke).",
+"Das rote Dalapferd aus Holz ist Schwedens heimliches Wappentier – das größte steht 13 Meter hoch in Avesta.",
+"Zu Weihnachten schaut halb Schweden um 15 Uhr Donald Duck – „Kalle Anka“ läuft seit über 60 Jahren im TV.",
+"Die Wasserspiele in Hellbrunn haben Fürsten schon vor 400 Jahren nass gespritzt – die Tricks funktionieren heute noch.",
+"Knäckebrot backen die Menschen in Schweden schon seit Wikingerzeiten – früher mit Loch, zum Aufhängen an der Decke.",
+"IKEA-Sachen heißen nach echten Orten und Namen: Betten nach norwegischen Orten, Teppiche nach dänischen."],
+erwachsene:[
+"Schweden hat seit über 200 Jahren keinen Krieg mehr geführt – seit 1814. Europarekord.",
+"„Zlatanera“ steht wirklich im schwedischen Wörterbuch: etwas mit purer Dominanz erledigen. Danke, Zlatan aus Malmö.",
+"Die Stockholmer U-Bahn gilt als längste Kunstgalerie der Welt – über 90 Stationen sind künstlerisch gestaltet.",
+"Der „Elchtest“ heißt seit 1997 so, weil eine Mercedes A-Klasse beim Ausweichmanöver in Schweden umkippte.",
+"Bluetooth ist nach dem Wikingerkönig Harald Blauzahn benannt – das Logo besteht aus seinen Runen H+B.",
+"Surströmming-Dosen blähen sich durch die Gärung so auf, dass mehrere Airlines sie als Gefahrgut verbieten.",
+"Schweden verbrennt Müll so effizient zu Energie, dass es zeitweise Müll aus anderen Ländern importiert hat.",
+"Rechtsverkehr gibt es in Schweden erst seit dem 3. September 1967 – „Dagen H“, umgestellt über Nacht im ganzen Land.",
+"Schweden gehört beim Kaffeekonsum zur Weltspitze – Fika ist in vielen Firmen quasi Pflichttermin.",
+"Die Rezepte fürs Nobelpreis-Bankett werden bis zum Abend der Verleihung streng geheim gehalten.",
+"2018 twitterte Schwedens offizieller Account: Köttbullar basieren auf einem Rezept, das Karl XII. aus der Türkei mitbrachte.",
+"Fast jede zweite schwedische Familie hat Zugang zu einem Sommerhaus – der sommarstuga-Traum ist real.",
+"Das Vasa-Schiff kam 1628 genau 1.300 Meter weit, bevor es sank – heute ist es Skandinaviens meistbesuchtes Museum.",
+"In Schweden ist Bargeld so selten, dass sogar die Kirchenkollekte per Handy-App „Swish“ eingesammelt wird.",
+"Systembolaget gehört dem Staat – und wirbt in eigenen Kampagnen offensiv dafür, WENIGER zu trinken."]
+};
+let factState={set:"kinder",order:[],pos:0};
+function factShuffle(){factState.order=FACTS[factState.set].map((_,i)=>i).sort(()=>Math.random()-0.5);factState.pos=0;}
+function setFactSet(set){factState.set=set;factShuffle();
+  document.querySelectorAll("#factToggle button").forEach(b=>b.classList.toggle("on",b.dataset.s===set));
+  nextFact(true);}
+function nextFact(first){
+  if(!factState.order.length||factState.pos>=factState.order.length) factShuffle();
+  const f=FACTS[factState.set][factState.order[factState.pos]];
+  if(!first) factState.pos++;
+  else factState.pos=1;
+  const el=document.getElementById("factText");
+  if(el){el.style.opacity=0;setTimeout(()=>{el.textContent=f;el.style.opacity=1;},120);}
+}
+/* ============ V2: FUNKTIONEN ============ */
+function wotdCard(t){
+  const idx=daysBetween(DAYS[0].d,t);
+  if(idx<0||idx>=WOTD.length) return "";
+  const w=WOTD[idx];
+  const sv=w[0].replace(" 🇩🇰","");
+  const lang=w[0].includes("🇩🇰")?"da-DK":"sv-SE";
+  return `<div class="card"><h3>🇸🇪 Wort des Tages</h3><div class="rowline"><span class="big">${w[0]}</span><button class="iconbtn" aria-label="Wort vorsprechen" onclick="say('${sv}','${lang}')">🔉</button></div><p class="muted">${w[1]}</p><div class="tiny">Aussprache: ${w[2]}</div></div>`;
+}
+function say(t,lang){try{if(!("speechSynthesis" in window))return;const u=new SpeechSynthesisUtterance(t);u.lang=lang||"sv-SE";u.rate=0.85;speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}}
+const CTRY={salzburg:"AT",bamberg:"DE",wernigerode:"DE",luebeck:"DE",kopenhagen:"DK",lomma:"SE",vimmerby:"SE",stockholm:"SE",skrea:"SE",rostock:"DE",dresden:"DE"};
+function curStationKey(){const t=todayISO();const d=dayFor(t);if(d)return d.st;if(t<DAYS[0].d)return "salzburg";return "dresden";}
+function openNotfall(){
+  pushNav();
+  const key=curStationKey(); const c=CTRY[key]; const st=ST[key];
+  const hot=c==="SE"?[["1177 – Ärzte-Hotline (24 h)","tel:1177"],["Falls 1177 nicht geht: +46 771 11 77 00","tel:+46771117700"]]
+    :c==="DK"?[["1813 – IMMER zuerst anrufen (24 h)","tel:1813"],["Falls 1813 nicht geht: +45 38 69 89 00","tel:+4538698900"]]
+    :c==="DE"?[["116 117 – ärztlicher Bereitschaftsdienst","tel:116117"]]
+    :[["1450 – Gesundheitsberatung","tel:1450"]];
+  const gift=c==="SE"?["Giftnotruf SE: +46 10 456 67 00","tel:+46104566700"]:c==="DK"?["Giftlinjen DK: +45 82 12 12 12","tel:+4582121212"]:c==="DE"?["Giftnotruf DE: +49 551 19240","tel:+4955119240"]:["Vergiftungszentrale AT: +43 1 406 43 43","tel:+4314064343"];
+  const box=$("#v-"+curView);
+  box.innerHTML=`<div class="topbar"><button class="back" aria-label="Zurück" onclick="navBack()">‹</button><h2>🚨 Notfall</h2></div>
+  <a class="btn" style="display:block;text-align:center;font-size:21px;padding:16px;background:var(--red);margin:6px 0" href="tel:112">🚨 112 anrufen</a>
+  <div class="card"><h3>📞 Vor Ort (${st.fl} ${st.name})</h3>${hot.map(x=>`<p><a class="btn sub" style="display:block;text-align:center" href="${x[1]}">${x[0]}</a></p>`).join("")}
+  <p><a class="btn ghost" style="display:block;text-align:center" href="${gift[1]}">☠️ ${gift[0]}</a></p></div>
+  <div class="card"><h3>🏥 Nächste Kinder-Notaufnahme</h3><p>${ER[key].t}</p><a class="btn sub" href="${mapsLink(ER[key].q)}" target="_blank" rel="noopener">🗺️ Route zum Krankenhaus</a></div>
+  <div class="card"><h3>🧒 Kind verloren?</h3><p>1) Ruhig bleiben, sofort Personal informieren – Parks & Strände haben eingespielte Abläufe.<br>2) Eine:r bleibt am vereinbarten Treffpunkt, eine:r sucht.<br>3) Die Kinder wissen: stehen bleiben, laut rufen, nur Uniform/Namensschild oder andere Eltern mit Kindern ansprechen.</p></div>
+  <div class="card"><h3>🚗 Panne</h3><p>ÖAMTC-Nothilfe Ausland: <a href="tel:+431251200">+43 1 25 120 00</a> (24 h)<br>Warnblinker → Westen im Auto anziehen → Dreieck aufstellen → alle hinter die Leitplanke.</p></div>
+  <p class="tiny" style="margin:8px 4px">Botschaften: Stockholm <a href="tel:+4686651770">+46 8 665 17 70</a> · Kopenhagen <a href="tel:+4539294141">+45 39 29 41 41</a> · Karten sperren: PSA <a href="tel:+4312048800">+43 1 204 8800</a></p>`;
+  window.scrollTo({top:0});
+}
+async function getWxH(key){
+  const st=ST[key]; const cache=load("sw26_wxh",{}); const c=cache[key];
+  if(c && Date.now()-c.t<2*3600e3) return c.data;
+  try{
+    const u=`https://api.open-meteo.com/v1/forecast?latitude=${st.lat}&longitude=${st.lon}&hourly=precipitation_probability,precipitation&timezone=Europe%2FBerlin&forecast_days=2`;
+    const r=await fetch(u); if(!r.ok) throw 0;
+    const j=await r.json(); if(!j.hourly||!j.hourly.time) throw 0;
+    cache[key]={t:Date.now(),data:j.hourly}; store("sw26_wxh",cache);
+    return j.hourly;
+  }catch(e){ return c?c.data:null; }
+}
+function rainStrip(hh,dateS){
+  if(!hh) return "";
+  const idx=[];
+  for(let i=0;i<hh.time.length;i++){
+    if(hh.time[i].startsWith(dateS)){const hr=parseInt(hh.time[i].slice(11,13),10); if(hr>=7&&hr<=22) idx.push(i);}
+  }
+  if(!idx.length) return "";
+  let firstRain=null,rainy=0;
+  const bars=idx.map(i=>{
+    const p=hh.precipitation_probability[i]||0;
+    const hr=parseInt(hh.time[i].slice(11,13),10);
+    if(p>=45){rainy++; if(firstRain===null)firstRain=hr;}
+    const hgt=Math.max(2,Math.round(p*0.38));
+    return `<span><i style="height:${hgt}px;${p>=45?"":"background:var(--line);"}opacity:${p>=45?1:.6}"></i><b>${hr%3===0?hr:""}</b></span>`;
+  }).join("");
+  let sum;
+  if(!rainy) sum="Tagsüber voraussichtlich trocken";
+  else if(firstRain<=9&&rainy>=8) sum="Immer wieder Regen – Indoor-Plan bereithalten";
+  else if(firstRain<=9) sum="Früh nass, später besser – Blick auf die Balken";
+  else sum=`Regen ab ca. ${firstRain} Uhr möglich – Programm davor legen`;
+  return `<div class="tiny" style="margin-top:10px"><b>☔ ${sum}</b></div><div class="rs">${bars}</div><div class="rslegend"><span>7 Uhr</span><span>Regenrisiko pro Stunde</span><span>22 Uhr</span></div>`;
+}
+async function getWarnings(key){
+  const cache=load("sw26_warn",{}); const c=cache[key];
+  if(c && Date.now()-c.t<3600e3) return c.v;
+  let v=null;
+  try{
+    if(COUNTY[key]){
+      const r=await fetch("https://opendata-download-warnings.smhi.se/ibww/api/version/1/warning.json");
+      if(!r.ok) throw 0;
+      const j=await r.json(); v=[];
+      (j||[]).forEach(w=>{(w.warningAreas||[]).forEach(a=>{
+        const lvl=a.warningLevel&&a.warningLevel.code;
+        if(!["YELLOW","ORANGE","RED"].includes(lvl)) return;
+        if(!(a.affectedAreas||[]).some(x=>(x.sv||"").includes(COUNTY[key]))) return;
+        if(a.approximateEnd && new Date(a.approximateEnd)<new Date()) return;
+        v.push({ev:(w.event&&(w.event.sv||w.event.en))||"Varning",lvl:lvl,txt:(a.eventDescription&&(a.eventDescription.sv||""))||""});
+      });});
+    } else if(DWDK[key]){
+      const r=await fetch("https://www.dwd.de/DWD/warnungen/warnapp/json/warnings.json");
+      if(!r.ok) throw 0;
+      const raw=await r.text();
+      const j=JSON.parse(raw.substring(raw.indexOf("(")+1,raw.lastIndexOf(")")));
+      const all=[]; Object.values(j.warnings||{}).forEach(arr=>(arr||[]).forEach(w=>all.push(w)));
+      Object.keys(DWDK).forEach(k2=>{
+        let vv=[];
+        all.forEach(w=>{
+          if((w.level||0)<2) return;
+          if(!DWDK[k2].some(kw=>(w.regionName||"").includes(kw))) return;
+          vv.push({ev:w.event||"Warnung",lvl:w.level>=4?"RED":w.level===3?"ORANGE":"YELLOW",txt:""});
+        });
+        const seen=new Set(); vv=vv.filter(w=>!seen.has(w.ev)&&seen.add(w.ev));
+        cache[k2]={t:Date.now(),v:vv};
+      });
+      store("sw26_warn",cache);
+      return cache[key].v;
+    }
+  }catch(e){ v=c?c.v:null; }
+  if(v!==null){cache[key]={t:Date.now(),v:v}; store("sw26_warn",cache);}
+  return v;
+}
+async function warnHtml(key){
+  if(key==="kopenhagen") return '<div class="tiny" style="margin-top:6px">Amtliche Warnungen Dänemark: <a href="https://www.dmi.dk/varsler" target="_blank" rel="noopener">dmi.dk</a></div>';
+  if(!COUNTY[key]&&!DWDK[key]) return "";
+  const v=await getWarnings(key);
+  if(v===null) return "";
+  if(!v.length) return '<div class="tiny" style="margin-top:6px">✅ Keine amtlichen Unwetterwarnungen</div>';
+  return v.slice(0,3).map(w=>`<div class="${w.lvl==="YELLOW"?"note":"warn"}">⚠️ <b>${esc(w.ev)}</b>${w.txt?" – "+esc(w.txt):""} <span class="tiny">(${w.lvl==="YELLOW"?"gelbe":w.lvl==="ORANGE"?"orange":"rote"} Warnstufe)</span></div>`).join("");
+}
+async function getBath(){
+  const c=load("sw26_bath",null);
+  if(c && Date.now()-c.t<6*3600e3) return c.v;
+  try{
+    const r=await fetch("https://badplatsen.havochvatten.se/badplatsen/api/detail/SE0A11382000002849");
+    if(!r.ok) throw 0;
+    const j=await r.json();
+    const v={cls:j.classificationText,algal:j.algalText,temp:j.sampleTemperature,val:j.sampleValue,date:j.sampleDate};
+    store("sw26_bath",{t:Date.now(),v:v}); return v;
+  }catch(e){ return c?c.v:null; }
+}
+async function bathHtml(){
+  const b=await getBath(); if(!b) return "";
+  const ok=b.val===1;
+  const d=b.date?new Date(b.date):null;
+  const ds=d?d.getDate()+"."+(d.getMonth()+1)+".":"";
+  return `<div class="${ok?"oknote":"warn"}">🏊 Badewasser Skrea (amtlich): „${esc(b.cls||"–")}“${ds?" · letzte Probe "+ds+(ok?" einwandfrei":" mit Anmerkung"):""}${b.algal&&b.algal.indexOf("Ingen")===0?" · keine Algenblüte":""}</div>`;
+}
+async function fillTomorrow(t){
+  const el=document.getElementById("hTomorrow"); if(!el) return;
+  if(new Date().getHours()<18) return;
+  const tm=iso(new Date(d2(t).getTime()+86400000));
+  const day=dayFor(tm); if(!day) return;
+  let h=`<div class="card blue"><h3>🌙 Blick auf morgen: ${day.ti}</h3>`;
+  if(day.type==="drive") h+=`<p class="muted"><b>${day.drive.dep}</b> · ${day.drive.km} km (${day.drive.hrs})</p>`;
+  if(day.ferry) h+=`<p class="muted">⛴️ ${day.ferry.n} – Abfahrt ${day.ferry.dep}</p>`;
+  const prep=day.ferry?["Auto heute Abend packen & tanken","Frühstück und Jause fürs Auto vorrichten","Wecker stellen – Check-in nicht verpassen"]:day.type==="drive"?["Trinkflaschen füllen, Snackbox richten","Hörspiele und Tablets laden","Kühlschrank-Reste = morgen Picknick"]:[];
+  if(prep.length) h+=`<p>`+prep.map(p=>"• "+p).join("<br>")+`</p>`;
+  h+=`<div id="tmWx"></div></div>`;
+  el.innerHTML=h;
+  const daily=await getWx(day.st);
+  const w=document.getElementById("tmWx");
+  if(w&&daily) w.innerHTML=wxRows(daily,tm,tm,1);
+}
+function parkStatusHtml(){
+  const pk=load("sw26_park",null);
+  if(!pk) return '<p class="muted">Noch kein Standort gespeichert.</p>';
+  const d=new Date(pk.t);
+  return `<p>📍 Gespeichert am ${d.getDate()}.${d.getMonth()+1}. um ${String(d.getHours()).padStart(2,"0")}:${String(d.getMinutes()).padStart(2,"0")} Uhr${pk.note?` · <i>${esc(pk.note)}</i>`:""}</p>
+  <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=${pk.lat},${pk.lon}&travelmode=walking" target="_blank" rel="noopener">🚶 Zum Auto navigieren</a> <button class="btn ghost" onclick="parkClear()">Löschen</button>`;
+}
+function parkSave(){
+  const el=document.getElementById("parkStatus");
+  if(!("geolocation" in navigator)){alert("GPS ist in diesem Browser nicht verfügbar.");return;}
+  if(el) el.innerHTML='<p class="muted">📡 GPS wird geholt …</p>';
+  navigator.geolocation.getCurrentPosition(pos=>{
+    const note=(document.getElementById("parkNote")||{value:""}).value||"";
+    store("sw26_park",{lat:pos.coords.latitude.toFixed(6),lon:pos.coords.longitude.toFixed(6),t:Date.now(),note:note.trim()});
+    if(el) el.innerHTML=parkStatusHtml();
+  },err=>{
+    if(el) el.innerHTML='<div class="warn">GPS gerade nicht verfügbar. Tipp: funktioniert über die App-Adresse (https), nicht aus einer lokal gespeicherten Datei.</div>'+parkStatusHtml();
+  },{enableHighAccuracy:true,timeout:12000});
+}
+function parkClear(){localStorage.removeItem("sw26_park");const el=document.getElementById("parkStatus");if(el)el.innerHTML=parkStatusHtml();}
+function shareToday(){
+  const t=todayISO(); const day=dayFor(t);
+  let txt;
+  if(!day){txt="Schweden 2026 – bald geht's los! 🇸🇪";}
+  else{
+    txt=fmtD(t)+" – "+day.ti+"\n";
+    if(day.type==="drive") txt+="🚗 "+day.drive.from+" → "+day.drive.to+", "+day.drive.km+" km ("+day.drive.hrs+")\n";
+    if(day.ferry) txt+="⛴️ "+day.ferry.n+", Abfahrt "+day.ferry.dep+"\n";
+    (day.prog||[]).slice(0,5).forEach(p=>{txt+="• "+p.replace(/<[^>]*>/g,"")+"\n";});
+    const cache=load("sw26_wx",{}); const c=cache[day.st];
+    if(c&&c.data){const i=c.data.time.indexOf(t); if(i>=0) txt+="🌦️ "+WCODE(c.data.weather_code[i])[1]+", "+Math.round(c.data.temperature_2m_max[i])+"°/"+Math.round(c.data.temperature_2m_min[i])+"°\n";}
+    txt+="– aus unserer Schweden-App 🇸🇪";
+  }
+  if(navigator.share){navigator.share({title:"Schweden 2026",text:txt}).catch(()=>{});}
+  else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(()=>alert("Tagesplan kopiert – einfach irgendwo einfügen!"));}
+  else alert(txt);
+}
+let qz=null;
+function startQuiz(set){
+  qz={set:set,idx:0,score:0,order:QUIZ[set].map((_,i)=>i).sort(()=>Math.random()-0.5).slice(0,8)};
+  renderQuiz();
+}
+function renderQuiz(){
+  const el=document.getElementById("quizBox"); if(!el||!qz) return;
+  if(qz.idx>=qz.order.length){
+    const n=qz.order.length;
+    const qb=load("sw26_quizbest",{});
+    let extra="";
+    if(qz.score>(qb[qz.set]||0)){qb[qz.set]=qz.score;store("sw26_quizbest",qb);extra+='<div class="oknote">🏅 Neuer Rekord!</div>';confetti(14);}
+    if(qz.score===n){extra+='<div class="oknote">👑 Quiz-König:in der Rückbank – fehlerfrei!</div>';confetti(24);}
+    el.innerHTML=`<div class="oknote">🏁 Fertig! <b>${qz.score} von ${n}</b> richtig${qz.score>=n*0.7&&qz.score<n?" – stark!":""}</div>${extra}<button class="btn sub sm" onclick="startQuiz('${qz.set}')">Noch eine Runde (neue Fragen)</button>`;
+    const qbEl=document.getElementById("quizBest");
+    if(qbEl) qbEl.innerHTML=["mini","kinder","erwachsene"].filter(k=>qb[k]).map(k=>"🏅 "+({mini:"Mini",kinder:"Kinder",erwachsene:"Erwachsene"})[k]+": "+qb[k]+"/8").join(" · ");
+    return;
+  }
+  const q=QUIZ[qz.set][qz.order[qz.idx]];
+  el.innerHTML=`<p class="tiny">Frage ${qz.idx+1} von ${qz.order.length} · Punkte: ${qz.score}</p><p><b>${q.q}</b></p>`+q.a.map((a,i)=>`<button class="qbtn${qz.set==="mini"?" big":""}" onclick="answerQuiz(${i})">${a}</button>`).join("")+`<div id="quizFb"></div>`;
+}
+function answerQuiz(i){
+  if(!qz) return;
+  const q=QUIZ[qz.set][qz.order[qz.idx]];
+  const btns=document.querySelectorAll("#quizBox .qbtn");
+  if(!btns.length||btns[0].disabled) return;
+  btns.forEach((b,j)=>{b.disabled=true;
+    if(j===q.c){b.classList.add("ok");b.insertAdjacentText("beforeend"," ✓");}
+    else if(j===i){b.classList.add("no");b.insertAdjacentText("beforeend"," ✗");}
+  });
+  if(i===q.c){qz.score++;if(navigator.vibrate&&(!navigator.userActivation||navigator.userActivation.hasBeenActive))navigator.vibrate(40);}
+  const fb=document.getElementById("quizFb");
+  if(fb) fb.innerHTML=(i===q.c?'<div class="oknote">✅ Richtig!</div>':`<div class="warn">Richtig wäre: ${q.a[q.c]}</div>`)+`<button class="btn sm" onclick="qz.idx++;renderQuiz()">Weiter →</button>`;
+}
+function toggleMyMap(){
+  const b=document.getElementById("myMapBox"); const btn=document.getElementById("myMapBtn");
+  if(!b) return;
+  if(b.innerHTML){b.innerHTML=""; if(btn) btn.textContent="Karte hier anzeigen"; return;}
+  b.innerHTML=`<iframe class="mymap" loading="lazy" src="https://www.google.com/maps/d/embed?mid=${MYMAP}" title="Reisekarte"></iframe>`;
+  if(btn) btn.textContent="Karte ausblenden";
+}
+/* ================= START ================= */
+function setHeadDate(){
+  const t=todayISO(); const sim=!!localStorage.getItem("sw26_date")||!!new URLSearchParams(location.search).get("date");
+  const first=DAYS[0].d,last=DAYS[DAYS.length-1].d;
+  let txt;
+  if(t<first){txt="noch "+daysBetween(t,first)+" Tage";}
+  else if(t<=last){txt="Tag "+(daysBetween(first,t)+1)+" · "+fmtShort(t);}
+  else{txt="Hej då!";}
+  $("#headDate").textContent=(sim?"🔧 ":"")+txt;
+}
+function pushNav(){try{history.pushState({s:1},"");}catch(e){}}
+function navBack(){if(history.state&&history.state.s){history.back();}else{go(curView);}}
+window.addEventListener("popstate",()=>{go(curView);});
+let lastRenderDay=todayISO(), lastRenderTs=Date.now();
+function freshen(){
+  const now=todayISO();
+  if(now!==lastRenderDay){lastRenderDay=now;lastRenderTs=Date.now();setHeadDate();go("heute");}
+  else if(Date.now()-lastRenderTs>3*3600e3){lastRenderTs=Date.now();setHeadDate();go(curView);}
+}
+document.addEventListener("visibilitychange",()=>{if(!document.hidden)freshen();});
+window.addEventListener("pageshow",freshen);
+setInterval(freshen,60000);
+setHeadDate();
+go("heute");
+if("serviceWorker" in navigator && location.protocol.startsWith("http")){
+  navigator.serviceWorker.register("sw.js").catch(()=>{});
+}
+</script>
+</body>
+</html>
