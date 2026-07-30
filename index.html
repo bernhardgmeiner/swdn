@@ -179,6 +179,13 @@ iframe.mymap{width:100%;height:420px;border:0;border-radius:12px;margin-top:10px
 .chips.actions .chip{min-height:44px;display:inline-flex;align-items:center;padding:8px 14px;font-size:13.5px;border:1.5px solid var(--line);cursor:pointer}
 .qbtn.big{font-size:18px;padding:13px 14px}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}}
+.checkrow label small{display:block;color:var(--ink3);font-size:12.5px;font-weight:400;margin-top:1px}
+.checkrow.done label small{text-decoration:line-through}
+.checkrow.prio label{font-weight:700}
+.checkrow.prio input{outline:2px solid var(--yellow);outline-offset:1px;border-radius:5px}
+details.packdet summary .tiny{font-weight:600}
+.pkm{height:10px;background:var(--blue-soft);border-radius:99px;overflow:hidden;margin-top:8px}
+.pkmf{height:100%;width:0;background:linear-gradient(90deg,var(--yellow),#E8A61C);border-radius:99px;transition:width .35s ease}
 </style>
 </head>
 <body>
@@ -478,18 +485,104 @@ const DAYS = [
  prog:["Ankommen, auspacken, Fotos anschauen. Ihr habt's verdient."]}
 ];
 const PACK = {
-"Dokumente":["Reisepässe (alle 4!)","e-cards (Rückseite = EU-Krankenversicherung)","Führerschein + Zulassungsschein","Grüne Versicherungskarte","Buchungs-Referenzen (sind auch hier in der App)","Öresund-Online-Ticket (vorab kaufen!)"],
-"Auto":["Warnwesten für alle","Verbandszeug + Warndreieck","Parkscheibe (Pflicht in Dänemark!)","Handyhalterung + Ladekabel","Sonnenblenden für die Rückbank","Müllsackerl + Feuchttücher","Picknickdecke"],
-"Strand & draußen":["Badesachen für alle","Neoprenshortys für die Kinder (17–19 °C Wasser!)","Handtücher + Mikrofaser-Reserve","Strandmuschel/Windschutz","Sandspielzeug + Drachen","Schwimmflügel/Schwimmhilfe für Karl"],
-"Kleidung":["Regenjacken für alle (Schweden!)","Warme Schicht für die Abende","Feste Schuhe + Sandalen","Kappen/Sonnenhüte"],
-"Kinder":["Hörspiele/Kopfhörer für die Fahrten","Mal- und Rätselzeug","Lieblingskuscheltiere","Wasserfester Stift (Handynummer auf den Kinderarm an vollen Tagen)","Reise-Übelkeitsmittel (falls nötig)","Snack-Box je Kind"],
-"Technik":["Powerbank(s)","Ladekabel-Set (kein Adapter nötig – EU)","Kamera","Kopfhörer"],
-"Apotheke":["Zeckenzange/-karte (Südschweden!)","Gelsen- & Zeckenschutz","Sonnencreme 50+","Fieberthermometer + Fiebersaft","Pflaster-Set","persönliche Medikamente"]
+"Dokumente & Geld":[
+ ["Reisepässe alle 4","Kinderpässe von Nora und Karl auf Gültigkeit prüfen – die laufen schneller ab!",1],
+ "e-cards alle 4 (Rückseite = EU-Krankenversicherung)",
+ "Führerschein + Zulassungsschein",
+ "Grüne Karte + Europäischer Unfallbericht",
+ ["Öresund-Online-Ticket gekauft","64 € statt 72 € – oresundsbron.com",1],
+ ["CZ-E-Vignette für die Heimreise","Dresden→Wien fährt über die D1 – vorab online kaufen",1],
+ "Bankomat- + Kreditkarte (Limits geprüft)",
+ ["Etwas Bargeld-Reserve in Euro","SEK/DKK braucht ihr kaum – die Karte zahlt alles"],
+ ["Fotos aller Pässe + e-cards am Handy","Falls unterwegs etwas verloren geht"]],
+"Auto":[
+ "Warnwesten für alle 4 + Warndreieck",
+ "Verbandszeug",
+ ["Parkscheibe","Pflicht in Dänemark bei Gratis-Parkplätzen mit Zeitlimit!"],
+ "Handyhalterung + Ladekabel fürs Auto",
+ "Sonnenblenden für die Rückbank",
+ ["Polster + Decken für Nora und Karl","Frühe Fähr-Abfahrten = weiterschlafen im Auto"],
+ "Kotzsackerl + Küchenrolle griffbereit",
+ ["Wechselgewand für beide Kinder griffbereit","Nicht unten im Koffer vergraben"],
+ "Müllsackerl + Feuchttücher vorne",
+ ["Kühltasche","Kommt am Samstag als Letztes rein"],
+ "Picknickdecke"],
+"Strand & draußen":[
+ "Badesachen – je 2 pro Person",
+ ["Neoprenshortys für die Kinder","17–19 °C Wasser in Skrea!"],
+ "Badetücher + Mikrofaser-Reserve",
+ "Strandmuschel/Windschutz",
+ "Sandspielzeug + Drachen",
+ "Schwimmflügel/Schwimmhilfe für Karl",
+ "Schwimmbrillen",
+ ["Luftmatratze + Pumpe","Die Pumpe ist der Klassiker unter den vergessenen Dingen"],
+ ["Badeschuhe","Wasserspielplatz Lübeck + steinige Ostsee-Stellen"],
+ "Rucksack für Tagesausflüge"],
+"Sonne & Gelsen":[
+ "Sonnencreme LSF 50 (Kinder) + LSF 30 (Eltern)",
+ "After-Sun",
+ "Kappen/Sonnenhüte + Sonnenbrillen alle 4",
+ "UV-Shirts für Nora und Karl",
+ ["Gelsen- & Zeckenschutz","Waldrand + Spätnachmittag in Småland = Gelsenzeit"],
+ "Fenistil-Gel für Stiche"],
+"Kleidung (pro Person)":[
+ ["7–8x Unterwäsche + Socken","Waschmöglichkeit je nach Unterkunft – lieber eine Ration mehr"],
+ "5–6 T-Shirts",
+ "2 kurze + 2 lange Hosen",
+ "Warmer Pulli oder Fleece",
+ ["Regenjacken für alle 4","Das ist Schweden – ihr werdet sie brauchen",1],
+ "Feste Schuhe + Sandalen",
+ ["1 schickeres Outfit","Für den 40er in Stockholm 🎂"],
+ "Pyjamas"],
+"Kinder":[
+ ["Kuscheltiere","Vor der Abfahrt checken, dass sie WIRKLICH im Auto sind",1],
+ ["Tablets geladen + Kinderkopfhörer","Hörspiele am Vorabend offline speichern"],
+ "Mal- und Rätselzeug",
+ "Nachtlicht",
+ "Lieblingsbecher für Karl",
+ "Ein paar Bücher",
+ "Snack-Box je Kind",
+ "Reise-Übelkeitsmittel (falls nötig)"],
+"Apotheke & Hygiene":[
+ ["Zeckenzange/-karte","Südschweden ist Borreliose-Gebiet – der Ablauf steht in der App",1],
+ "Fieberthermometer + Fiebersaft/-zäpfchen",
+ "Pflaster-Set + Desinfektionsmittel",
+ "Reisetabletten",
+ "Durchfallmittel + Elektrolytlösung",
+ "Antihistaminikum",
+ "Pinzette (Splitter, Stacheln)",
+ "Persönliche Medikamente",
+ "Zahnbürsten, Zahnpasta, Duschgel, Deo",
+ "Nagelschere, Haarbürste, Zopfgummis",
+ "Ersatzbrille bzw. Kontaktlinsen + Mittel",
+ ["Ohropax","Dünne Wände in Ferienwohnungen"]],
+"Technik":[
+ "Powerbank(s) geladen",
+ "Ladekabel-Set (kein Adapter nötig – EU)",
+ ["Steckdosenleiste","In Hotelzimmern mit einer einzigen Steckdose Gold wert"],
+ "Kamera + Speicherkarte",
+ "Kindle/Bücher für die Eltern",
+ "Kopfhörer"],
+"Spiele & Schlechtwetter":[
+ "Kartenspiele (Skyjo, Uno, Wizard …)",
+ "Ein kompaktes Reisespiel",
+ "Softball/Frisbee für Parks und Strand",
+ ["Regentags-Joker","Eine kleine Überraschung pro Kind für den ersten richtigen Regentag"]],
+"Essen & Vorräte":[
+ "Kaffee für die Apartments",
+ "Müsli/Cornflakes für die Kinder",
+ ["Salz, Öl, Grundgewürze in klein","In Airbnbs oft nicht da"],
+ "Brote + Obst für Tag 1",
+ "Snacks + Müsliriegel",
+ ["Gummibärchen","Die Stau-Reserve"],
+ "Trinkflasche je Person",
+ ["Was fürs Anstoßen am 40er","Systembolaget hat sonntags zu – rechtzeitig planen 🥂"],
+ ["Geburtstagskerzen + kleine Deko","Für den Frühstückstisch am 14.8. – das Ständchen kommt von den Kindern",1]]
 };
 const CHECK = {
 "Wohnung":["Fenster zu, Wasser ab, Herd aus","Müll raus","Pflanzen versorgt / Nachbarn informiert","Post organisiert","Kühlschrank leer geräumt"],
 "Auto":["Volltanken","Reifendruck + Öl + Scheibenwasser","Scheiben innen putzen (Sonne!)","Auto-Ladung: schwere Sachen unten"],
-"Organisatorisches":["Öresund-Online-Ticket gekauft (64 € statt 72 €)","Daten-Roaming am Handy checken","Bankomat-/Kreditkarten-Limits prüfen","ALV-App + SL-App + EasyPark installiert","Viaplay? (Man U am 22.8.)","Geburtstagsessen Stockholm Fr 14.8. reservieren (Villa Godthem / Ulla Winbladh / Oaxen Slip)","ÖAMTC-Schutzbrief aktiv? Nothilfe-Nummer: +43 1 25 120 00","Nachbarn Schlüssel/Notfallnummer"]
+"Organisatorisches":["Öresund-Online-Ticket gekauft (64 € statt 72 €)","Daten-Roaming am Handy checken","Bankomat-/Kreditkarten-Limits prüfen","ALV-App + SL-App + EasyPark installiert","Viaplay? (Man U am 22.8.)","Geburtstagsessen Stockholm Fr 14.8. reservieren (Villa Godthem / Ulla Winbladh / Oaxen Slip)","ÖAMTC-Schutzbrief aktiv? Nothilfe-Nummer: +43 1 25 120 00","Nachbarn Schlüssel/Notfallnummer","Hörspiele + Offline-Karten downloaden","Auto am Vorabend beladen – bis auf die Kühltasche"]
 };
 const PHRASES = [
 ["Hej!","Hallo!","hey"],["Hej då!","Tschüss!","hey doh"],["Tack!","Danke!","tack"],["Tack så mycket!","Vielen Dank!","tack soh mücke"],
@@ -555,10 +648,6 @@ const KNOW = [
 <p><b>Ablauf bei Panne:</b> Warnblinker an → Warnwesten für alle 4 noch IM Auto anziehen → Warndreieck 100–200 m (Autobahn) aufstellen → alle hinter die Leitplanke, nie im Auto warten.</p>
 <p><b>Unfall:</b> Verletzte? → 112. Sonst: Fotos von allem, Daten austauschen, Europäischen Unfallbericht ausfüllen (liegt bei der Grünen Karte). Keine Schuld anerkennen, nur Fakten.</p>
 <p><b>Falsch getankt (E85/HVO erwischt):</b> NICHT starten! Auto stehen lassen, Pannenhilfe rufen – dann bleibt es beim Abpumpen.</p>`},
-{id:"kind",ic:"🧒",t:"Kind verloren – der Plan",h:`
-<p><b>Vorsorge:</b> An vollen Tagen (ALV, Gröna Lund, Festivals, Strand) morgens die Handynummer mit wasserfestem Stift auf Karls und Noras Unterarm schreiben. Bei Ankunft an jedem vollen Ort gemeinsam einen Treffpunkt zeigen: „Wenn du uns nicht siehst → hierher.“</p>
-<p><b>Regel für die Kinder:</b> Stehen bleiben, laut rufen, nur Menschen mit Uniform/Namensschild ansprechen – oder eine andere Mama/einen anderen Papa mit Kindern.</p>
-<p><b>Für die Eltern:</b> Sofort Personal informieren (Parks haben eingespielte Abläufe), eine:r bleibt am Treffpunkt, eine:r sucht. Morgens ein aktuelles Foto der Kinder machen – kostet nichts, hilft enorm.</p>`},
 {id:"allemans",ic:"🌲",t:"Allemansrätten – für Kinder erklärt",h:`
 <p>In Schweden gilt das „Jedermannsrecht“ – die Natur gehört allen. Die Regeln:</p>
 <p>🥾 <b>Überall wandern & spielen</b> – Wald und Wiese darf man betreten, auch ohne zu fragen.<br>
@@ -753,7 +842,7 @@ async function renderHeute(){
     if(daysBetween(t,first)<=14){h+=`<div class="card" id="cdWx"><h3>🌦️ Wetter zum Start (Salzburg)</h3><div id="cdWxRows" class="skel">lädt …</div></div>`;}
     box.innerHTML=h;
     const cp=document.getElementById("cdPack");
-    if(cp){const stp=load("sw26_pack",{});let tot=0,done=0;Object.entries(PACK).forEach(([c,items])=>items.forEach(it=>{tot++;if(stp[c+"|"+it])done++;}));const px=load("sw26_packx",[]);px.forEach(i=>{tot++;if(i.d)done++;});cp.innerHTML=`<p class="muted">🧳 Packliste: <b>${done} von ${tot}</b> erledigt</p>`;}
+    if(cp){const[done,tot]=packCount();cp.innerHTML=`<p class="muted">🧳 Packliste: <b>${done} von ${tot}</b> erledigt</p>`;}
     if(document.getElementById("cdWxRows")){const d=await getWx("salzburg");if(todayISO()===t&&document.getElementById("cdWxRows"))document.getElementById("cdWxRows").innerHTML=wxRows(d,first,null,5);}
     return;
   }
@@ -942,36 +1031,54 @@ function clearSim(){localStorage.removeItem("sw26_date");if(new URLSearchParams(
 function subShell(title,inner){
   return `<div class="topbar"><button class="back" aria-label="Zurück" onclick="navBack()">‹</button><h2>${title}</h2></div>`+inner;
 }
+function itT(it){return Array.isArray(it)?it[0]:it;}
 function checklist(storageKey,data){
   const state=load(storageKey,{});
   let h="";
-  if(storageKey==="sw26_pack") h+=`<div class="card"><div id="packSum" class="muted">…</div></div>`;
+  if(storageKey==="sw26_pack") h+=`<div class="card"><div id="packSum" class="muted">…</div><div class="pkm"><div class="pkmf" id="pkmFill"></div></div></div>`;
   Object.entries(data).forEach(([cat,items])=>{
-    const dn=items.filter(it=>state[cat+"|"+it]).length;
-    h+=`<div class="card"><h3>${cat} <span class="tiny">· ${dn}/${items.length}</span></h3>`;
+    const dn=items.filter(it=>state[cat+"|"+itT(it)]).length;
+    h+=`<details class="packdet" open><summary>${cat} <span class="tiny" data-cnt="${cat}">· ${dn}/${items.length}</span></summary><div class="inner">`;
     items.forEach(it=>{
-      const id=cat+"|"+it; const done=!!state[id];
+      const[ti,hint,prio]=Array.isArray(it)?[it[0],it[1]||null,it[2]||0]:[it,null,0];
+      const id=cat+"|"+ti; const done=!!state[id];
       const cid="c_"+btoa(encodeURIComponent(id)).replace(/[^a-zA-Z0-9]/g,"");
-      h+=`<div class="checkrow ${done?"done":""}"><input type="checkbox" id="${cid}" ${done?"checked":""} onchange="toggleCheck('${storageKey}','${id.replace(/'/g,"\\'")}',this)"><label for="${cid}">${it}</label></div>`;
+      h+=`<div class="checkrow ${done?"done":""}${prio?" prio":""}"><input type="checkbox" id="${cid}" ${done?"checked":""} onchange="toggleCheck('${storageKey}','${id.replace(/'/g,"\\'")}',this)"><label for="${cid}">${ti}${hint?`<small>${hint}</small>`:""}</label></div>`;
     });
-    h+=`</div>`;
+    h+=`</div></details>`;
   });
   return h;
 }
 function toggleCheck(key,id,el){
   el.closest(".checkrow").classList.toggle("done",el.checked);
   const st=load(key,{}); st[id]=el.checked; store(key,st);
+  const ds=key==="sw26_pack"?PACK:CHECK;
+  const cat=id.split("|")[0];
+  if(ds[cat]){
+    const dn=ds[cat].filter(x=>st[cat+"|"+itT(x)]).length;
+    const cEl=document.querySelector(`[data-cnt="${CSS.escape(cat)}"]`);
+    if(cEl) cEl.textContent=`· ${dn}/${ds[cat].length}`;
+  }
   packCelebrate();
 }
 let packParty=false;
-function packCelebrate(){
-  if(packParty) return;
+function packCount(){
   const stp=load("sw26_pack",{});
   let tot=0,done=0;
-  Object.entries(PACK).forEach(([c,items])=>items.forEach(it=>{tot++;if(stp[c+"|"+it])done++;}));
+  Object.entries(PACK).forEach(([c,items])=>items.forEach(it=>{tot++;if(stp[c+"|"+itT(it)])done++;}));
   const px=load("sw26_packx",[]); px.forEach(i=>{tot++;if(i.d)done++;});
+  return[done,tot];
+}
+function packMeter(done,tot){
+  const f=document.getElementById("pkmFill");
+  if(f) f.style.width=(tot?Math.round(done/tot*100):0)+"%";
+}
+function packCelebrate(){
+  const[done,tot]=packCount();
   const sum=document.getElementById("packSum");
-  if(sum) sum.innerHTML=`Noch <b>${tot-done}</b> von ${tot} offen`;
+  if(sum&&!(packParty&&done===tot)) sum.innerHTML=`🧳 Koffer-Meter: <b>${done} / ${tot}</b>`;
+  packMeter(done,tot);
+  if(packParty) return;
   if(tot>0&&done===tot){packParty=true;confetti(28);if(sum)sum.innerHTML="🧳 Alles gepackt – Schweden kann kommen! 🇸🇪";}
 }
 async function openSub(id){
@@ -1052,12 +1159,11 @@ async function openSub(id){
   window.scrollTo({top:0});
 }
 function packSumInit(){
-  const stp=load("sw26_pack",{});let tot=0,done=0;
-  Object.entries(PACK).forEach(([c,items])=>items.forEach(it=>{tot++;if(stp[c+"|"+it])done++;}));
-  const px=load("sw26_packx",[]);px.forEach(i=>{tot++;if(i.d)done++;});
+  const[done,tot]=packCount();
   packParty=(tot>0&&done===tot);
   const sum=document.getElementById("packSum");
-  if(sum) sum.innerHTML=packParty?"🧳 Alles gepackt – Schweden kann kommen! 🇸🇪":`Noch <b>${tot-done}</b> von ${tot} offen`;
+  if(sum) sum.innerHTML=packParty?"🧳 Alles gepackt – Schweden kann kommen! 🇸🇪":`🧳 Koffer-Meter: <b>${done} / ${tot}</b>`;
+  packMeter(done,tot);
 }
 function addPackX(){
   const inp=document.getElementById("newPack"); const v=inp.value.trim(); if(!v) return;
@@ -1344,7 +1450,6 @@ function openNotfall(){
   <div class="card"><h3>📞 Vor Ort (${st.fl} ${st.name})</h3>${hot.map(x=>`<p><a class="btn sub" style="display:block;text-align:center" href="${x[1]}">${x[0]}</a></p>`).join("")}
   <p><a class="btn ghost" style="display:block;text-align:center" href="${gift[1]}">☠️ ${gift[0]}</a></p></div>
   <div class="card"><h3>🏥 Nächste Kinder-Notaufnahme</h3><p>${ER[key].t}</p><a class="btn sub" href="${mapsLink(ER[key].q)}" target="_blank" rel="noopener">🗺️ Route zum Krankenhaus</a></div>
-  <div class="card"><h3>🧒 Kind verloren?</h3><p>1) Ruhig bleiben, sofort Personal informieren – Parks & Strände haben eingespielte Abläufe.<br>2) Eine:r bleibt am vereinbarten Treffpunkt, eine:r sucht.<br>3) Die Kinder wissen: stehen bleiben, laut rufen, nur Uniform/Namensschild oder andere Eltern mit Kindern ansprechen.</p></div>
   <div class="card"><h3>🚗 Panne</h3><p>ÖAMTC-Nothilfe Ausland: <a href="tel:+431251200">+43 1 25 120 00</a> (24 h)<br>Warnblinker → Westen im Auto anziehen → Dreieck aufstellen → alle hinter die Leitplanke.</p></div>
   <p class="tiny" style="margin:8px 4px">Botschaften: Stockholm <a href="tel:+4686651770">+46 8 665 17 70</a> · Kopenhagen <a href="tel:+4539294141">+45 39 29 41 41</a> · Karten sperren: PSA <a href="tel:+4312048800">+43 1 204 8800</a></p>`;
   window.scrollTo({top:0});
