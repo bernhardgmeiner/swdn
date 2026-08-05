@@ -252,7 +252,7 @@ top:[
 reserve:[],
 food:[{n:"Kartoffelkeller",pr:"€€",d:"Koberg – deftig, preiswert, viele vegetarische Kartoffelgerichte."},{n:"Tipasa",pr:"€",d:"Schlumacherstraße – Studi-Klassiker, günstig, gute Veggie-Auswahl."}],
 fika:[],foto:["Holstentor von der Wiese davor, abends angestrahlt; Salzspeicher von der Obertrave-Brücke"],
-prak:["Morgen früh: 90 km bis Puttgarden (ca. 1:10 h). Spätestens 7:45 losfahren – Fähre 9:45, Puffer für die Fehmarnbelt-Baustellen auf der A1."]},
+prak:["Morgen früh: 85 km bis Puttgarden (ca. 1 h). Spätestens 8:00 losfahren – Fähre 9:45, Check-in 30–45 min vorher, Puffer für die Fehmarnbelt-Baustellen auf der A1.","Heute Abend fürs Knuthenborg-Picknick einkaufen (morgen ganzer Safaripark-Tag – die Essensstände dort haben lange Wartezeiten) und die Ticket-QR-Codes offline speichern!"]},
 
 kopenhagen:{name:"Kopenhagen",fl:"🇩🇰",lat:55.68,lon:12.57,ni:"3 Nächte · 6.→9.8.",lodg:"Airbnb, Bjelkes Allé 4, 2200 København N",
 about:"Euer Viertel Nørrebro ist entspannt und voller Spielplätze – das Zentrum ist mit Metro/Rad schnell erreicht. Kinder unter 12 fahren im ganzen ÖPNV gratis mit.",
@@ -431,9 +431,20 @@ const DAYS = [
  {n:"Lüneburg Altstadt",d:"Platz Am Sande, Stintmarkt am Wasser, Eis – schöner 1-h-Stopp."},
  {n:"Alternativ: Wildpark Lüneburger Heide",d:"A7-Ausfahrt Evendorf: weiße Tiger + großer Spielplatz (Erw. ~18 €, Kind ~15 €) – nur bei ≥2 h Zeit."}]},
  prog:["Abend: Holstentor → Niederegger (vor 18 Uhr!) → Obertrave"]},
-{d:"2026-08-06",ti:"Fährtag! Lübeck → Kopenhagen",type:"drive",st:"kopenhagen",drive:{from:"Lübeck",to:"Kopenhagen",km:240,hrs:"1:10 h bis Puttgarden + 45 min Fähre + 1:40 h bis CPH",dep:"Spätestens 7:45 ab Lübeck!",stops:[]},
- ferry:{n:"Scandlines Puttgarden → Rødby",dep:"9:45",ref:"MT26EBBDDA",q:"Scandlines Fährhafen Puttgarden",info:"Check-in spätestens 15 min vorher – wegen dänischer Grenzkontrollen besser 30–45 min einplanen. Auto aufs Deck, alle raus nach oben (Shop, Cafeteria, Sonnendeck). Überfahrt 45 min. Verpasst? Halb so wild – fährt ca. alle 30 min."},
- prog:["Nachmittags ankommen, Nørrebro erkunden: Superkilen + Spielplatz","Abendessen im Viertel (Laundromat Café?)"]},
+{d:"2026-08-06",ti:"Fährtag + Safari! Lübeck → Knuthenborg → Kopenhagen",type:"drive",st:"kopenhagen",drive:{from:"Lübeck",to:"Knuthenborg → Kopenhagen",km:250,hrs:"1 h bis Puttgarden + 45 min Fähre + 25 min zum Park · abends 1:45 h nach CPH",dep:"Spätestens 8:00 ab Lübeck – Check-in 30–45 min vor der Fähre",stops:[]},
+ ferry:{n:"Scandlines Puttgarden → Rødby",dep:"9:45",ref:"MT26EBBDDA",q:"Scandlines Fährhafen Puttgarden",info:"Check-in spätestens 15 min vorher – wegen dänischer Grenzkontrollen besser 30–45 min einplanen. Auto aufs Deck, alle raus nach oben (Shop, Cafeteria, Sonnendeck). Überfahrt 45 min, Ankunft Rødby ca. 10:30 – von dort nur 25 km zum Safaripark. Verpasst? Halb so wild – fährt ca. alle 30 min."},
+ xtra:`<div class="card hl"><h3>🦁 Knuthenborg Safaripark – der Tag dazwischen</h3>
+ <div class="chips"><span class="chip">Park: 10–18 Uhr</span><span class="chip plain">Ankunft ~11, Abfahrt ~17–17:30</span><span class="chip y">Tickets gekauft ✓</span></div>
+ <p class="muted">Onlinetickets für den 6.8. (datumsgebunden, nicht stornier-/umbuchbar!): 309 DKK p. P. ab 3 Jahren, gesamt 1.236 DKK ≈ 165 €. <b>QR-Codes vorab offline speichern!</b> · <a href="https://www.knuthenborg.dk" target="_blank" rel="noopener">knuthenborg.dk ↗</a> · <a href="${mapsLink("Knuthenborg Safaripark, Knuthenborg Allé, 4930 Maribo")}" target="_blank" rel="noopener">🗺️ Route zum Park</a></p>
+ <div class="act"><div class="nm">🚗 Autosafari</div><div class="why">Mit dem eigenen Auto durch Savanne und Tigerskov – inklusive der neu angekommenen Löwen. Im Tiger-Bereich Fenster und Türen geschlossen halten!</div></div>
+ <div class="act"><div class="nm">🐘 Elefantenanlage</div><div class="why">Die vier pensionierten Zirkuselefanten Ramboline, Lara, Djunga und Jenny leben hier auf 140.000 m² Savanne – ihre Geschichte ist eine feine Vorlese-Story für Nora und Karl.</div></div>
+ <div class="act"><div class="nm">🦖 Evolutionsmuseum + Dinosaurierwald</div><div class="why">Der 9 m lange Allosaurus „Big Joe“, bewegliche Dino-Modelle und ein Fossilien-Grabeplatz.</div></div>
+ <div class="act"><div class="nm">💦 Limpopoland</div><div class="why">Wasserspielplatz + Fahrgeschäfte, die Wasserbahn Congo Splash läuft im August – Badesachen und Wechselgewand griffbereit packen!</div></div>
+ <div class="act"><div class="nm">🌳 Naturspielplatz</div><div class="why">Dänemarks größter – für die Restenergie vor der Weiterfahrt.</div></div>
+ <div class="note">🧺 Picknick mitnehmen (am Vorabend in Lübeck einkaufen): Die Essensstände haben lange Wartezeiten, Picknickplätze gibt es überall im Park. Zahlung in DKK – mit Revolut zahlen, DCC („in Euro zahlen?“) immer ablehnen.</div>
+ <div class="tiny">🦒 Für die Rückbank: Giraffe, Nashorn, Tiger und Elefant zählen heute als Ehren-Elche – Jubel erlaubt.</div>
+ </div>`,
+ prog:["8:00 ab Lübeck → 9:45 Fähre → ca. 10:30 Rødby → ca. 11:00 im Safaripark","Bis ca. 17–17:30 im Park, dann 140 km / 1:45 h nach Kopenhagen – Ankunft ca. 19:00","Check-in: Infos in Carinas Airbnb-App (Gastgeber Elias) · Parkzone gleich per EasyPark registrieren","Abendessen unterwegs oder in Nørrebro liefern lassen – für große Pläne wird es heute zu spät, und das ist okay"]},
 {d:"2026-08-07",ti:"Kopenhagen",type:"stay",st:"kopenhagen",
  prog:["Vormittag: Rundetaarn (Spiralrampe!) + Bummel Richtung Nyhavn","Nachmittag: Hafenrundfahrt (Netto-Bådene, 80 DKK) + Broens Gadekøkken","Abends: Superkilen-Runde im Viertel"]},
 {d:"2026-08-08",ti:"Kopenhagen",type:"stay",st:"kopenhagen",
@@ -582,7 +593,7 @@ const PACK = {
 const CHECK = {
 "Wohnung":["Fenster zu, Wasser ab, Herd aus","Müll raus","Pflanzen versorgt / Nachbarn informiert","Post organisiert","Kühlschrank leer geräumt"],
 "Auto":["Volltanken","Reifendruck + Öl + Scheibenwasser","Scheiben innen putzen (Sonne!)","Auto-Ladung: schwere Sachen unten"],
-"Organisatorisches":["Öresund-Online-Ticket gekauft (64 € statt 72 €)","Daten-Roaming am Handy checken","Bankomat-/Kreditkarten-Limits prüfen","ALV-App + SL-App + EasyPark installiert","Viaplay? (Man U am 22.8.)","Geburtstagsessen Stockholm Fr 14.8. reservieren (Villa Godthem / Ulla Winbladh / Oaxen Slip)","ÖAMTC-Schutzbrief aktiv? Nothilfe-Nummer: +43 1 25 120 00","Nachbarn Schlüssel/Notfallnummer","Hörspiele + Offline-Karten downloaden","Auto am Vorabend beladen – bis auf die Kühltasche"]
+"Organisatorisches":["Öresund-Online-Ticket gekauft (64 € statt 72 €)","Daten-Roaming am Handy checken","Bankomat-/Kreditkarten-Limits prüfen","ALV-App + SL-App + EasyPark installiert","Viaplay? (Man U am 22.8.)","Geburtstagsessen Stockholm Fr 14.8. reservieren (Villa Godthem / Ulla Winbladh / Oaxen Slip)","ÖAMTC-Schutzbrief aktiv? Nothilfe-Nummer: +43 1 25 120 00","Nachbarn Schlüssel/Notfallnummer","Hörspiele + Offline-Karten downloaden","Auto am Vorabend beladen – bis auf die Kühltasche","Knuthenborg-QR-Codes offline am Handy speichern (Tickets datumsgebunden, 6.8.!)","Picknick für Knuthenborg am 5.8. in Lübeck einkaufen"]
 };
 const PHRASES = [
 ["Hej!","Hallo!","hey"],["Hej då!","Tschüss!","hey doh"],["Tack!","Danke!","tack"],["Tack så mycket!","Vielen Dank!","tack soh mücke"],
@@ -873,6 +884,7 @@ async function renderHeute(){
   if(day.ferry) h+=ferryCard(day.ferry);
   if(day.oresund) h+=`<div class="card hl"><h3>🌉 Öresundbrücke heute</h3><p>Online-Ticket gekauft? 64 € statt 72 € – <a href="https://www.oresundsbron.com/de/preise" target="_blank" rel="noopener">oresundsbron.com</a>. Kennzeichen wird an der Mautstation automatisch erkannt.</p></div>`;
   if(day.type==="drive") h+=driveCard(day);
+  if(day.xtra) h+=day.xtra;
   h+=`<div class="card" id="hWx"><h3>🌦️ Wetter: ${st.name}</h3><div id="hWxRows" class="skel">lädt …</div><div id="hRain"></div><div id="hExtra"></div><div class="tiny" id="hSun"></div><div id="hWarn"></div></div>`;
   h+=progCard(day);
   h+=`<div id="hSuggest"></div>`;
@@ -947,6 +959,7 @@ function openDay(i){
   if(day.oresund) h+=`<div class="card hl"><h3>🌉 Öresundbrücke</h3><p>Online 64 € statt 72 € – vorher auf oresundsbron.com kaufen.</p></div>`;
   if(day.manu) h+=`<div class="card hl"><h3>⚽ Man United</h3><p>${day.manu.txt}</p></div>`;
   if(day.type==="drive") h+=driveCard(day);
+  if(day.xtra) h+=day.xtra;
   h+=progCard(day);
   h+=`<button class="btn sub" onclick="openStation('${day.st}',true)">📍 Alles über ${st.name}</button>`;
   box.innerHTML=h; window.scrollTo({top:0});

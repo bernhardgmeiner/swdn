@@ -1,5 +1,5 @@
 /* Schweden 2026 – Service Worker */
-const VERSION = "sw26-v7";
+const VERSION = "sw26-v8";
 const SHELL = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png"];
 
 self.addEventListener("install", e => {
